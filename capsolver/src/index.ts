@@ -1,0 +1,1 @@
+export * as CaptchaClient from "./lib/capsolver";
