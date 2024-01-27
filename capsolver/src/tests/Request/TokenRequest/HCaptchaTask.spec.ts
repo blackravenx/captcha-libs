@@ -12,6 +12,7 @@ describe("HCaptchaTask test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
       isInvisible: false,
       proxy: "proxy",
@@ -29,6 +30,7 @@ describe("HCaptchaTask test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       enterprisePayload: undefined,
       isInvisible: false,
       proxy: "proxy",

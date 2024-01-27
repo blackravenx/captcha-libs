@@ -11,6 +11,7 @@ describe("HCaptchaTaskProxyLess test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
       isInvisible: false,
       type: "HCaptchaTaskProxyLess",
@@ -26,6 +27,7 @@ describe("HCaptchaTaskProxyLess test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       enterprisePayload: undefined,
       isInvisible: false,
       type: "HCaptchaTaskProxyLess",

@@ -9,6 +9,7 @@ describe("DataDomeSliderTask", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaUrl: "https://some-url.com",
       proxy: "proxy",
       type: "DataDomeSliderTask",

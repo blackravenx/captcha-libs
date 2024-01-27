@@ -10,6 +10,7 @@ describe("HCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       queries: [ "image1" ],
       question: "question",
       type: "HCaptchaClassification",
@@ -24,6 +25,7 @@ describe("HCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       module: undefined,
       queries: [ "image1" ],
       question: "question",

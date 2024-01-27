@@ -12,6 +12,7 @@ describe("AntiAwsWafTask", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       awsChallengeJS: "some-challenge-js",
       awsContext: "some-context",
       awsIv: "some-iv",
@@ -28,6 +29,7 @@ describe("AntiAwsWafTask", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       proxy: "proxy",
       type: "AntiAwsWafTask",
       websiteURL: "https://some-url.com"

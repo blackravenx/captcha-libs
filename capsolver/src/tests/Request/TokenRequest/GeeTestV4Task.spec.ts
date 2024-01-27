@@ -9,6 +9,7 @@ describe("GeeTestV4Task", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: "some-captchaId",
       proxy: "proxy",
       type: "GeeTestTask",
@@ -23,6 +24,7 @@ describe("GeeTestV4Task", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: "some-captchaId",
       proxy: "proxy",
       type: "GeeTestTask",

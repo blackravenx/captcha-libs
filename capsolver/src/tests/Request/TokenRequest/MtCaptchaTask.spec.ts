@@ -9,6 +9,7 @@ describe("TASK", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       proxy: "proxy",
       type: "MtCaptchaTask",
       websiteKey: "some-websiteKey",

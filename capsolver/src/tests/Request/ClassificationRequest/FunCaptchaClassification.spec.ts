@@ -11,6 +11,7 @@ describe("FunCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       images: "image1",
       module: "module",
       question: "question",
@@ -26,6 +27,7 @@ describe("FunCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       images: "image1",
       module: undefined,
       question: "question",

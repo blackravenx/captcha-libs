@@ -9,6 +9,7 @@ describe("AntiAkamaiWebTask", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "akamaiweb/invoke",
       abck: "some-abck",
       type: "AntiAkamaiWebTask",
       url: "https://some-url.com",
@@ -19,6 +20,7 @@ describe("AntiAkamaiWebTask", () => {
     const task = new AntiAkamaiWebTask({ url: "https://some-url.com" });
 
     expect(task).toEqual({
+      _endpoint: "akamaiweb/invoke",
       type: "AntiAkamaiWebTask",
       url: "https://some-url.com"
     });

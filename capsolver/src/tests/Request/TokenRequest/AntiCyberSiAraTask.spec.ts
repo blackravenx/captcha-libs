@@ -11,6 +11,7 @@ describe("AntiCyberSiAraTask", () => {
 
     expect(task).toEqual({
       SlideMasterUrlId: "some-SlideMasterUrlId",
+      _endpoint: "createTask",
       proxy: "proxy",
       type: "AntiCyberSiAraTask",
       userAgent: "some-userAgent",

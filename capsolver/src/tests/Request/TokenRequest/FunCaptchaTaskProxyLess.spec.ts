@@ -11,6 +11,7 @@ describe("FunCaptchaTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       data: "some-data",
       funcaptchaApiJSSubdomain: "https://some-api-domain.com",
       proxy: "proxy",
@@ -26,6 +27,7 @@ describe("FunCaptchaTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       data: undefined,
       funcaptchaApiJSSubdomain: undefined,
       proxy: undefined,

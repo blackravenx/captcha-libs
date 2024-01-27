@@ -10,6 +10,7 @@ describe("ReCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       image: "image1",
       question: "question",
       type: "ReCaptchaV2Classification",
@@ -24,6 +25,7 @@ describe("ReCaptchaClassificationRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       image: "image1",
       module: undefined,
       question: "question",

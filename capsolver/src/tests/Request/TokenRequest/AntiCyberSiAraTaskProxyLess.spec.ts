@@ -10,6 +10,7 @@ describe("AntiCyberSiAraTaskProxyLess", () => {
 
     expect(task).toEqual({
       SlideMasterUrlId: "some-SlideMasterUrlId",
+      _endpoint: "createTask",
       type: "AntiCyberSiAraTaskProxyLess",
       userAgent: "some-userAgent",
       websiteURL: "https://some-url.com"

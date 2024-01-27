@@ -23,6 +23,7 @@ describe("ReCaptchaV3EnterpriseTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       apiDomain: "https://some-api-domain.com",
       cookies: [
         {
@@ -50,6 +51,7 @@ describe("ReCaptchaV3EnterpriseTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       apiDomain: undefined,
       cookies: undefined,
       enterprisePayload: undefined,

@@ -12,6 +12,7 @@ describe("AntiImpervaTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       reese84: true,
       reeseScriptUrl: "some-reeseScriptUrl",
       reeseToken: "some-reeseToken",
@@ -28,6 +29,7 @@ describe("AntiImpervaTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       reese84: false,
       reeseScriptUrl: undefined,
       reeseToken: undefined,

@@ -10,6 +10,7 @@ describe("GeeTestTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: "some-captchaId",
       challenge: "some-challenge",
       gt: "some-gt",
@@ -25,6 +26,7 @@ describe("GeeTestTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       challenge: "some-challenge",
       gt: "some-gt",
       type: "GeeTestTaskProxyLess",

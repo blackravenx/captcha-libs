@@ -11,6 +11,7 @@ describe("AntiAwsWafTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       awsChallengeJS: "some-challenge-js",
       awsContext: "some-context",
       awsIv: "some-iv",
@@ -23,7 +24,7 @@ describe("AntiAwsWafTaskProxyLess", () => {
     const task = new AntiAwsWafTaskProxyLess({ websiteURL: "https://some-url.com" });
 
     expect(task).toEqual({
-
+      _endpoint: "createTask",
       type: "AntiAwsWafTaskProxyLess",
       websiteURL: "https://some-url.com"
     });

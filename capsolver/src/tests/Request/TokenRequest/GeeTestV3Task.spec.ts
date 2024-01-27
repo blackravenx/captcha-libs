@@ -12,6 +12,7 @@ describe("GeeTestV3Task", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       challenge: "some-challenge",
       geetestApiServerSubdomain: "https://some-api-domain.com",
       gt: "some-gt",
@@ -30,6 +31,7 @@ describe("GeeTestV3Task", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       challenge: "some-challenge",
       gt: "some-gt",
       proxy: "proxy",

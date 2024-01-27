@@ -8,6 +8,7 @@ describe("GeeTestV4TaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: "some-captchaId",
       type: "GeeTestTaskProxyLess",
       websiteURL: "https://some-url.com"
@@ -20,6 +21,7 @@ describe("GeeTestV4TaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: "some-captchaId",
       type: "GeeTestTaskProxyLess",
       websiteURL: "https://some-url.com"

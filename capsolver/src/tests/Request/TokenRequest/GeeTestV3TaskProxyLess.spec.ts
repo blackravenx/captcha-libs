@@ -11,6 +11,7 @@ describe("GeeTestV3TaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       captchaId: undefined,
       challenge: "some-challenge",
       geetestApiServerSubdomain: "https://some-api-domain.com",
@@ -29,6 +30,7 @@ describe("GeeTestV3TaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       challenge: "some-challenge",
       gt: "some-gt",
       type: "GeeTestTaskProxyLess",

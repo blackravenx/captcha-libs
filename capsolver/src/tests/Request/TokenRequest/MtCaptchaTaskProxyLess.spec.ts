@@ -8,6 +8,7 @@ describe("MtCaptchaTaskProxyLess", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       type: "MtCaptchaTaskProxyLess",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"

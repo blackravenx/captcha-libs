@@ -1,6 +1,6 @@
 import { ImageToTextTask } from "../../../lib/Request/ClassificationRequest/ImageToTextTask";
 
-describe("ImageToTextTaskRequest Test", () => {
+describe("ImageToTextTask Test", () => {
   it("To be equal to object", () => {
     const task = new ImageToTextTask({
       body: "image",
@@ -11,6 +11,7 @@ describe("ImageToTextTaskRequest Test", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       body: "image",
       case: true,
       module: "common",
@@ -23,6 +24,7 @@ describe("ImageToTextTaskRequest Test", () => {
     const task = new ImageToTextTask({ body: "image" });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       body: "image",
       case: undefined,
       module: undefined,

@@ -10,6 +10,7 @@ describe("AwsWafClassification", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       images: [ "img1", "img2" ],
       question: "question",
       type: "AwsWafClassification",
@@ -24,6 +25,7 @@ describe("AwsWafClassification", () => {
     });
 
     expect(task).toEqual({
+      _endpoint: "createTask",
       images: [ "img1", "img2" ],
       question: "question",
       type: "AwsWafClassification",
