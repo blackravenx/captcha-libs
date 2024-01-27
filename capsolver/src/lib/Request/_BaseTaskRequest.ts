@@ -37,6 +37,7 @@ const _TaskTypes = [
 export type TaskTypes = typeof _TaskTypes[keyof typeof _TaskTypes];
 
 export interface BaseParams {
+  _endpoint?: string;
   type: TaskTypes;
 }
 
@@ -48,9 +49,24 @@ export type ProxyRequiredTaskParams<T> = T & { proxy: string };
  * @classdesc BaseTask for Capsolver tasks
  * @class
  */
-export abstract class BaseTask {
+export class BaseTask {
+
+  /**
+   * @type {TaskTypes} type - task type
+   */
   protected type: TaskTypes;
-  constructor({ type }: BaseParams) {
+
+  /**
+   * @type {string} _endpoint - special endpoint for task request
+   */
+  public _endpoint: string = "createTask";
+
+  constructor(params: BaseParams) {
+    const {
+      type, _endpoint = "createTask"
+    } = params || { _endpoint: "createTask" };
+
     this.type = type;
+    this._endpoint = _endpoint;
   }
 }
