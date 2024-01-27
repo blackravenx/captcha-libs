@@ -23,7 +23,7 @@
         "main": "capsolver/src/lib/index.ts",
         "tsConfig": "capsolver/tsconfig.lib.json",
         "generatePackageJson": true,
-        "assets": [],
+        "assets": [ "./README.md" ],
         "rootDir": "capsolver/src/lib"
       }
     }
