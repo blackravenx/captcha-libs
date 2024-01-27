@@ -14,7 +14,17 @@
       "options": {
         "jestConfig": "captcha-client/jest.config.ts"
       }
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/captcha-client",
+        "main": "captcha-client/src/index.ts",
+        "tsConfig": "captcha-client/tsconfig.lib.json",
+        "assets": [],
+        "rootDir": "captcha-client/src"
+      }
     }
-  },
-  "tags": []
+  }
 }
