@@ -1,7 +1,6 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
+export type AntiAkamaiWebTaskSolution = {
   sensorData: string;
 };
 
-export type AntiAkamaiWebTaskSolution = CapSolverBaseSolution<Solution>;

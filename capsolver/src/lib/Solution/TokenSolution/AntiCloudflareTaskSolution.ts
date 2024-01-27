@@ -1,9 +1,7 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
+export type AntiCloudflareTaskSolution = {
   token: string;
   type: string;
   userAgent: string;
 };
-
-export type AntiCloudflareTaskSolution = CapSolverBaseSolution<Solution>;

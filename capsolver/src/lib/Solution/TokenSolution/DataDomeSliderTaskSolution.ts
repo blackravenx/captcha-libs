@@ -1,8 +1,6 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
+export type DataDomeSliderTaskSolution = {
   cookie: string;
   userAgent: string;
 };
-
-export type DataDomeSliderTaskSolution = CapSolverBaseSolution<Solution>;

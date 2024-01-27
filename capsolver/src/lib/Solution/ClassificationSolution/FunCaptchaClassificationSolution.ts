@@ -1,7 +1,5 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
 
-type Solution = {
+export type FunCaptchaClassificationSolution = {
   objects: Array<number>;
 };
 
-export type FunCaptchaClassificationSolution = CapSolverBaseSolution<Solution>;

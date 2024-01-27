@@ -1,8 +1,5 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
 
-type Solution = {
+export type AwsWafClassificationSolution = {
   box: number[];
   distance: number;
 };
-
-export type AwsWafClassificationSolution = CapSolverBaseSolution<Solution>;

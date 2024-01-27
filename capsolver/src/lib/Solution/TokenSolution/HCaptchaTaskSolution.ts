@@ -1,11 +1,9 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
+export type HCaptchaTaskSolution = {
   captchaKey: string;
   expireTime: number;
   gRecaptchaResponse: string;
   timestamp: number;
   userAgent: string;
 };
-
-export type HCaptchaTaskSolution = CapSolverBaseSolution<Solution>;

@@ -1,4 +1,3 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
 
 type MultiSolution = {
   objects: number[];
@@ -12,4 +11,4 @@ type SingleSolution = {
   type: string;
 };
 
-export type ReCaptchaV2ClassificationSolution = CapSolverBaseSolution<MultiSolution | SingleSolution>;
+export type ReCaptchaV2ClassificationSolution = MultiSolution | SingleSolution;

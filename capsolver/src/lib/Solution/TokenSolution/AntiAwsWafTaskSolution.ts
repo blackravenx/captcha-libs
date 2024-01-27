@@ -1,7 +1,5 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
+export type AntiAwsWafTaskSolution = {
   cookie: string;
 };
-
-export type AntiAwsWafTaskSolution = CapSolverBaseSolution<Solution>;

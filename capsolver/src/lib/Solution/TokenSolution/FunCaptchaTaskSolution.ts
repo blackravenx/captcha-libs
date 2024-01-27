@@ -1,8 +1,6 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-interface Solution {
+export type FunCaptchaTaskSolution = {
   token: string;
   userAgent: string;
-}
-
-export type FunCaptchaTaskSolution = CapSolverBaseSolution<Solution>;
+};

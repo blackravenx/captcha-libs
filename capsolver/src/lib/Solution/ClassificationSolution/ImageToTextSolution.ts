@@ -1,7 +1,5 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
 
-type Solution = {
+export type ImageToTextSolution = {
   text: string;
 };
 
-export type ImageToTextSolution = CapSolverBaseSolution<Solution>;

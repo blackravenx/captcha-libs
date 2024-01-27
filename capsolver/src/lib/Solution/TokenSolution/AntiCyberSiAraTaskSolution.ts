@@ -1,7 +1,3 @@
-import type { CapSolverBaseSolution } from "../_BaseSolution";
+import type { } from "../_BaseSolution";
 
-type Solution = {
-  token: string;
-};
-
-export type AntiCyberSiAraTaskSolution = CapSolverBaseSolution<Solution>;
+export type AntiCyberSiAraTaskSolution = { token: string };
