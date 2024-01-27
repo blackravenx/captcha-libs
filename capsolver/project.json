@@ -14,6 +14,18 @@
       "options": {
         "jestConfig": "capsolver/jest.config.ts"
       }
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/capsolver",
+        "main": "capsolver/src/lib/index.ts",
+        "tsConfig": "capsolver/tsconfig.lib.json",
+        "generatePackageJson": true,
+        "assets": [],
+        "rootDir": "capsolver/src/lib"
+      }
     }
   },
   "tags": ["Capsolver captcha client"]

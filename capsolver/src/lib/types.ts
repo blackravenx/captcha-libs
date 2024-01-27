@@ -4,7 +4,7 @@ export type CaptchaClientParams = {
   timeout?: number;
 };
 
-export type CapSolverCreateTaskResponse<TSolution=unknown> = {
+export type CapSolverCreateTaskResponse<TSolution =unknown> = {
   errorCode: string;
   errorDescription: string;
   errorId: number;

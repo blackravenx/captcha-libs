@@ -1,75 +1,74 @@
+import { MtCaptchaTask } from "./Request/TokenRequest/MtCaptchaTask";
 import type { $Fetch } from "ofetch";
 import { ofetch } from "ofetch";
 import { CaptchaClient } from "@captcha-libs/captcha-client";
 import type {
-  AntiAkamaiBMPTask,
-  AntiAkamaiWebTask,
-  AntiAwsWafTask,
-  AntiAwsWafTaskProxyLess,
-  AntiCloudflareTaskChallenge,
-  AntiCloudflareTaskTurnstile,
-  AntiCyberSiAraTask,
-  AntiCyberSiAraTaskProxyLess,
-  AntiImpervaTask,
-  AntiImpervaTaskProxyLess,
-  DataDomeSliderTask,
-  FunCaptchaTaskProxyLess,
-  GeeTestTaskProxyLess,
-  GeeTestV3Task,
-  GeeTestV3TaskProxyLess,
-  GeeTestV4Task,
-  GeeTestV4TaskProxyLess,
-  HCaptchaClassification,
-  HCaptchaTask,
-  ImageToTextTask,
-  MtCaptchaTask,
-  MtCaptchaTaskProxyLess,
-  ReCaptchaV2Classification,
-  ReCaptchaV2EnterpriseTask,
-  ReCaptchaV2EnterpriseTaskProxyLess,
-  ReCaptchaV2Task,
-  ReCaptchaV2TaskProxyLess,
-  ReCaptchaV3EnterpriseTask,
-  ReCaptchaV3EnterpriseTaskProxyLess,
-  ReCaptchaV3Task,
-  ReCaptchaV3TaskProxyLess,
-  requests,
-  GeeTestTask,
-
-  AwsWafClassification
-} from "./Request";
-import type {
-  AntiAkamaiBMPTaskSolution,
-  AntiCloudflareTaskSolution,
-  AntiAkamaiWebTaskSolution,
-  AntiAwsWafTaskSolution,
-  AntiCyberSiAraTaskSolution,
-  AntiImpervaTaskSolution,
-  AwsWafClassificationSolution,
-  ImageToTextSolution,
-  FunCaptchaTaskSolution,
-  HCaptchaClassificationSolution,
-  ReCaptchaV2ClassificationSolution,
-  DataDomeSliderTaskSolution,
-  Solution,
-  GeeTestTaskV3Solution,
-  GeeTestTaskV4Solution,
-  MtCaptchaTaskSolution,
-  ReCaptchaV2TaskSolution,
-  ReCaptchaV3TaskSolution,
-  HCaptchaTaskSolution,
-  CapSolverBaseSolution
-} from "./Solution";
-import type {
   CapSolverCreateTaskResponse, CaptchaClientParams, CapSolverBalanceResponse
 } from "./types";
+import { ReCaptchaV3TaskProxyLess } from "./Request/TokenRequest/ReCaptchaV3TaskProxyLess";
+import { ReCaptchaV3M1TaskProxyLess } from "./Request/TokenRequest/ReCaptchaV3M1TaskProxyLess";
+import { ReCaptchaV3EnterpriseTask } from "./Request/TokenRequest/ReCaptchaV3EnterpriseTask";
+import { ReCaptchaV3EnterpriseTaskProxyLess } from "./Request/TokenRequest/ReCaptchaV3EnterpriseTaskProxyLess";
+import { ReCaptchaV3Task } from "./Request/TokenRequest/ReCaptchaV3Task";
+import { ReCaptchaV2EnterpriseTask } from "./Request/TokenRequest/ReCaptchaV2EnterpriseTask";
+import { ReCaptchaV2EnterpriseTaskProxyLess } from "./Request/TokenRequest/ReCaptchaV2EnterpriseTaskProxyLess";
+import { ReCaptchaV2Task } from "./Request/TokenRequest/ReCaptchaV2Task";
+import { ReCaptchaV2TaskProxyLess } from "./Request/TokenRequest/ReCaptchaV2TaskProxyLess";
+import { MtCaptchaTaskProxyLess } from "./Request/TokenRequest/MtCaptchaTaskProxyLess";
+import { MtCaptchaTaskSolution } from "./Solution/TokenSolution/MtCaptchaTaskSolution";
+import { ReCaptchaV2TaskSolution } from "./Solution/TokenSolution/ReCaptchaV2TaskSolution";
+import { ReCaptchaV3TaskSolution } from "./Solution/TokenSolution/ReCaptchaV3TaskSolution";
+import { CapSolverBaseSolution } from "./Solution/_BaseSolution";
+import { HCaptchaTask } from "./Request/TokenRequest/HCaptchaTask";
+import { HCaptchaTaskProxyLess } from "./Request/TokenRequest/HCaptchaTaskProxyLess";
+import { HCaptchaTaskSolution } from "./Solution/TokenSolution/HCaptchaTaskSolution";
+import { AwsWafClassification } from "./Request/ClassificationRequest/AwsWafClassification";
+import { HCaptchaClassification } from "./Request/ClassificationRequest/HCaptchaClassification";
+import { ImageToTextTask } from "./Request/ClassificationRequest/ImageToTextTask";
+import { ReCaptchaV2Classification } from "./Request/ClassificationRequest/ReCaptchaV2Classification";
+import { AntiAwsWafTaskProxyLess } from "./Request/TokenRequest/AntiAwsWafTaskProxyLess";
+import { AntiCloudflareChallengeTask } from "./Request/TokenRequest/AntiCloudflareChallengeTask";
+import { AntiCloudflareTurnstileTask } from "./Request/TokenRequest/AntiCloudflareTurnstileTask";
+import { AntiCyberSiAraTask } from "./Request/TokenRequest/AntiCyberSiAraTask";
+import { AntiCyberSiAraTaskProxyLess } from "./Request/TokenRequest/AntiCyberSiAraTaskProxyLess";
+import { AntiImpervaTask } from "./Request/TokenRequest/AntiImpervaTask";
+import { AntiImpervaTaskProxyLess } from "./Request/TokenRequest/AntiImpervaTaskProxyLess";
+import { DataDomeSliderTask } from "./Request/TokenRequest/DataDomeSliderTask";
+import { FunCaptchaTaskProxyLess } from "./Request/TokenRequest/FunCaptchaTaskProxyLess";
+import { GeeTestV3Task } from "./Request/TokenRequest/GeeTestV3Task";
+import { GeeTestV3TaskProxyLess } from "./Request/TokenRequest/GeeTestV3TaskProxyLess";
+import { GeeTestV4Task } from "./Request/TokenRequest/GeeTestV4Task";
+import { GeeTestV4TaskProxyLess } from "./Request/TokenRequest/GeeTestV4TaskProxyLess";
+import { AwsWafClassificationSolution } from "./Solution/ClassificationSolution/AwsWafClassificationSolution";
+import { HCaptchaClassificationSolution } from "./Solution/ClassificationSolution/HCaptchaClassificationSolution";
+import { ReCaptchaV2ClassificationSolution } from "./Solution/ClassificationSolution/ReCaptchaV2ClassificationSolution";
+import { AntiAwsWafTaskSolution } from "./Solution/TokenSolution/AntiAwsWafTaskSolution";
+import { AntiCyberSiAraTaskSolution } from "./Solution/TokenSolution/AntiCyberSiAraTaskSolution";
+import { AntiImpervaTaskSolution } from "./Solution/TokenSolution/AntiImpervaTaskSolution";
+import { DataDomeSliderTaskSolution } from "./Solution/TokenSolution/DataDomeSliderTaskSolution";
+import { FunCaptchaTaskSolution } from "./Solution/TokenSolution/FunCaptchaTaskSolution";
+import { ImageToTextSolution } from "./Solution/ClassificationSolution/ImageToTextSolution";
+import { AntiCloudflareTaskSolution } from "./Solution/TokenSolution/AntiCloudflareTaskSolution";
+import { Requests } from "./Request";
+import { AntiAwsWafTask } from "./Request/TokenRequest/AntiAwsWafTask";
+import { AntiAkamaiPowTask } from "./Request/TokenRequest/AntiAkamaiPowTask";
+import { AntiAkamaiSensorTask } from "./Request/TokenRequest/AntiAkamaiSensorTask";
+import { AntiAkamaiWebTask } from "./Request/TokenRequest/AntiAkamaiWebTask";
+import { AntiAkamaiPowTaskSolution } from "./Solution/TokenSolution/AntiAkamaiPowTaskSolution";
+import { AntiAkamaiSensorTaskSolution } from "./Solution/TokenSolution/AntiAkamaiSensorTaskSolution";
+import { AntiAkamaiWebTaskSolution } from "./Solution/TokenSolution/AntiAkamaiWebTaskSolution";
+import { GeeTestV3TaskSolution } from "./Solution/TokenSolution/GeeTestV3TaskSolution";
+import { GeeTestV4TaskSolution } from "./Solution/TokenSolution/GeeTestV4TaskSolution";
+import { AntiAkamaiBMPTask } from "./Request/TokenRequest/AntiAkamaiBMPTask";
+import { GeeTestTask } from "./Request/TokenRequest/GeeTestTask";
+import { GeeTestTaskProxyLess } from "./Request/TokenRequest/GeeTestTaskProxyLess";
 
 /**
  * @classdesc CapSolver client
  * @class
  * {@link https://docs.capsolver.com/guide/getting-started.html}
  */
-export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse> {
+export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Requests> {
 
   /**
    * @type {string} clientKey - YOUR_API_KEY from dashboard
@@ -125,9 +124,16 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse> {
    * @param {object} request - task payload to create task
    * @return {Promise<CapSolverCreateTaskResponse<TSolution>>} - response of createTask
    */
-  protected override async createTask<TSolution>(request: requests): Promise<CapSolverCreateTaskResponse<TSolution>> {
-    const response = await this.httpClient<CapSolverCreateTaskResponse<TSolution>>("createTask", {
-      body: request,
+  protected async createTask<TSolution>(request: Requests): Promise<CapSolverCreateTaskResponse<TSolution>> {
+    const {
+      _endpoint, ...body
+    } = request;
+
+    const response = await this.httpClient<CapSolverCreateTaskResponse<TSolution>>(_endpoint, {
+      body: {
+        clientKey: this.clientKey,
+        task: body
+      },
       method: "POST"
     });
 
@@ -138,211 +144,140 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse> {
   }
 
   /**
+  * @param {ReCaptchaV2EnterpriseTask | ReCaptchaV2EnterpriseTaskProxyLess | ReCaptchaV2Task | ReCaptchaV2TaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<ReCaptchaV2TaskSolution>>} - response of createTask
+  */
+  public async solve(request: ReCaptchaV2EnterpriseTask | ReCaptchaV2EnterpriseTaskProxyLess | ReCaptchaV2Task | ReCaptchaV2TaskProxyLess): Promise<CapSolverBaseSolution<ReCaptchaV2TaskSolution>>;
+
+  /**
+  * @param {ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess | ReCaptchaV3M1TaskProxyLess>>} - response of createTask
+  */
+  public async solve(request: ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess): Promise<CapSolverBaseSolution<ReCaptchaV3TaskSolution>>;
+
+  /**
+  * @param {AntiAwsWafTask | AntiAwsWafTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiAwsWafTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiAwsWafTask | AntiAwsWafTaskProxyLess): Promise<CapSolverBaseSolution<AntiAwsWafTaskSolution>>;
+
+  /**
+  * @param {AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiCyberSiAraTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess): Promise<CapSolverBaseSolution<AntiCyberSiAraTaskSolution>>;
+
+  /**
+  * @param {FunCaptchaTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<FunCaptchaTaskSolution>>} - response of createTask
+  */
+  public async solve(request: FunCaptchaTaskProxyLess): Promise<CapSolverBaseSolution<FunCaptchaTaskSolution>>;
+
+  /**
+  * @param {GeeTestV3Task | GeeTestV3TaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<GeeTestV3TaskSolution>>} - response of createTask
+  */
+  public async solve(request: GeeTestV3Task | GeeTestV3TaskProxyLess): Promise<CapSolverBaseSolution<GeeTestV3TaskSolution>>;
+
+  /**
+  * @param {GeeTestV4Task | GeeTestV4TaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<GeeTestV4TaskSolution>>} - response of createTask
+  */
+  public async solve(request: GeeTestV4Task | GeeTestV4TaskProxyLess): Promise<CapSolverBaseSolution<GeeTestV4TaskSolution>>;
+
+  /**
+  * @param {GeeTestTask | GeeTestTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<GeeTestTaskSolution>>} - response of createTask
+  */
+  public async solve(request: GeeTestTask | GeeTestTaskProxyLess): Promise<CapSolverBaseSolution<GeeTestV3TaskSolution & GeeTestV4TaskSolution>>;
+
+  /**
+  * @param {HCaptchaTask | HCaptchaTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<HCaptchaTaskSolution>>} - response of createTask
+  */
+  public async solve(request: HCaptchaTask | HCaptchaTaskProxyLess): Promise<CapSolverBaseSolution<HCaptchaTaskSolution>>;
+
+  /**
+  * @param {MtCaptchaTask | MtCaptchaTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<MtCaptchaTaskSolution>>} - response of createTask
+  */
+  public async solve(request: MtCaptchaTask | MtCaptchaTaskProxyLess): Promise<CapSolverBaseSolution<MtCaptchaTaskSolution>>;
+
+  /**
+  * @param {AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiCloudflareTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask): Promise<CapSolverBaseSolution<AntiCloudflareTaskSolution>>;
+
+  /**
+  * @param {AntiImpervaTask | AntiImpervaTaskProxyLess} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiImpervaTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiImpervaTask | AntiImpervaTaskProxyLess): Promise<CapSolverBaseSolution<AntiImpervaTaskSolution>>;
+
+  /**
+  * @param {DataDomeSliderTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<DataDomeSliderTaskSolution>>} - response of createTask
+  */
+  public async solve(request: DataDomeSliderTask): Promise<CapSolverBaseSolution<DataDomeSliderTaskSolution>>;
+
+  /**
+  * @param {AntiAkamaiSensorTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiAkamaiBMPTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiAkamaiSensorTask): Promise<CapSolverBaseSolution<AntiAkamaiSensorTaskSolution>>;
+
+  /**
+  * @param {AntiAkamaiPowTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiAkamaiBMPTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiAkamaiPowTask): Promise<CapSolverBaseSolution<AntiAkamaiPowTaskSolution>>;
+
+  /**
+  * @param {AntiAkamaiBMPTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiAkamaiBMPTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiAkamaiBMPTask): Promise<CapSolverBaseSolution<AntiAkamaiPowTaskSolution & AntiAkamaiSensorTaskSolution>>;
+
+  /**
+  * @param {AntiAkamaiWebTask} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AntiAkamaiWebTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AntiAkamaiWebTask): Promise<CapSolverBaseSolution<AntiAkamaiWebTaskSolution>>;
+
+  /**
    * @param {ImageToTextTask} request - ImageToTextTask
    * @return {Promise<ImageToTextSolution>} - response of createTask
    */
-  public async solve(request: ImageToTextTask): Promise<ImageToTextSolution>;
+  public async solve(request: ImageToTextTask): Promise<CapSolverBaseSolution<ImageToTextSolution>>;
 
   /**
-   * @param {AwsWafClassification} request - task payload to create task
-   * @return {Promise<AwsWafClassificationSolution>} - response of createTask
-   */
-  public async solve(request: AwsWafClassification): Promise<AwsWafClassificationSolution>;
+  * @param {AwsWafClassification} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<AwsWafClassificationSolution>>} - response of createTask
+  */
+  public async solve(request: AwsWafClassification): Promise<CapSolverBaseSolution<AwsWafClassificationSolution>>;
 
   /**
-   * @param {HCaptchaClassification} request - task payload to create task
-   * @return {Promise<HCaptchaClassificationSolution>} - response of createTask
-   */
-  public async solve(request: HCaptchaClassification): Promise<HCaptchaClassificationSolution>;
+  * @param {HCaptchaClassification} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<HCaptchaClassificationSolution>>} - response of createTask
+  */
+  public async solve(request: HCaptchaClassification): Promise<CapSolverBaseSolution<HCaptchaClassificationSolution>>;
 
   /**
-   * @param {ReCaptchaV2Classification} request - task payload to create task
-   * @return {Promise<ReCaptchaV2ClassificationSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV2Classification): Promise<ReCaptchaV2ClassificationSolution>;
+  * @param {ReCaptchaV2Classification} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<ReCaptchaV2ClassificationSolution>>} - response of createTask
+  */
+  public async solve(request: ReCaptchaV2Classification): Promise<CapSolverBaseSolution<ReCaptchaV2ClassificationSolution>>;
 
   /**
-   * @param {AntiAkamaiBMPTask} request - task payload to create task
-   * @return {Promise<AntiAkamaiBMPTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiAkamaiBMPTask): Promise<AntiAkamaiBMPTaskSolution>;
-
-  /**
-   * @param {AntiAkamaiWebTask} request - task payload to create task
-   * @return {Promise<AntiAkamaiWebTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiAkamaiWebTask): Promise<AntiAkamaiWebTaskSolution>;
-
-  /**
-   * @param {AntiAwsWafTask} request - task payload to create task
-   * @return {Promise<AntiAwsWafTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiAwsWafTask): Promise<AntiAwsWafTaskSolution>;
-
-  /**
-   * @param {AntiAwsWafTaskProxyLess} request - task payload to create task
-   * @return {Promise<AntiAwsWafTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiAwsWafTaskProxyLess): Promise<AntiAwsWafTaskSolution>;
-
-  /**
-   * @param {AntiCloudflareTaskChallenge} request - task payload to create task
-   * @return {Promise<AntiCloudflareTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiCloudflareTaskChallenge): Promise<AntiCloudflareTaskSolution>;
-
-  /**
-   * @param {AntiCloudflareTaskTurnstile} request - task payload to create task
-   * @return {Promise<AntiCloudflareTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiCloudflareTaskTurnstile): Promise<AntiCloudflareTaskSolution>;
-
-  /**
-   * @param {AntiCyberSiAraTask} request - task payload to create task
-   * @return {Promise<AntiCyberSiAraTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiCyberSiAraTask): Promise<AntiCyberSiAraTaskSolution>;
-
-  /**
-   * @param {AntiCyberSiAraTaskProxyLess} request - task payload to create task
-   * @return {Promise<AntiCyberSiAraTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiCyberSiAraTaskProxyLess): Promise<AntiCyberSiAraTaskSolution>;
-
-  /**
-   * @param {AntiImpervaTask} request - task payload to create task
-   * @return {Promise<AntiImpervaTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiImpervaTask): Promise<AntiImpervaTaskSolution>;
-
-  /**
-   * @param {AntiImpervaTaskProxyLess} request - task payload to create task
-   * @return {Promise<AntiImpervaTaskSolution>} - response of createTask
-   */
-  public async solve(request: AntiImpervaTaskProxyLess): Promise<AntiImpervaTaskSolution>;
-
-  /**
-   * @param {DataDomeSliderTask} request - task payload to create task
-   * @return {Promise<DataDomeSliderTaskSolution>} - response of createTask
-   */
-  public async solve(request: DataDomeSliderTask): Promise<DataDomeSliderTaskSolution>;
-
-  /**
-   * @param {FunCaptchaTaskProxyLess} request - task payload to create task
-   * @return {Promise<FunCaptchaTaskSolution>} - response of createTask
-   */
-  public async solve(request: FunCaptchaTaskProxyLess): Promise<FunCaptchaTaskSolution>;
-
-  /**
-   * @param {GeeTestTask} request - task payload to create task
-   * @return {Promise<GeeTestTaskV3Solution | GeeTestTaskV4Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestTask): Promise<GeeTestTaskV3Solution | GeeTestTaskV4Solution>;
-
-  /**
-   * @param {GeeTestTaskProxyLess} request - task payload to create task
-   * @return {Promise<GeeTestTaskV3Solution | GeeTestTaskV4Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestTaskProxyLess): Promise<GeeTestTaskV3Solution | GeeTestTaskV4Solution>;
-
-  /**
-   * @param {GeeTestV3Task} request - task payload to create task
-   * @return {Promise<GeeTestTaskV3Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestV3Task): Promise<GeeTestTaskV3Solution>;
-
-  /**
-   * @param {GeeTestV3TaskProxyLess} request - task payload to create task
-   * @return {Promise<GeeTestTaskV3Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestV3TaskProxyLess): Promise<GeeTestTaskV3Solution>;
-
-  /**
-   * @param {GeeTestV4Task} request - task payload to create task
-   * @return {Promise<GeeTestTaskV4Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestV4Task): Promise<GeeTestTaskV4Solution>;
-
-  /**
-   * @param {GeeTestV4TaskProxyLess} request - task payload to create task
-   * @return {Promise<GeeTestTaskV4Solution>} - response of createTask
-   */
-  public async solve(request: GeeTestV4TaskProxyLess): Promise<GeeTestTaskV4Solution>;
-
-  /**
-   * @param {HCaptchaTask} request - task payload to create task
-   * @return {Promise<HCaptchaTaskSolution>} - response of createTask
-   */
-  public async solve(request: HCaptchaTask): Promise<HCaptchaTaskSolution>;
-
-  /**
-   * @param {MtCaptchaTask} request - task payload to create task
-   * @return {Promise<MtCaptchaTaskSolution>} - response of createTask
-   */
-  public async solve(request: MtCaptchaTask): Promise<MtCaptchaTaskSolution>;
-
-  /**
-   * @param {MtCaptchaTaskProxyLess} request - task payload to create task
-   * @return {Promise<MtCaptchaTaskSolution>} - response of createTask
-   */
-  public async solve(request: MtCaptchaTaskProxyLess): Promise<MtCaptchaTaskSolution>;
-
-  /**
-   * @param {ReCaptchaV2Task} request - task payload to create task
-   * @return {Promise<ReCaptchaV2TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV2Task): Promise<ReCaptchaV2TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV2EnterpriseTask} request - task payload to create task
-   * @return {Promise<ReCaptchaV2TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV2EnterpriseTask): Promise<ReCaptchaV2TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV2EnterpriseTaskProxyLess} request - task payload to create task
-   * @return {Promise<ReCaptchaV2TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV2EnterpriseTaskProxyLess): Promise<ReCaptchaV2TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV2TaskProxyLess} request - task payload to create task
-   * @return {Promise<ReCaptchaV2TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV2TaskProxyLess): Promise<ReCaptchaV2TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV3Task} request - task payload to create task
-   * @return {Promise<ReCaptchaV3TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV3Task): Promise<ReCaptchaV3TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV3EnterpriseTask} request - task payload to create task
-   * @return {Promise<ReCaptchaV3TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV3EnterpriseTask): Promise<ReCaptchaV3TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV3EnterpriseTaskProxyLess} request - task payload to create task
-   * @return {Promise<ReCaptchaV3TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV3EnterpriseTaskProxyLess): Promise<ReCaptchaV3TaskSolution>;
-
-  /**
-   * @param {ReCaptchaV3TaskProxyLess} request - ReCaptchaV3TaskProxyLess
-   * @return {Promise<ReCaptchaV3TaskSolution>} - response of createTask
-   */
-  public async solve(request: ReCaptchaV3TaskProxyLess): Promise<ReCaptchaV3TaskSolution>;
-
-  /**
-   * @param {requests} request - task payload to create task
-   * @return {Promise<TSolution>} - response(solution) of task
-   */
-  public async solve<TSolution extends Solution>(request: requests): Promise<TSolution> {
+  * @param {Requests} request - task payload to create task
+  * @return {Promise<CapSolverBaseSolution<TSolution>>} - response of createTask
+  */
+  public async solve<TSolution>(request: Requests): Promise<CapSolverBaseSolution<TSolution>> {
     const createTaskResponse = await this.createTask<TSolution>(request);
 
-    if (createTaskResponse.solution) return createTaskResponse.solution;
+    if (createTaskResponse.solution)
+      return await new Promise(resolve => resolve(createTaskResponse as unknown as CapSolverBaseSolution<TSolution>));
 
     const abortSignal = AbortSignal.timeout(this.timeout);
 
@@ -355,7 +290,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse> {
       });
 
       if (data.solution)
-        return await new Promise(resolve => resolve(data.solution));
+        return await new Promise(resolve => resolve(data));
 
       else if (data.errorCode)
         return await Promise.reject(data.errorDescription);
