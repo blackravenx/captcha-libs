@@ -3,7 +3,7 @@ import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
 import type { AntiAwsWafTaskBaseParams } from "./_AntiAwsWafBase";
 import { AntiAwsWafTaskBase } from "./_AntiAwsWafBase";
 
-type AntiAwsWafTaskParams = ProxyRequiredTaskParams<Omit<AntiAwsWafTaskBaseParams, "type">>;
+type AntiAwsWafTaskParams = ProxyRequiredTaskParams<Omit<AntiAwsWafTaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc AntiAwsWafTask this task type require your own proxies.

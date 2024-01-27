@@ -2,7 +2,7 @@ import {
   FunCaptchaTaskBase, type FunCaptchaTaskBaseParams
 } from "./_FunCaptchaBase";
 
-export type FunCaptchaTaskProxyLessParams = Omit<FunCaptchaTaskBaseParams, "type">;
+export type FunCaptchaTaskProxyLessParams = Omit<FunCaptchaTaskBaseParams, "_endpoint" | "type">;
 
 /**
  * @classdesc FunCaptchaTaskProxyLess is using the server's built-in proxy.

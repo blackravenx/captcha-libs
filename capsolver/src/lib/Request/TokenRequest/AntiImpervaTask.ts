@@ -3,7 +3,7 @@ import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
 import type { AntiImpervaTaskBaseParams } from "./_AntiImpervaBase";
 import { AntiImpervaTaskBase } from "./_AntiImpervaBase";
 
-type AntiImpervaTaskParams = ProxyRequiredTaskParams<Omit<AntiImpervaTaskBaseParams, "type">>;
+type AntiImpervaTaskParams = ProxyRequiredTaskParams<Omit<AntiImpervaTaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc AntiImpervaTask this task type require your own proxies.

@@ -3,30 +3,31 @@ import {
   AntiCloudflareTaskBase, type AntiCloudflareTaskBaseParams
 } from "./_AntiCloudflareBase";
 
-type AntiCloudflareTaskTurnstileTypes = "challenge" | "turnstile";
+type AntiCloudflareTurnstileTaskTypes = "challenge" | "turnstile";
 
-type AntiCloudflareTaskTurnstileMetadata = {
+export type AntiCloudflareTurnstileTaskMetadata = {
   action?: string;
   cdata?: string;
-  type: AntiCloudflareTaskTurnstileTypes;
+  type: AntiCloudflareTurnstileTaskTypes;
 };
 
-type AntiCloudflareTaskTurnstileParams = Omit<AntiCloudflareTaskBaseParams, "type"> & {
-  metadata?: AntiCloudflareTaskTurnstileMetadata;
+export type AntiCloudflareTurnstileTaskParams = AntiCloudflareTaskBaseParams & {
+  metadata: AntiCloudflareTurnstileTaskMetadata;
+  websiteKey: string;
 };
 
 /**
- * @classdesc AntiCloudflareTaskTurnstile
+ * @classdesc AntiCloudflareTurnstileTask
  * @class
  * @extends {AntiCloudflareTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/cloudflare_turnstile.html}
  */
-export class AntiCloudflareTaskTurnstile extends AntiCloudflareTaskBase implements AntiCloudflareTaskTurnstileParams {
+export class AntiCloudflareTurnstileTask extends AntiCloudflareTaskBase implements AntiCloudflareTurnstileTaskParams {
 
   /**
-   * Create AntiCloudflareTaskTurnstile
+   * Create AntiCloudflareTurnstileTask
    * {@link https://docs.capsolver.com/guide/antibots/cloudflare_turnstile.html}
-   * @param {Object} params - AntiCloudflareTaskTurnstileParams
+   * @param {Object} params - AntiCloudflareTurnstileTaskParams
    * @param {string} [params.websiteURL] - The address of the target page.
    * @param {string=} [params.websiteKey] - Turnstile website key.
    * @param {object} [params.metadata] - Turnstile extra data {@link https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/}
@@ -35,8 +36,8 @@ export class AntiCloudflareTaskTurnstile extends AntiCloudflareTaskBase implemen
    * @param {string} [params.proxy] - proxy
    */
   constructor({
-    websiteURL, proxy, metadata
-  }: AntiCloudflareTaskTurnstileParams) {
+    websiteURL, proxy, metadata, websiteKey
+  }: AntiCloudflareTurnstileTaskParams) {
     const {
       action, type = "turnstile", cdata
     } = metadata || { type: "turnstile" };
@@ -45,12 +46,14 @@ export class AntiCloudflareTaskTurnstile extends AntiCloudflareTaskBase implemen
       proxy,
       websiteURL
     }, "AntiCloudflareTask");
+    this.websiteKey = websiteKey;
     this.metadata = {
       action,
       cdata,
       type
     };
   }
+  websiteKey: string;
 
   /**
    * @type {object} [type.metadata] - Turnstile extra data {@link https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/}
@@ -58,5 +61,5 @@ export class AntiCloudflareTaskTurnstile extends AntiCloudflareTaskBase implemen
    * @type {string} [type.proxy] - proxy
    * @type {string} [type.websiteURL] - The URL of the page that returns the captcha info
    */
-  metadata: AntiCloudflareTaskTurnstileMetadata;
+  metadata: AntiCloudflareTurnstileTaskMetadata;
 }

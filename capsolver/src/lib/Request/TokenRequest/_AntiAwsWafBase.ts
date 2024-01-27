@@ -15,7 +15,6 @@ export type AntiAwsWafTaskBaseParams = {
  * @class
  * {@link https://docs.capsolver.com/guide/captcha/awsWaf.html}
  * @extends {BaseTask}
- * @implements {AntiAwsWafTaskBaseParams}
  */
 export abstract class AntiAwsWafTaskBase extends BaseTask implements AntiAwsWafTaskBaseParams {
 

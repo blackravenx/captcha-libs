@@ -13,7 +13,6 @@ export type AntiCyberSiAraTaskBaseParams = {
  * @class
  * {@link https://docs.capsolver.com/guide/captcha/CyberSiara.html}
  * @extends {BaseTask}
- * @implements {AntiCyberSiAraTaskBaseParams}
  */
 export abstract class AntiCyberSiAraTaskBase extends BaseTask implements AntiCyberSiAraTaskBaseParams {
 

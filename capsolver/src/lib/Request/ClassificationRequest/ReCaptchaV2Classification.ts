@@ -2,7 +2,7 @@ import {
   BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
-type ReCaptchaClassificationParams = Omit<BaseParams, "type"> & {
+type ReCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
   image: string;
   question: string;
   websiteKey?: string;

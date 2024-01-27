@@ -22,7 +22,7 @@ const _ImageToTextModules = [
 
 type ImageToTextModules =typeof _ImageToTextModules[keyof typeof _ImageToTextModules];
 
-type ImageToTextParams = Omit<BaseParams, "type"> & {
+type ImageToTextParams = Omit<BaseParams, "_endpoint" | "type"> & {
   body: string;
   isCaseSensitive?: boolean;
   module?: ImageToTextModules;

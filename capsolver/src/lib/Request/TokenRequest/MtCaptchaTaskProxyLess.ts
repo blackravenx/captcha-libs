@@ -1,7 +1,7 @@
 import type { ProxylessTaskParams } from "../_BaseTaskRequest";
 import { MtCaptchaTaskBase } from "./_MtCaptchaTaskBase";
 
-type MtCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<MtCaptchaTaskBase, "type">>;
+type MtCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<MtCaptchaTaskBase, "_endpoint" | "type">>;
 
 /**
  * @classdesc MtCaptchaTaskProxyLess is using the server's built-in proxy.

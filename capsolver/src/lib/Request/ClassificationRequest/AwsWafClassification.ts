@@ -2,7 +2,7 @@ import {
   BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
-type AwsWafClassificationParams = Omit<BaseParams, "type"> & {
+type AwsWafClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
   images: Array<string>;
   question: string;
   websiteKey?: string;

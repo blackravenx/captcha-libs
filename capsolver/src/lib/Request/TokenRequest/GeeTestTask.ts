@@ -3,7 +3,7 @@ import {
   GeeTestTaskBase, type GeeTestTaskBaseParams
 } from "./_GeeTestTaskBase";
 
- type GeeTestTaskParams = ProxyRequiredTaskParams<Omit<GeeTestTaskBaseParams, "type">>;
+ type GeeTestTaskParams = ProxyRequiredTaskParams<GeeTestTaskBaseParams>;
 
 /**
  * @classdesc GeeTestTask this task type require your own proxies.

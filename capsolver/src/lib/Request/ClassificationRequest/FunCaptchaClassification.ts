@@ -2,7 +2,7 @@ import {
   BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
-type FunCaptchaClassificationParams = Omit<BaseParams, "type"> & {
+type FunCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
   images: string;
   module?: string;
   question: string;

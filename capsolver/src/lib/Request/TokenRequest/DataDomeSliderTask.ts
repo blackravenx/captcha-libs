@@ -1,7 +1,7 @@
 import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
 import { BaseTask } from "../_BaseTaskRequest";
 
-type DataDomeSliderTaskParams = Omit<BaseTask, "type"> & ProxyRequiredTaskParams<{
+type DataDomeSliderTaskParams = Omit<BaseTask, "_endpoint" | "type"> & ProxyRequiredTaskParams<{
   captchaUrl: string;
   userAgent: string;
 }>;

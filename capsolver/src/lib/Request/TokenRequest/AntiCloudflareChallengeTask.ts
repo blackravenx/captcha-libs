@@ -2,24 +2,24 @@
 import type { AntiCloudflareTaskBaseParams } from "./_AntiCloudflareBase";
 import { AntiCloudflareTaskBase } from "./_AntiCloudflareBase";
 
-type AntiCloudflareTaskChallengeParams = AntiCloudflareTaskBaseParams;
+type AntiCloudflareChallengeTaskParams = AntiCloudflareTaskBaseParams;
 
 /**
- * @classdesc AntiCloudflareTaskChallenge
+ * @classdesc AntiCloudflareChallengeTask
  * @class
  * @extends {AntiCloudflareTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html}
  */
-export class AntiCloudflareTaskChallenge extends AntiCloudflareTaskBase {
+export class AntiCloudflareChallengeTask extends AntiCloudflareTaskBase {
 
   /**
-   * Create AntiCloudflareTaskChallenge
+   * Create AntiCloudflareChallengeTask
    * {@link https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html}
-   * @param {object} params -	AntiCloudflareTaskChallengeParams
+   * @param {object} params -	AntiCloudflareChallengeTaskParams
    * @param {string} [params.proxy] -	proxy
    * @param {string} [params.websiteURL] - The address of the target page.
    */
-  constructor(params: AntiCloudflareTaskChallengeParams) {
+  constructor(params: AntiCloudflareChallengeTaskParams) {
     super(params, "AntiCloudflareTask");
   }
 }

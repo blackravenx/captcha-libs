@@ -3,7 +3,7 @@ import type { ProxylessTaskParams } from "../_BaseTaskRequest";
 import type { AntiCyberSiAraTaskBaseParams } from "./_AntiCyberSiAraBase";
 import { AntiCyberSiAraTaskBase } from "./_AntiCyberSiAraBase";
 
-type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<Omit<AntiCyberSiAraTaskBaseParams, "type">>;
+type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<Omit<AntiCyberSiAraTaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc AntiCyberSiAraTaskProxyLess this task type don't require your own proxies.

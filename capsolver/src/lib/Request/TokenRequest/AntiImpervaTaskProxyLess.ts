@@ -3,7 +3,7 @@ import type { ProxylessTaskParams } from "../_BaseTaskRequest";
 import type { AntiImpervaTaskBaseParams } from "./_AntiImpervaBase";
 import { AntiImpervaTaskBase } from "./_AntiImpervaBase";
 
-type AntiImpervaTaskProxyLessParams = ProxylessTaskParams<Omit<AntiImpervaTaskBaseParams, "type">>;
+type AntiImpervaTaskProxyLessParams = ProxylessTaskParams<Omit<AntiImpervaTaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc AntiImpervaTaskProxyLess this task type require your own proxies.

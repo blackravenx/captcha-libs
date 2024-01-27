@@ -20,7 +20,6 @@ export type RecaptchaV3TaskBaseParams = {
  * @class
  * {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV3.html}
  * @extends {BaseTask}
- * @implements {RecaptchaV3TaskBase}
  */
 export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV3TaskBaseParams {
 

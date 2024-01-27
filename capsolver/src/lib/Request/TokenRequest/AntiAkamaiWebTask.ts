@@ -26,7 +26,11 @@ export class AntiAkamaiWebTask extends BaseTask implements AntiAkamaiWebTaskPara
   constructor({
     abck, bmsz, url, userAgent
   }: AntiAkamaiWebTaskParams) {
-    super({ type: "AntiAkamaiWebTask" });
+    super({
+      _endpoint: "akamaiweb/invoke",
+
+      type: "AntiAkamaiWebTask"
+    });
     this.abck = abck;
     this.bmsz = bmsz;
     this.url = url;

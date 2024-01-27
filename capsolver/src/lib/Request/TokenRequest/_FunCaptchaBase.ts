@@ -13,7 +13,6 @@ export type FunCaptchaTaskBaseParams = {
  * @classdesc Base class for FunCaptchaTask
  * @class
  * @extends {BaseTask}
- * @implements {FunCaptchaTaskBaseParams}
  * {@link https://docs.capsolver.com/guide/captcha/FunCaptcha.html}
  */
 

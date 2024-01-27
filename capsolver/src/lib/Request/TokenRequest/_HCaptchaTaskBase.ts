@@ -15,7 +15,6 @@ export type HCaptchaBaseTaskParams = {
  * @class
  * {@link https://docs.capsolver.com/guide/captcha/HCaptcha.html}
  * @extends {BaseTask}
- * @implements {HCaptchaBaseTaskParams}
  */
 export abstract class HCaptchaTaskBase extends BaseTask implements HCaptchaBaseTaskParams {
 

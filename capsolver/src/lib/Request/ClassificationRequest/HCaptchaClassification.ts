@@ -2,7 +2,7 @@ import {
   BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
-type HCaptchaClassificationParams = Omit<BaseParams, "type"> & {
+type HCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
   queries: Array<string>;
   question: string;
   websiteKey?: string;

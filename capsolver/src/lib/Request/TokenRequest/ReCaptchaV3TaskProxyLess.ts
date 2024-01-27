@@ -1,8 +1,8 @@
 import type { ProxylessTaskParams } from "../_BaseTaskRequest";
-import type { RecaptchaV3TaskBaseParams } from "./_RecaptchaV3Base";
-import { RecaptchaV3TaskBase } from "./_RecaptchaV3Base";
+import type { RecaptchaV3TaskBaseParams } from "./_RecaptchaV3TaskBase";
+import { RecaptchaV3TaskBase } from "./_RecaptchaV3TaskBase";
 
-type ReCaptchaV3TaskProxyLessParams =ProxylessTaskParams<Omit<RecaptchaV3TaskBaseParams, "type">>;
+type ReCaptchaV3TaskProxyLessParams =ProxylessTaskParams<Omit<RecaptchaV3TaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc ReCaptchaV3TaskProxyLess is using the server's built-in proxy.

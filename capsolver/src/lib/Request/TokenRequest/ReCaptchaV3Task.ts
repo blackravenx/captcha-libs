@@ -1,8 +1,8 @@
 import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
-import type { RecaptchaV3TaskBaseParams } from "./_RecaptchaV3Base";
-import { RecaptchaV3TaskBase } from "./_RecaptchaV3Base";
+import type { RecaptchaV3TaskBaseParams } from "./_RecaptchaV3TaskBase";
+import { RecaptchaV3TaskBase } from "./_RecaptchaV3TaskBase";
 
-type ReCaptchaV3TaskParams = ProxyRequiredTaskParams<Omit<RecaptchaV3TaskBaseParams, "type">>;
+type ReCaptchaV3TaskParams = ProxyRequiredTaskParams<Omit<RecaptchaV3TaskBaseParams, "_endpoint" | "type">>;
 
 /**
  * @classdesc ReCaptchaV3Task this task type require your own proxies.

@@ -2,7 +2,7 @@
 import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
 import { HCaptchaTaskBase } from "./_HCaptchaTaskBase";
 
-type HCaptchaTaskParams = ProxyRequiredTaskParams<Omit<HCaptchaTaskBase, "type">>;
+type HCaptchaTaskParams = ProxyRequiredTaskParams<Omit<HCaptchaTaskBase, "_endpoint" | "type">>;
 
 /**
  * @classdesc HCaptchaTask this task type require your own proxies

@@ -1,16 +1,18 @@
 import { BaseTask } from "../_BaseTaskRequest";
 
-type AntiAkamaiBMPTaskParams ={
+export type AntiAkamaiBMPTaskParams = {
   count?: number;
+  country?: string;
   deviceId?: string;
   deviceName?: string;
-  packageName: string;
+  metadata?: Record<string, string>;
+  packageName?: string;
   pow?: string;
   version?: string;
 };
 
 /**
- * @classdesc AntiAkamaiBMPTask This task type uses a separate endpoint for fetching /akamaibmp/invoke
+ * @classdesc Class for AntiAkamaiBMPTask. This task type uses a separate endpoint for fetching /akamaibmp/invoke
  * @class
  * @extends {AntiAkamaiBMPTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/akamaibmp.html}
@@ -29,15 +31,20 @@ export class AntiAkamaiBMPTask extends BaseTask implements AntiAkamaiBMPTaskPara
    * @param {string} [params.version] - AKAMAI BMP Version number, default is: 3.2.6 , max support 3.3.1
    */
   constructor({
-    count, deviceId, deviceName, packageName, pow, version
+    count, deviceId, deviceName, packageName, pow, version, metadata, country
   }: AntiAkamaiBMPTaskParams) {
-    super({ type: "AntiAkamaiBMPTask" });
+    super({
+      _endpoint: "akamaibmp/invoke",
+      type: "AntiAkamaiBMPTask"
+    });
     this.count = count;
     this.deviceId = deviceId;
     this.deviceName = deviceName;
     this.packageName = packageName;
     this.pow = pow;
     this.version = version;
+    this.metadata = metadata;
+    this.country = country;
   }
 
   /**
@@ -58,7 +65,7 @@ export class AntiAkamaiBMPTask extends BaseTask implements AntiAkamaiBMPTaskPara
   /**
    * @type {string} packageName - Package name of AkamaiBMP mobile APP, de.package.iphone
    */
-  packageName: string;
+  packageName?: string;
 
   /**
    * @type {string} pow - Support: /_bm/get_params data
@@ -70,5 +77,15 @@ export class AntiAkamaiBMPTask extends BaseTask implements AntiAkamaiBMPTaskPara
    * @type {string} version - AKAMAI BMP Version number, default is: 3.2.6 , max support 3.3.1
    */
   version?: string;
+
+  /**
+   * @type {object} metadata - Use for sensor task
+   */
+  metadata?: Record<string, string>;
+
+  /**
+   * @type {string} country -
+   */
+  country?: string;
 }
 

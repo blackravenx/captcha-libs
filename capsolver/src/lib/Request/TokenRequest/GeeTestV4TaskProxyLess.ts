@@ -1,11 +1,9 @@
 import type { ProxylessTaskParams } from "../_BaseTaskRequest";
 import {
-  GeeTestTaskBase, type GeeTestTaskBaseParams
-} from "./_GeeTestTaskBase";
+  GeeTestV4TaskBase, GeeTestV4TaskBaseParams
+} from "./_GeeTestV4TaskBase";
 
-type GeeTestV4TaskProxyLessParams = ProxylessTaskParams<Omit<GeeTestTaskBaseParams, "challenge" | "gt" | "type">> & {
-  captchaId: string;
-};
+type GeeTestV4TaskProxyLessParams = ProxylessTaskParams<GeeTestV4TaskBaseParams>;
 
 /**
  * @classdesc GeeTestTask V4 this task type require your own proxies.
@@ -15,13 +13,13 @@ type GeeTestV4TaskProxyLessParams = ProxylessTaskParams<Omit<GeeTestTaskBasePara
  * {@link https://docs.capsolver.com/guide/captcha/Geetest.html}
  */
 
-export class GeeTestV4TaskProxyLess extends GeeTestTaskBase {
+export class GeeTestV4TaskProxyLess extends GeeTestV4TaskBase {
 
   /**
    * @classdesc GeeTestTask V4 this task type require your own proxies.
    * {@link https://docs.capsolver.com/guide/captcha/Geetest.html}
    * @param {object} params -	GeeTestTaskBaseParams
-   * @param {string} [params.gt] - required. The domain gt field.
+   * @param {string} [params.captchaId] - required. captchaId
    * @param {string} [params.proxy] -	proxy
    * @param {string} [params.websiteURL] -required. Web address of the website using funcaptcha, generally it's fixed value. (Ex: https://google.com)
    * @param {string} [param.geetestApiServerSubdomain] - optional. A special subdomain of funcaptcha.com, from which the JS captcha widget should be loaded. Most FunCaptcha installations work from shared domains.
