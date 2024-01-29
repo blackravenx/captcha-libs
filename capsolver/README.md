@@ -5,13 +5,13 @@ Docs: https://docs.capsolver.com
 
 ## Installation
 Via [npm](https://www.npmjs.com/package/@captcha-libs/capsolver)
-    ```npm i --save-dev @captcha-libs/capsolver```
+    ```npm i @captcha-libs/capsolver```
 
 Usage
 ```javascript
 import { CapSolver, ReCaptchaV2Task } from "@captcha-libs/capsolver";
 
-const capsolverClient = new CapSolver({ clientKey: "<YOUR_CLIENT_KEY>", timeout});
+const capsolverClient = new CapSolver({ clientKey: "<YOUR_CLIENT_KEY>" });
 
 const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
     proxy: "http:ip:port:user:pass",
@@ -27,7 +27,7 @@ const {
 
 ```
 
-###Currently supported task payloads
+### Currently supported task payloads
 What 'custom' does mean? Custom means that the parameters and solutions have been narrowed down from the official documentation from more general cases. However, you can still use classes strictly according to the official documentation.
 
 1. Classification

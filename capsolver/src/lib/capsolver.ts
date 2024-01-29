@@ -107,7 +107,11 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
     this.timeout = timeout;
     this.httpClient = ofetch.create({
       baseURL: "https://api.capsolver.com/",
-      body: { clientKey: this.clientKey }
+      body: { clientKey: this.clientKey },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
     });
   }
   protected async getBalance(): Promise<number> {
@@ -286,6 +290,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
     while (!isAborted) {
       const data = await this.httpClient<CapSolverBaseSolution<TSolution>>("getTaskResult", {
         body: { taskId: createTaskResponse.taskId },
+        method: "POST",
         signal: abortSignal
       });
 

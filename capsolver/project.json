@@ -23,10 +23,14 @@
         "main": "capsolver/src/lib/index.ts",
         "tsConfig": "capsolver/tsconfig.lib.json",
         "generatePackageJson": true,
-        "assets": [ "./README.md" ],
+        "assets": [ "capsolver/README.md" ],
         "rootDir": "capsolver/src/lib"
       }
     }
   },
-  "tags": ["Capsolver captcha client"]
+  "tags": [
+    "CapSolver",
+    "Captcha recognition",
+    "Captcha solving"
+  ]
 }
