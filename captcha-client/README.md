@@ -1,7 +1,1 @@
-# captcha-client
-
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test captcha-client` to execute the unit tests via [Jest](https://jestjs.io).
+# Captcha client - base class for all captcha providers in monorepo
