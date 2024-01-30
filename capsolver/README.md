@@ -1,6 +1,8 @@
+# Capsolver NodeJS captcha client - use CapSolver with ease 
 <a alt="CapSolver logo" href="https://docs.capsolver.com" target="_blank" rel="noreferrer"><img src="https://docs.capsolver.com/logo-1.png" width="45"></a>
 
-# Capsolver NodeJS captcha client - use CapSolver with ease 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/maxshydev)
+[![GitHub stars](https://img.shields.io/github/stars/blackravenx/captcha-libs.svg?style=social&label=Star)](https://github.com/blackravenx/captcha-libs)
 Docs: https://docs.capsolver.com
 
 ## Installation
@@ -11,8 +13,11 @@ Usage
 ```javascript
 import { CapSolver, ReCaptchaV2Task } from "@captcha-libs/capsolver";
 
-const capsolverClient = new CapSolver({ clientKey: "<YOUR_CLIENT_KEY>" });
-
+const capsolverClient = new CapSolver({
+  clientKey: "<YOUR_CLIENT_KEY>",
+  pollingInterval: 5000, //optional. Delay in milliseconds to fetch task result, default: 5000ms
+  timeout: 120_000 //optional. Max time in milliseconds to wait for settled task result, default: 120000ms
+});
 const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
     proxy: "http:ip:port:user:pass",
     websiteKey: "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
@@ -22,9 +27,16 @@ const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
 const reCaptchaV3Solution = await capsolverClient.solve(reCaptchaV3Request);
 
 const {
-   solution: { expireTime, gRecaptchaResponse, userAgent }
+   solution: { expireTime, gRecaptchaResponse, userAgent, taskId }
 } = reCaptchaV3Solution;
 
+//if you want to submit feedback
+const feedback = await capsolverClient.feedbackTask({
+    taskId,
+    invalid: false, //is captcha solved successfully? required.
+    message: "success", //optional
+    code: 1, //optional
+});
 ```
 
 ### Currently supported task payloads
