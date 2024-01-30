@@ -20,10 +20,10 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/captcha-client",
-        "main": "captcha-client/src/index.ts",
+        "main": "captcha-client/src/lib/index.ts",
         "tsConfig": "captcha-client/tsconfig.lib.json",
-        "assets": [],
-        "rootDir": "captcha-client/src"
+        "assets": [ "captcha-client/README.md" ],
+        "rootDir": "captcha-client/src/lib"
       }
     }
   }
