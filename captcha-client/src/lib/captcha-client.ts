@@ -10,4 +10,10 @@ abstract class CaptchaClient<TCreateTaskResponse, TaskRequests, TGetBalanceRespo
   protected abstract getBalance(): Promise<TGetBalanceResponse>;
 }
 
-export { CaptchaClient };
+const delay = async(timeout: number) =>
+  await new Promise((resolve) => setTimeout(resolve, timeout));
+
+export {
+  CaptchaClient,
+  delay
+};
