@@ -1,9 +1,12 @@
+#!/usr/bin/env node --no-warnings
 import { MtCaptchaTask } from "./Request/TokenRequest/MtCaptchaTask";
 import type { $Fetch } from "ofetch";
 import { ofetch } from "ofetch";
-import { CaptchaClient } from "@captcha-libs/captcha-client";
+import {
+  CaptchaClient, delay
+} from "@captcha-libs/captcha-client";
 import type {
-  CapSolverCreateTaskResponse, CaptchaClientParams, CapSolverBalanceResponse
+  CapSolverCreateTaskResponse, CaptchaClientParams, CapSolverBalanceResponse, FeedbackTaskParams, FeedbackResponse
 } from "./types";
 import { ReCaptchaV3TaskProxyLess } from "./Request/TokenRequest/ReCaptchaV3TaskProxyLess";
 import { ReCaptchaV3M1TaskProxyLess } from "./Request/TokenRequest/ReCaptchaV3M1TaskProxyLess";
@@ -90,6 +93,8 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
    */
   protected httpClient: $Fetch;
 
+  private appId = "123FB4BE-4028-4B49-A71B-D6D578F88136";
+
   /**
    * @param {object} [params] - CaptchaClientParams
    * @param {string} [params.clientKey] - YOUR_API_KEY from dashboard
@@ -107,19 +112,22 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
     this.timeout = timeout;
     this.httpClient = ofetch.create({
       baseURL: "https://api.capsolver.com/",
-      body: { clientKey: this.clientKey },
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
-      }
+      },
+      ignoreResponseError: true
     });
   }
   protected async getBalance(): Promise<number> {
     const {
-      balance, errorId
-    } = await this.httpClient<CapSolverBalanceResponse>("getBalance");
+      balance, errorId, errorCode, errorDescription
+    } = await this.httpClient<CapSolverBalanceResponse>("getBalance", {
+      body: { clientKey: this.clientKey },
+      method: "POST"
+    });
 
-    if (errorId) throw new Error(`CapSolver: ${errorId}`);
+    if (errorId) throw new Error(`CapSolver: ${errorCode} - ${errorDescription}`);
 
     return balance;
   }
@@ -135,6 +143,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
     const response = await this.httpClient<CapSolverCreateTaskResponse<TSolution>>(_endpoint, {
       body: {
+        appId: this.appId,
         clientKey: this.clientKey,
         task: body
       },
@@ -143,6 +152,33 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
     if (response.errorCode)
       throw new Error(`CapSolver: ${response.errorCode}`);
+
+    return response;
+  }
+
+  /**
+   * We rely on reports to automatically analyze the quality of tokens issued by our API. These reports are processed automatically, and our team takes proactive steps to enhance token quality, such as updating the system for new tasks, improving grids, and more.
+   * {@link https://docs.capsolver.com/guide/api-feedback.html}
+   * @param {FeedbackTaskParams} params - task feedback payload
+   * @param {string} [params.taskId] - Your task id
+   * @param {boolean} [params.invalid] - is task result invalid?
+   * @param {number} [params.code] - code of task result
+   * @param {number} [params.message] - invalid token messages
+   */
+  public async feedbackTask(params: FeedbackTaskParams) {
+    const {
+      taskId, ...result
+    } = params;
+
+    const response = await this.httpClient<FeedbackResponse>("feedbackTask", {
+      body: {
+        appId: this.appId,
+        clientKey: this.clientKey,
+        result,
+        taskId
+      },
+      method: "POST"
+    });
 
     return response;
   }
@@ -278,10 +314,14 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   * @return {Promise<CapSolverBaseSolution<TSolution>>} - response of createTask
   */
   public async solve<TSolution>(request: Requests): Promise<CapSolverBaseSolution<TSolution>> {
+    const balance = await this.getBalance();
+
+    if (!balance) throw new Error("CapSolver: ERROR_ZERO_BALANCE");
+
     const createTaskResponse = await this.createTask<TSolution>(request);
 
     if (createTaskResponse.solution)
-      return await new Promise(resolve => resolve(createTaskResponse as unknown as CapSolverBaseSolution<TSolution>));
+      return await new Promise(resolve => resolve((createTaskResponse) as unknown as CapSolverBaseSolution<TSolution>));
 
     const abortSignal = AbortSignal.timeout(this.timeout);
 
@@ -298,12 +338,14 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
         return await new Promise(resolve => resolve(data));
 
       else if (data.errorCode)
-        return await Promise.reject(data.errorDescription);
+        return await Promise.reject(`CapSolver: ${data.errorDescription}`);
 
       else if (isAborted)
-        return await Promise.reject("Timeout exceed. Request aborted");
+        return await Promise.reject("CapSolver: Timeout exceed. Request aborted");
+
+      await delay(this.pollingInterval);
     }
 
-    return await Promise.reject("Timeout exceed. Request aborted");
+    return await Promise.reject("CapSolver: Timeout exceed. Request aborted");
   }
 }

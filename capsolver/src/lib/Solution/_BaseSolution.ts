@@ -1,8 +1,9 @@
 
 export type CapSolverBaseSolution<Solution> = {
-  errorCode?: any;
-  errorDescription?: any;
+  errorCode?: string;
+  errorDescription?: string;
   errorId: number;
   solution: Solution;
   status: string;
+  taskId: string;
 };

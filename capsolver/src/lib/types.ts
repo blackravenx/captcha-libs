@@ -14,8 +14,10 @@ export type CapSolverCreateTaskResponse<TSolution =unknown> = {
 
 export type CapSolverBalanceResponse = {
   balance: number;
+  errorCode?: string;
+  errorDescription?: string;
   errorId: number;
-  packages: Package[];
+  packages?: Package[];
 };
 
 export type Package = {
@@ -26,4 +28,18 @@ export type Package = {
   status: number;
   token: string;
   type: number;
+};
+
+export type FeedbackTaskParams = {
+  code?: number;
+  invalid: boolean;
+  message?: string;
+  taskId: string;
+};
+
+export type FeedbackResponse = {
+  errorCode?: string;
+  errorDescription?: string;
+  errorId: number;
+  message: string;
 };
