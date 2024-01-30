@@ -1,9 +1,13 @@
 {
   "name": "@captcha-libs/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Max Shy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackravenx/captcha-libs.git"
   },
   "description": "CapSolver NodeJS client",
   "keywords": [
@@ -15,7 +19,6 @@
     "prepare": "husky install",
     "commit": "git-cz"
   },
-  "private": true,
   "dependencies": {
     "@commitlint/cli": "^18.5.0",
     "@commitlint/cz-commitlint": "^18.5.0",
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@commitlint/config-nx-scopes": "^18.5.1",
+    "@nx/esbuild": "17.2.8",
     "@nx/eslint": "17.2.8",
     "@nx/eslint-plugin": "^17.2.8",
     "@nx/jest": "17.2.8",
@@ -42,6 +46,7 @@
     "@typescript-eslint/parser": "^6.18.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "^0.19.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
