@@ -2,10 +2,12 @@
 # yarn lockfile v1
 
 
-"@captcha-libs/captcha-client@^0.0.2":
-  "integrity" "sha512-ErH8Wurdu2+ednrhBzXuxFhpHPQgSdALL1VLGcNpsrHD7vZAMV55fey+DftNk7ujOdHkbcaZCvRUHFxnlnt54w=="
-  "resolved" "https://registry.npmjs.org/@captcha-libs/captcha-client/-/captcha-client-0.0.2.tgz"
-  "version" "0.0.2"
+"@captcha-libs/captcha-client@latest":
+  "integrity" "sha512-oz0LIWvN0gvrE3RaJfwkwy3Sf+YVpzD8Fd2Xaqnpev+RJ7/rynHa0rupFd2W2PGFoGNR72oZWvb+ESBl6vrA8Q=="
+  "resolved" "https://registry.npmjs.org/@captcha-libs/captcha-client/-/captcha-client-0.0.5.tgz"
+  "version" "0.0.5"
+  dependencies:
+    "ofetch" "^1.3.3"
 
 "destr@^2.0.1":
   "integrity" "sha512-65AlobnZMiCET00KaFFjUefxDX0khFA/E4myqZ7a6Sq1yZtR8+FVIvilVX66vF2uobSumxooYZChiRPCKNqhmg=="

@@ -81,12 +81,12 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   /**
    * @type {number} pollingInterval - polling interval to getTaskResult in ms. Default to 5000
    */
-  protected pollingInterval: number = 5000;
+  protected pollingInterval: number;
 
   /**
    * @type {number} timeout - max timeout to getTaskResult in ms. Default to 120_000
    */
-  protected timeout: number = 120_000;
+  protected timeout: number;
 
   /**
    * @type {$Fetch} httpClient - HTTP Client
