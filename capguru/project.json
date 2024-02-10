@@ -9,9 +9,10 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/capguru",
-        "main": "capguru/src/index.ts",
+        "main": "capguru/index.ts",
         "tsConfig": "capguru/tsconfig.lib.json",
-        "assets": ["capguru/*.md"]
+        "assets": [ "capguru/README.md", "capguru/capguru-logo.png" ],
+        "rootDir": "capguru/"
       }
     },
     "publish": {
