@@ -6,3 +6,4 @@
 
 ## Currently supported services
 [CapSolver](https://www.npmjs.com/package/@captcha-libs/capsolver)
+[CapGuru](https://www.npmjs.com/package/@captcha-libs/capguru)
