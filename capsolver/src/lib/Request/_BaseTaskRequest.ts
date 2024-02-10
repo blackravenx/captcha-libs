@@ -59,7 +59,7 @@ export class BaseTask {
   /**
    * @type {string} _endpoint - special endpoint for task request
    */
-  public _endpoint: string = "createTask";
+  public _endpoint = "createTask";
 
   constructor(params: BaseParams) {
     const {
