@@ -1,0 +1,33 @@
+{
+  "name": "twocaptcha",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "twocaptcha/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/twocaptcha",
+        "main": "twocaptcha/src/index.ts",
+        "tsConfig": "twocaptcha/tsconfig.lib.json",
+        "assets": ["twocaptcha/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs twocaptcha {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "twocaptcha/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
