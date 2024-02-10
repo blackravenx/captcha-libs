@@ -1,10 +1,17 @@
 {
   "name": "@captcha-libs/capsolver",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "keywords": [
       "CapSolver",
       "Captcha recognition",
-      "Captcha solving"
+      "Captcha solving",
+      "ReCaptcha captcha",
+      "DataDome captcha",
+      "HCaptcha captcha",
+      "GeeTest captcha",
+      "MtCaptcha",
+      "AWS WAF captcha",
+      "Cloudflare captcha"
   ],
   "license": "ISC",
   "author": "Max Shy",

@@ -37,6 +37,9 @@ const feedback = await capsolverClient.feedbackTask({
     message: "success", //optional
     code: 1, //optional
 });
+
+//to get balance
+const balance = await capsolverClient.getBalance()
 ```
 
 ### Currently supported task payloads

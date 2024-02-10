@@ -1,7 +1,9 @@
 #!/usr/bin/env node --no-warnings
 import { MtCaptchaTask } from "./Request/TokenRequest/MtCaptchaTask";
 import type { $Fetch } from "ofetch";
-import { ofetch } from "ofetch";
+import {
+  FetchError, ofetch
+} from "ofetch";
 import {
   CaptchaClient, delay
 } from "@captcha-libs/captcha-client";
@@ -119,7 +121,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       ignoreResponseError: true
     });
   }
-  protected async getBalance(): Promise<number> {
+  public async getBalance(): Promise<number> {
     const {
       balance, errorId, errorCode, errorDescription
     } = await this.httpClient<CapSolverBalanceResponse>("getBalance", {
@@ -327,25 +329,30 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
     const isAborted = abortSignal.aborted;
 
-    while (!isAborted) {
-      const data = await this.httpClient<CapSolverBaseSolution<TSolution>>("getTaskResult", {
-        body: { taskId: createTaskResponse.taskId },
-        method: "POST",
-        signal: abortSignal
-      });
+    try {
+      while (!isAborted) {
+        const data = await this.httpClient<CapSolverBaseSolution<TSolution>>("getTaskResult", {
+          body: { taskId: createTaskResponse.taskId },
+          method: "POST",
+          signal: abortSignal
+        });
 
-      if (data.solution)
-        return await new Promise(resolve => resolve(data));
+        if (data.solution)
+          return await new Promise(resolve => resolve(data));
 
-      else if (data.errorCode)
-        return await Promise.reject(`CapSolver: ${data.errorDescription}`);
+        else if (data.errorCode)
+          return await Promise.reject(`CapSolver: ${data.errorDescription}`);
 
-      else if (isAborted)
-        return await Promise.reject("CapSolver: Timeout exceed. Request aborted");
-
-      await delay(this.pollingInterval);
+        await delay(this.pollingInterval);
+      }
+    }
+    catch (error) {
+      if (error instanceof FetchError)
+        throw new Error(`CapSolver timeout ${this.timeout} exceeded!`);
+      else
+        throw new Error("CapSolver unknown error!");
     }
 
-    return await Promise.reject("CapSolver: Timeout exceed. Request aborted");
+    throw new Error("CapSolver finished with error");
   }
 }

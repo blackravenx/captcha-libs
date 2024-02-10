@@ -7,5 +7,5 @@ export abstract class CaptchaClient<TCreateTaskResponse, TaskRequests, TGetBalan
   protected abstract httpClient: $Fetch;
   protected abstract createTask(params: unknown): Promise<TCreateTaskResponse>;
   public abstract solve(params: TaskRequests): Promise<unknown>;
-  protected abstract getBalance(): Promise<TGetBalanceResponse>;
+  public abstract getBalance(): Promise<TGetBalanceResponse>;
 }
