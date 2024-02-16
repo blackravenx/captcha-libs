@@ -21,7 +21,8 @@
     "paths": {
       "@captcha-libs/capguru": ["capguru/index.ts"],
       "@captcha-libs/capsolver": ["capsolver/index.ts"],
-      "@captcha-libs/captcha-client": ["captcha-client/index.ts"]
+      "@captcha-libs/captcha-client": ["captcha-client/index.ts"],
+      "@captcha-libs/twocaptcha": ["twocaptcha/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],
