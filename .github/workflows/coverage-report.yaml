@@ -25,7 +25,7 @@ jobs:
         run: npm install && npm ci
         
       - name: Test with Coverage (Nx Affected)
-        run: 'rm -rf coverage && npx nx affected -t test --skip-nx-cache --coverage --coverageReporters=json,json-summary'
+        run: 'npx nx run-many -t test --skip-nx-cache --coverage --coverageReporters=json,json-summary'
 
       - name: Archive сode сoverage results
         uses: actions/upload-artifact@v3
