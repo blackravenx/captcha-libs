@@ -34,6 +34,13 @@ jobs:
           path: ./coverage/**/coverage-summary.json
           if-no-files-found: error
 
+      - name: Archive сode сoverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: ./coverage/**/coverage-summary.json
+          if-no-files-found: error
+
       - name: Code сoverage
         uses: dkhunt27/nx-code-coverage@v1
         with:
