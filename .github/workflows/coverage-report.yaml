@@ -22,7 +22,14 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
 
       - name: Build (Nx Affected)
         uses: mansagroup/nrwl-nx-action@v2
