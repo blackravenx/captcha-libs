@@ -11,7 +11,7 @@ Via [npm](https://www.npmjs.com/package/@captcha-libs/capsolver)
 
 Usage
 ```javascript
-import { CapSolver, ReCaptchaV2Task } from "@captcha-libs/capsolver";
+import { CapSolver, ReCaptchaV3EnterpriseTask } from "@captcha-libs/capsolver";
 
 const capsolverClient = new CapSolver({
   clientKey: "<YOUR_CLIENT_KEY>",
