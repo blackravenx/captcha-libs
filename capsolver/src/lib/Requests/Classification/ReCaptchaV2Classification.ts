@@ -1,13 +1,12 @@
-import {
-  BaseTask, type BaseParams, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
-type ReCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
+interface ReCaptchaClassificationParams {
   image: string;
   question: string;
   websiteKey?: string;
   websiteURL?: string;
-};
+}
 
 /**
  * @classdesc ReCaptcha Images Recognize
@@ -16,7 +15,11 @@ type ReCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
  * {@link https://docs.capsolver.com/guide/recognition/ReCaptchaClassification.html}
  */
 export class ReCaptchaV2Classification extends BaseTask implements ReCaptchaClassificationParams, _IsTaskType {
-  readonly _isReCaptchaV2Classification = true;
+
+  /**
+  * @type {boolean} _isReCaptchaV2Classification - Only used for correct method overloading intellisense
+  */
+  readonly _isReCaptchaV2Classification: _IsTaskType["_isReCaptchaV2Classification"] = true;
 
   /**
    * Create ReCaptchaV2Classification

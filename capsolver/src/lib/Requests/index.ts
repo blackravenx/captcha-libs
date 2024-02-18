@@ -1,45 +1,16 @@
-import type { AwsWafClassification } from "./Classification/AwsWafClassification";
-import type { FunCaptchaClassification } from "./Classification/FunCaptchaClassification";
-import type { HCaptchaClassification } from "./Classification/HCaptchaClassification";
-import type { ImageToTextTask } from "./Classification/ImageToTextTask";
-import type { ReCaptchaV2Classification } from "./Classification/ReCaptchaV2Classification";
-import { AntiAkamaiBMPTask } from "./Token/AntiAkamaiBMPTask";
-import type { AntiAkamaiPowTask } from "./Token/AntiAkamaiPowTask";
-import type { AntiAkamaiSensorTask } from "./Token/AntiAkamaiSensorTask";
-import type { AntiAkamaiWebTask } from "./Token/AntiAkamaiWebTask";
-import type { AntiAwsWafTask } from "./Token/AntiAwsWafTask";
-import type { AntiAwsWafTaskProxyLess } from "./Token/AntiAwsWafTaskProxyLess";
-import type { AntiCloudflareChallengeTask } from "./Token/AntiCloudflareChallengeTask";
-import type { AntiCloudflareTurnstileTask } from "./Token/AntiCloudflareTurnstileTask";
-import type { AntiCyberSiAraTask } from "./Token/AntiCyberSiAraTask";
-import type { AntiCyberSiAraTaskProxyLess } from "./Token/AntiCyberSiAraTaskProxyLess";
-import type { AntiImpervaTask } from "./Token/AntiImpervaTask";
-import type { AntiImpervaTaskProxyLess } from "./Token/AntiImpervaTaskProxyLess";
-import type { DataDomeSliderTask } from "./Token/DataDomeSliderTask";
-import type { FunCaptchaTaskProxyLess } from "./Token/FunCaptchaTaskProxyLess";
-import { GeeTestTask } from "./Token/GeeTestTask";
-import { GeeTestTaskProxyLess } from "./Token/GeeTestTaskProxyLess";
-import type { GeeTestV3Task } from "./Token/GeeTestV3Task";
-import type { GeeTestV3TaskProxyLess } from "./Token/GeeTestV3TaskProxyLess";
-import type { GeeTestV4Task } from "./Token/GeeTestV4Task";
-import type { GeeTestV4TaskProxyLess } from "./Token/GeeTestV4TaskProxyLess";
-import type { HCaptchaTask } from "./Token/HCaptchaTask";
-import type { HCaptchaTaskProxyLess } from "./Token/HCaptchaTaskProxyLess";
-import type { MtCaptchaTask } from "./Token/MtCaptchaTask";
-import type { MtCaptchaTaskProxyLess } from "./Token/MtCaptchaTaskProxyLess";
-import type { ReCaptchaV2EnterpriseTask } from "./Token/ReCaptchaV2EnterpriseTask";
-import type { ReCaptchaV2EnterpriseTaskProxyLess } from "./Token/ReCaptchaV2EnterpriseTaskProxyLess";
-import type { ReCaptchaV2Task } from "./Token/ReCaptchaV2Task";
-import type { ReCaptchaV2TaskProxyLess } from "./Token/ReCaptchaV2TaskProxyLess";
-import type { ReCaptchaV3EnterpriseTask } from "./Token/ReCaptchaV3EnterpriseTask";
-import type { ReCaptchaV3EnterpriseTaskProxyLess } from "./Token/ReCaptchaV3EnterpriseTaskProxyLess";
-import type { ReCaptchaV3M1TaskProxyLess } from "./Token/ReCaptchaV3M1TaskProxyLess";
-import type { ReCaptchaV3Task } from "./Token/ReCaptchaV3Task";
-import type { ReCaptchaV3TaskProxyLess } from "./Token/ReCaptchaV3TaskProxyLess";
-import type { BaseTask } from "./_BaseTaskRequest";
+import type {
+  AwsWafClassification,
+  FunCaptchaClassification,
+  HCaptchaClassification,
+  ImageToTextTask,
+  ReCaptchaV2Classification
+} from "./Classification";
+import type {
+  AntiAkamaiPowTask, AntiAkamaiBMPTask, AntiAkamaiSensorTask, AntiAkamaiWebTask, AntiAwsWafTask, AntiAwsWafTaskProxyLess, AntiCloudflareChallengeTask, AntiCloudflareTurnstileTask, AntiCyberSiAraTask, AntiCyberSiAraTaskProxyLess, AntiImpervaTask, AntiImpervaTaskProxyLess, DataDomeSliderTask, FunCaptchaTaskProxyLess, GeeTestTask, GeeTestTaskProxyLess, GeeTestV3Task, GeeTestV3TaskProxyLess, GeeTestV4Task, GeeTestV4TaskProxyLess, HCaptchaTask, HCaptchaTaskProxyLess, MtCaptchaTask, MtCaptchaTaskProxyLess, ReCaptchaV2EnterpriseTask, ReCaptchaV2EnterpriseTaskProxyLess, ReCaptchaV2Task, ReCaptchaV2TaskProxyLess, ReCaptchaV3EnterpriseTask, ReCaptchaV3EnterpriseTaskProxyLess, ReCaptchaV3M1TaskProxyLess, ReCaptchaV3Task, ReCaptchaV3TaskProxyLess
+} from "./Token";
 
-export type Requests = AntiAkamaiBMPTask | AntiAkamaiPowTask | AntiAkamaiSensorTask | AntiAkamaiWebTask | AntiAwsWafTask | AntiAwsWafTaskProxyLess | AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess | AntiImpervaTask | AntiImpervaTaskProxyLess | AwsWafClassification | BaseTask | DataDomeSliderTask | FunCaptchaClassification | FunCaptchaTaskProxyLess | GeeTestTask | GeeTestTaskProxyLess | GeeTestV3Task | GeeTestV3TaskProxyLess | GeeTestV4Task | GeeTestV4TaskProxyLess | HCaptchaClassification | HCaptchaTask | HCaptchaTaskProxyLess | ImageToTextTask | MtCaptchaTask | MtCaptchaTaskProxyLess | ReCaptchaV2Classification | ReCaptchaV2EnterpriseTask | ReCaptchaV2EnterpriseTaskProxyLess | ReCaptchaV2Task | ReCaptchaV2TaskProxyLess | ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess;
+export type Requests = AntiAkamaiBMPTask | AntiAkamaiPowTask | AntiAkamaiSensorTask | AntiAkamaiWebTask | AntiAwsWafTask | AntiAwsWafTaskProxyLess | AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess | AntiImpervaTask | AntiImpervaTaskProxyLess | AwsWafClassification | DataDomeSliderTask | FunCaptchaClassification | FunCaptchaTaskProxyLess | GeeTestTask | GeeTestTaskProxyLess | GeeTestV3Task | GeeTestV3TaskProxyLess | GeeTestV4Task | GeeTestV4TaskProxyLess | HCaptchaClassification | HCaptchaTask | HCaptchaTaskProxyLess | ImageToTextTask | MtCaptchaTask | MtCaptchaTaskProxyLess | ReCaptchaV2Classification | ReCaptchaV2EnterpriseTask | ReCaptchaV2EnterpriseTaskProxyLess | ReCaptchaV2Task | ReCaptchaV2TaskProxyLess | ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess;
 
-export * from "./Classification/index";
+export * from "./Classification";
 
-export * from "./Token/index";
+export * from "./Token";

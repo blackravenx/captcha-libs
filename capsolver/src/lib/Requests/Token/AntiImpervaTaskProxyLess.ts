@@ -2,10 +2,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { AntiImpervaTaskBaseParams } from "./_AntiImpervaBase";
-import { AntiImpervaTaskBase } from "./_AntiImpervaBase";
+import type { AntiImpervaTaskBaseParams } from "./Base/_AntiImpervaBase";
+import { AntiImpervaTaskBase } from "./Base/_AntiImpervaBase";
 
-type AntiImpervaTaskProxyLessParams = ProxylessTaskParams<Omit<AntiImpervaTaskBaseParams, "_endpoint" | "type">>;
+type AntiImpervaTaskProxyLessParams = ProxylessTaskParams<AntiImpervaTaskBaseParams>;
 
 /**
  * @classdesc AntiImpervaTaskProxyLess this task type require your own proxies.
@@ -16,9 +16,9 @@ type AntiImpervaTaskProxyLessParams = ProxylessTaskParams<Omit<AntiImpervaTaskBa
 export class AntiImpervaTaskProxyLess extends AntiImpervaTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isAntiImpervaTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isAntiImpervaTaskProxyLess = true;
+  * @type {boolean} _isAntiImpervaTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiImpervaTaskProxyLess: _IsTaskType["_isAntiImpervaTaskProxyLess"] = true;
 
   /**
    * Create AntiImpervaTaskProxyLess

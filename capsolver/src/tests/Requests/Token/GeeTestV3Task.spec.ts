@@ -6,7 +6,11 @@ describe("GeeTestV3Task", () => {
       challenge: "some-challenge",
       geetestApiServerSubdomain: "https://some-api-domain.com",
       gt: "some-gt",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       userAgent: "some-userAgent",
       websiteURL: "https://some-url.com"
     });
@@ -17,7 +21,12 @@ describe("GeeTestV3Task", () => {
       challenge: "some-challenge",
       geetestApiServerSubdomain: "https://some-api-domain.com",
       gt: "some-gt",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       userAgent: "some-userAgent",
       websiteURL: "https://some-url.com"
@@ -27,7 +36,11 @@ describe("GeeTestV3Task", () => {
     const task = new GeeTestV3Task({
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -36,7 +49,12 @@ describe("GeeTestV3Task", () => {
       _isGeeTestTask: true,
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       websiteURL: "https://some-url.com"
     });

@@ -4,7 +4,11 @@ describe("GeeTestV4Task", () => {
   it("To be equal to object", () => {
     const task = new GeeTestV4Task({
       captchaId: "some-captchaId",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -12,7 +16,12 @@ describe("GeeTestV4Task", () => {
       _endpoint: "createTask",
       _isGeeTestTask: true,
       captchaId: "some-captchaId",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       websiteURL: "https://some-url.com"
     });
@@ -20,7 +29,11 @@ describe("GeeTestV4Task", () => {
   it("To be equal to object without optional params", () => {
     const task = new GeeTestV4Task({
       captchaId: "some-captchaId",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -28,7 +41,12 @@ describe("GeeTestV4Task", () => {
       _endpoint: "createTask",
       _isGeeTestTask: true,
       captchaId: "some-captchaId",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       websiteURL: "https://some-url.com"
     });

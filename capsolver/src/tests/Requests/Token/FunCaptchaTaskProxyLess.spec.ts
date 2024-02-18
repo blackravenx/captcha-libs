@@ -5,7 +5,11 @@ describe("FunCaptchaTaskProxyLess", () => {
     const task = new FunCaptchaTaskProxyLess({
       data: "some-data",
       funcaptchaApiJSSubdomain: "https://some-api-domain.com",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websitePublicKey: "some-websitePublicKey",
       websiteURL: "https://some-url.com"
     });
@@ -15,7 +19,12 @@ describe("FunCaptchaTaskProxyLess", () => {
       _isFunCaptchaTaskProxyLess: true,
       data: "some-data",
       funcaptchaApiJSSubdomain: "https://some-api-domain.com",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "FunCaptchaTaskProxyLess",
       websitePublicKey: "some-websitePublicKey",
       websiteURL: "https://some-url.com"

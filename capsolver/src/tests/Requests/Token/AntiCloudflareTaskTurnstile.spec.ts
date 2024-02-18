@@ -8,7 +8,11 @@ describe("AntiCloudflareTurnstileTask", () => {
         cdata: "some-cdata",
         type: "challenge"
       },
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"
     });
@@ -21,7 +25,12 @@ describe("AntiCloudflareTurnstileTask", () => {
         cdata: "some-cdata",
         type: "challenge"
       },
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiCloudflareTask",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"
@@ -30,7 +39,11 @@ describe("AntiCloudflareTurnstileTask", () => {
   it("To be equal to object without optional params", () => {
     const task = new AntiCloudflareTurnstileTask({
       metadata: { type: "turnstile" },
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"
     });
@@ -43,7 +56,12 @@ describe("AntiCloudflareTurnstileTask", () => {
         cdata: undefined,
         type: "turnstile"
       },
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiCloudflareTask",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"

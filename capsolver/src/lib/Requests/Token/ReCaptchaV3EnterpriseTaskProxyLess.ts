@@ -1,10 +1,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { RecaptchaV3TaskBaseParams } from "./_RecaptchaV3TaskBase";
-import { RecaptchaV3TaskBase } from "./_RecaptchaV3TaskBase";
+import type { RecaptchaV3TaskBaseParams } from "./Base/_RecaptchaV3TaskBase";
+import { RecaptchaV3TaskBase } from "./Base/_RecaptchaV3TaskBase";
 
-type ReCaptchaV3EnterpriseTaskProxyLessParams =ProxylessTaskParams<Omit<RecaptchaV3TaskBaseParams, "_endpoint" | "type">>;
+type ReCaptchaV3EnterpriseTaskProxyLessParams =ProxylessTaskParams<RecaptchaV3TaskBaseParams>;
 
 /**
  * @classdesc ReCaptchaV3EnterpriseTaskProxyLess is using the server's built-in proxy.
@@ -15,9 +15,9 @@ type ReCaptchaV3EnterpriseTaskProxyLessParams =ProxylessTaskParams<Omit<Recaptch
 export class ReCaptchaV3EnterpriseTaskProxyLess extends RecaptchaV3TaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isReCaptchaV3EnterpriseTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isReCaptchaV3EnterpriseTaskProxyLess = true;
+  * @type {boolean} _isReCaptchaV3EnterpriseTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isReCaptchaV3EnterpriseTaskProxyLess: _IsTaskType["_isReCaptchaV3EnterpriseTaskProxyLess"] = true;
 
   /**
    * Create ReCaptchaV3EnterpriseTaskProxyLess

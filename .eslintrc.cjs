@@ -193,7 +193,7 @@ module.exports = {
         "tailwindcss/classnames-order": "off",
 
         "template-curly-spacing": "error",
-        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/consistent-type-imports": "error",
         "unused-imports/no-unused-imports": [
           "warn", {
             args: "after-used",

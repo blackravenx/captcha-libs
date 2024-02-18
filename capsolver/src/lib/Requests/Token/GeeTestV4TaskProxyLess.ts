@@ -1,9 +1,8 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  GeeTestV4TaskBase, GeeTestV4TaskBaseParams
-} from "./_GeeTestV4TaskBase";
+import type { GeeTestV4TaskBaseParams } from "./Base/_GeeTestV4TaskBase";
+import { GeeTestV4TaskBase } from "./Base/_GeeTestV4TaskBase";
 
 type GeeTestV4TaskProxyLessParams = ProxylessTaskParams<GeeTestV4TaskBaseParams>;
 
@@ -18,9 +17,9 @@ type GeeTestV4TaskProxyLessParams = ProxylessTaskParams<GeeTestV4TaskBaseParams>
 export class GeeTestV4TaskProxyLess extends GeeTestV4TaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isGeeTestTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isGeeTestTaskProxyLess = true;
+  * @type {boolean} _isGeeTestTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isGeeTestTaskProxyLess: _IsTaskType["_isGeeTestTaskProxyLess"] = true;
 
   /**
    * @classdesc GeeTestTask V4 this task type require your own proxies.
@@ -28,6 +27,11 @@ export class GeeTestV4TaskProxyLess extends GeeTestV4TaskBase implements _IsTask
    * @param {object} params -	GeeTestTaskBaseParams
    * @param {string} [params.captchaId] - required. captchaId
    * @param {string} [params.proxy] -	proxy
+   * @param {string} [params.proxyAddress] - proxyAddress
+   * @param {string} [params.proxyLogin] - proxyLogin
+   * @param {string} [params.proxyPassword] - proxyPassword
+   * @param {number} [params.proxyPort] - proxyPort
+   * @param {string} [params.proxyType] - proxyType
    * @param {string} [params.websiteURL] -required. Web address of the website using funcaptcha, generally it's fixed value. (Ex: https://google.com)
    * @param {string} [param.geetestApiServerSubdomain] - optional. A special subdomain of funcaptcha.com, from which the JS captcha widget should be loaded. Most FunCaptcha installations work from shared domains.
    */

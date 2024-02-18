@@ -6,7 +6,11 @@ describe("GeeTestTask", () => {
       captchaId: "some-captchaId",
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -16,7 +20,12 @@ describe("GeeTestTask", () => {
       captchaId: "some-captchaId",
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       websiteURL: "https://some-url.com"
     });
@@ -25,7 +34,11 @@ describe("GeeTestTask", () => {
     const task = new GeeTestTask({
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -34,7 +47,12 @@ describe("GeeTestTask", () => {
       _isGeeTestTask: true,
       challenge: "some-challenge",
       gt: "some-gt",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "GeeTestTask",
       websiteURL: "https://some-url.com"
     });

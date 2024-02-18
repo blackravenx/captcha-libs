@@ -1,13 +1,12 @@
-import {
-  BaseTask, type BaseParams, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
-type AwsWafClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
+interface AwsWafClassificationParams {
   images: Array<string>;
   question: string;
   websiteKey?: string;
   websiteURL?: string;
-};
+}
 
 /**
  * @classdesc AWS WAF Images Recognize
@@ -16,7 +15,11 @@ type AwsWafClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
  * {@link https://docs.capsolver.com/guide/recognition/AwsWafClassification.html}
  */
 export class AwsWafClassification extends BaseTask implements AwsWafClassificationParams, _IsTaskType {
-  readonly _isAwsWafClassification = true;
+
+  /**
+  * @type {boolean} _isAwsWafClassification - Only used for correct method overloading intellisense
+  */
+  readonly _isAwsWafClassification: _IsTaskType["_isAwsWafClassification"] = true;
 
   /**
    * Create AwsWafClassification

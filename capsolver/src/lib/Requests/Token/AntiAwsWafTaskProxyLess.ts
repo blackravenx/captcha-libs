@@ -2,10 +2,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { AntiAwsWafTaskBaseParams } from "./_AntiAwsWafBase";
-import { AntiAwsWafTaskBase } from "./_AntiAwsWafBase";
+import type { AntiAwsWafTaskBaseParams } from "./Base/_AntiAwsWafBase";
+import { AntiAwsWafTaskBase } from "./Base/_AntiAwsWafBase";
 
-type AntiAwsWafTaskProxyLessParams = ProxylessTaskParams<Omit<AntiAwsWafTaskBaseParams, "_endpoint" | "type">>;
+type AntiAwsWafTaskProxyLessParams = ProxylessTaskParams<AntiAwsWafTaskBaseParams>;
 
 /**
  * @classdesc AntiAwsWafTaskProxyLess this task type don't require your own proxies.
@@ -16,9 +16,9 @@ type AntiAwsWafTaskProxyLessParams = ProxylessTaskParams<Omit<AntiAwsWafTaskBase
 export class AntiAwsWafTaskProxyLess extends AntiAwsWafTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isAntiAwsWafTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isAntiAwsWafTaskProxyLess = true;
+  * @type {boolean} _isAntiAwsWafTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiAwsWafTaskProxyLess: _IsTaskType["_isAntiAwsWafTaskProxyLess"] = true;
 
   /**
    * Create AntiAwsWafTask

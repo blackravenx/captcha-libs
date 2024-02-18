@@ -1,14 +1,13 @@
-import {
-  BaseTask, type BaseParams, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
-type FunCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
+interface FunCaptchaClassificationParams {
   images: string;
   module?: string;
   question: string;
   websiteKey?: string;
   websiteURL?: string;
-};
+}
 
 /**
  * @classdesc FunCaptcha Images Recognize
@@ -17,7 +16,11 @@ type FunCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
  * {@link https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html}
  */
 export class FunCaptchaClassification extends BaseTask implements FunCaptchaClassificationParams, _IsTaskType {
-  readonly _isFunCaptchaClassification = true;
+
+  /**
+  * @type {boolean} _isFunCaptchaClassification - Only used for correct method overloading intellisense
+  */
+  readonly _isFunCaptchaClassification: _IsTaskType["_isFunCaptchaClassification"] = true;
 
   /**
    * Create FunCaptchaClassification

@@ -1,13 +1,12 @@
-import {
-  BaseTask, type BaseParams, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
-type HCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
+interface HCaptchaClassificationParams {
   queries: Array<string>;
   question: string;
   websiteKey?: string;
   websiteURL?: string;
-};
+}
 
 /**
  * @classdesc HCaptcha Images Recognize
@@ -16,7 +15,11 @@ type HCaptchaClassificationParams = Omit<BaseParams, "_endpoint" | "type"> & {
  * {@link https://docs.capsolver.com/guide/recognition/HCaptchaClassification.html}
  */
 export class HCaptchaClassification extends BaseTask implements HCaptchaClassificationParams, _IsTaskType {
-  readonly _isHCaptchaClassification = true;
+
+  /**
+  * @type {boolean} _isHCaptchaClassification - Only used for correct method overloading intellisense
+  */
+  readonly _isHCaptchaClassification: _IsTaskType["_isHCaptchaClassification"] = true;
 
   /**
    * Create HCaptchaClassification

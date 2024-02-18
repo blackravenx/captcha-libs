@@ -2,10 +2,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { AntiCyberSiAraTaskBaseParams } from "./_AntiCyberSiAraBase";
-import { AntiCyberSiAraTaskBase } from "./_AntiCyberSiAraBase";
+import type { AntiCyberSiAraTaskBaseParams } from "./Base/_AntiCyberSiAraBase";
+import { AntiCyberSiAraTaskBase } from "./Base/_AntiCyberSiAraBase";
 
-type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<Omit<AntiCyberSiAraTaskBaseParams, "_endpoint" | "type">>;
+type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<AntiCyberSiAraTaskBaseParams>;
 
 /**
  * @classdesc AntiCyberSiAraTaskProxyLess this task type don't require your own proxies.
@@ -16,9 +16,9 @@ type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<Omit<AntiCyberSiAra
 export class AntiCyberSiAraTaskProxyLess extends AntiCyberSiAraTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isAntiCyberSiAraTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isAntiCyberSiAraTaskProxyLess = true;
+  * @type {boolean} _isAntiCyberSiAraTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiCyberSiAraTaskProxyLess: _IsTaskType["_isAntiCyberSiAraTaskProxyLess"] = true;
 
   /**
    * Create AntiCyberSiAraTaskProxyLess
