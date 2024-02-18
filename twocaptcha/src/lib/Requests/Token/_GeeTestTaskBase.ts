@@ -1,5 +1,8 @@
+import type {
+  ProxyCredentials, ProxyTypes, TaskTypes
+} from "../_BaseTaskRequest";
 import {
-  BaseTask, ProxyCredentials, ProxyTypes, TaskTypes, _IsTaskType
+  BaseTask, _IsTaskType
 } from "../_BaseTaskRequest";
 
 export type GeetestV3TaskBaseParams = {
@@ -12,7 +15,7 @@ export type GeetestV4TaskBaseParams = {
   initParameters: Record<string, string> & { captcha_id: string };
 };
 
-export type GeetestCommonParams ={
+export type GeetestCommonParams = {
   userAgent?: string;
   websiteURL?: string;
 };

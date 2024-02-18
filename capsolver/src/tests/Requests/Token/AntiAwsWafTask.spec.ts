@@ -7,7 +7,11 @@ describe("AntiAwsWafTask", () => {
       awsContext: "some-context",
       awsIv: "some-iv",
       awsKey: "some-key",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
@@ -18,21 +22,35 @@ describe("AntiAwsWafTask", () => {
       awsContext: "some-context",
       awsIv: "some-iv",
       awsKey: "some-key",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiAwsWafTask",
       websiteURL: "https://some-url.com"
     });
   });
   it("To be equal to object without optional params", () => {
     const task = new AntiAwsWafTask({
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
     expect(task).toEqual({
       _endpoint: "createTask",
       _isAntiAwsWafTask: true,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiAwsWafTask",
       websiteURL: "https://some-url.com"
     });

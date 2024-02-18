@@ -1,6 +1,5 @@
-import {
-  BaseTask, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
 type AntiAkamaiWebTaskParams ={
   abck?: string;
@@ -18,9 +17,9 @@ type AntiAkamaiWebTaskParams ={
 export class AntiAkamaiWebTask extends BaseTask implements AntiAkamaiWebTaskParams, _IsTaskType {
 
   /**
- * @type {boolean} _isAntiAkamaiWebTask - Only used for correct method overloading intellisense
- */
-  readonly _isAntiAkamaiWebTask = true;
+  * @type {boolean} _isAntiAkamaiWebTask - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiAkamaiWebTask: _IsTaskType["_isAntiAkamaiWebTask"] = true;
 
   /**
    * Create AntiAkamaiWebTaskBase

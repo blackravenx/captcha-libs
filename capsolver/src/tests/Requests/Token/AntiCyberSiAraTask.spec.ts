@@ -4,7 +4,11 @@ describe("AntiCyberSiAraTask", () => {
   it("To be equal to object", () => {
     const task = new AntiCyberSiAraTask({
       SlideMasterUrlId: "some-SlideMasterUrlId",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       userAgent: "some-userAgent",
       websiteURL: "https://some-url.com"
     });
@@ -13,7 +17,12 @@ describe("AntiCyberSiAraTask", () => {
       SlideMasterUrlId: "some-SlideMasterUrlId",
       _endpoint: "createTask",
       _isAntiCyberSiAraTask: true,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiCyberSiAraTask",
       userAgent: "some-userAgent",
       websiteURL: "https://some-url.com"

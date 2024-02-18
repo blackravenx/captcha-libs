@@ -3,14 +3,23 @@ import { AntiCloudflareChallengeTask } from "../../../lib/Requests/Token/AntiClo
 describe("AntiCloudflareChallengeTask", () => {
   it("To be equal to object", () => {
     const task = new AntiCloudflareChallengeTask({
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteURL: "https://some-url.com"
     });
 
     expect(task).toEqual({
       _endpoint: "createTask",
       _isAntiCloudflareTask: true,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "AntiCloudflareTask",
       websiteURL: "https://some-url.com"
     });
@@ -21,6 +30,7 @@ describe("AntiCloudflareChallengeTask", () => {
     expect(task).toEqual({
       _endpoint: "createTask",
       _isAntiCloudflareTask: true,
+      proxy: undefined,
       type: "AntiCloudflareTask",
       websiteURL: "https://some-url.com"
     });

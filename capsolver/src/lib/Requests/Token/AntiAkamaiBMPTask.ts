@@ -1,8 +1,7 @@
-import {
-  BaseTask, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
-export type AntiAkamaiBMPTaskParams = {
+export interface AntiAkamaiBMPTaskParams {
   count?: number;
   country?: string;
   deviceId?: string;
@@ -11,7 +10,7 @@ export type AntiAkamaiBMPTaskParams = {
   packageName?: string;
   pow?: string;
   version?: string;
-};
+}
 
 /**
  * @classdesc Class for AntiAkamaiBMPTask. This task type uses a separate endpoint for fetching /akamaibmp/invoke
@@ -22,9 +21,9 @@ export type AntiAkamaiBMPTaskParams = {
 export class AntiAkamaiBMPTask extends BaseTask implements AntiAkamaiBMPTaskParams, _IsTaskType {
 
   /**
- * @type {boolean} _isAntiAkamaiBMPTask - Only used for correct method overloading intellisense
- */
-  readonly _isAntiAkamaiBMPTask = true;
+  * @type {boolean} _isAntiAkamaiBMPTask - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiAkamaiBMPTask: _IsTaskType["_isAntiAkamaiBMPTask"] = true;
 
   /**
    * Create AntiAkamaiBMPTaskBase

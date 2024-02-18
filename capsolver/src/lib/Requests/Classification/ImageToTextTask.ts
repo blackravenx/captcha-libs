@@ -1,6 +1,5 @@
-import {
-  BaseTask, type BaseParams, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
 const _ImageToTextModules = [
   "amazon",
@@ -20,15 +19,15 @@ const _ImageToTextModules = [
   "webde-register"
 ] as const;
 
-type ImageToTextModules =typeof _ImageToTextModules[number];
+type ImageToTextModules = typeof _ImageToTextModules[number];
 
-type ImageToTextParams = Omit<BaseParams, "_endpoint" | "type"> & {
+interface ImageToTextParams {
   body: string;
   isCaseSensitive?: boolean;
   module?: ImageToTextModules;
   score?: number;
   websiteURL?: string;
-};
+}
 
 /**
  * @classdesc OCR ImageToText
@@ -39,9 +38,9 @@ type ImageToTextParams = Omit<BaseParams, "_endpoint" | "type"> & {
 export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsTaskType {
 
   /**
- * @type {boolean} _isImageToTextTask - Only used for correct method overloading intellisense
- */
-  readonly _isImageToTextTask = true;
+  * @type {boolean} _isImageToTextTask - Only used for correct method overloading intellisense
+  */
+  readonly _isImageToTextTask: _IsTaskType["_isImageToTextTask"] = true;
 
   /**
    * Create ImageToTextTask
@@ -54,13 +53,13 @@ export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsT
    * @param {string} [params.websiteURL] - Page source url to improve accuracy
    */
   constructor({
-    body, isCaseSensitive, module, score, websiteURL
+    body, isCaseSensitive, module: _module, score, websiteURL
   }: ImageToTextParams) {
     super({ type: "ImageToTextTask" });
     this.body = body;
     this.case = isCaseSensitive;
     this.score = score;
-    this.module = module;
+    this.module = _module;
     this.websiteURL = websiteURL;
   }
 

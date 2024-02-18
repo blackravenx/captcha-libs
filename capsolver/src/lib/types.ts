@@ -1,10 +1,10 @@
-export type CaptchaClientParams = {
+export interface CaptchaClientParams {
   clientKey: string;
   pollingInterval?: number;
   timeout?: number;
-};
+}
 
-export type CapSolverCreateTaskResponse<TSolution =unknown> = {
+export type CapSolverCreateTaskResponse<TSolution = unknown> = {
   errorCode: string;
   errorDescription: string;
   errorId: number;
@@ -12,15 +12,15 @@ export type CapSolverCreateTaskResponse<TSolution =unknown> = {
   taskId: string;
 };
 
-export type CapSolverBalanceResponse = {
+export interface CapSolverBalanceResponse {
   balance: number;
   errorCode?: string;
   errorDescription?: string;
   errorId: number;
   packages?: Package[];
-};
+}
 
-export type Package = {
+export interface Package {
   activeTime: number;
   expireTime: number;
   numberOfCalls: number;
@@ -28,18 +28,18 @@ export type Package = {
   status: number;
   token: string;
   type: number;
-};
+}
 
-export type FeedbackTaskParams = {
+export interface FeedbackTaskParams {
   code?: number;
   invalid: boolean;
   message?: string;
   taskId: string;
-};
+}
 
-export type FeedbackResponse = {
+export interface FeedbackResponse {
   errorCode?: string;
   errorDescription?: string;
   errorId: number;
   message: string;
-};
+}

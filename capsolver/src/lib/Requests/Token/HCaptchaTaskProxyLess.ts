@@ -2,9 +2,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import { HCaptchaTaskBase } from "./_HCaptchaTaskBase";
+import type { HCaptchaTaskBaseParams } from "./Base/_HCaptchaTaskBase";
+import { HCaptchaTaskBase } from "./Base/_HCaptchaTaskBase";
 
-type HCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<HCaptchaTaskBase, "_endpoint" | "type">>;
+type HCaptchaTaskProxyLessParams = ProxylessTaskParams<HCaptchaTaskBaseParams>;
 
 /**
  * @classdesc HCaptchaTaskProxyLess this task type require your own proxies
@@ -16,9 +17,9 @@ type HCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<HCaptchaTaskBase, "_
 export class HCaptchaTaskProxyLess extends HCaptchaTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isHCaptchaTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isHCaptchaTaskProxyLess = true;
+  * @type {boolean} _isHCaptchaTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isHCaptchaTaskProxyLess: _IsTaskType["_isHCaptchaTaskProxyLess"] = true;
 
   /**
    * Create HCaptchaTaskProxyLess this task type require your own proxies

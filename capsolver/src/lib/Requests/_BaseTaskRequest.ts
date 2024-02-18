@@ -41,9 +41,19 @@ export interface BaseParams {
   type: TaskTypes;
 }
 
-export type ProxylessTaskParams<T> = Omit<T, "proxy">;
+type ProxyTypes = "http" | "https" | "socks5";
 
-export type ProxyRequiredTaskParams<T> = T & { proxy: string };
+export interface ProxyCredentials {
+  proxyAddress: string;
+  proxyLogin?: string;
+  proxyPassword?: string;
+  proxyPort: number;
+  proxyType: ProxyTypes;
+}
+
+export type ProxylessTaskParams<T> = Omit<T, keyof ProxyCredentials & "proxy">;
+
+export type ProxyRequiredTaskParams<T> = ProxyCredentials & T & { proxy?: never } | T & { [PC in keyof ProxyCredentials]?: never } & { proxy: string };
 
 /**
  * @type {_IsTaskType} _IsTaskType - Only used for correct method overloading intellisense

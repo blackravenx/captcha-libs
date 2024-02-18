@@ -2,10 +2,10 @@
 import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { AntiAwsWafTaskBaseParams } from "./_AntiAwsWafBase";
-import { AntiAwsWafTaskBase } from "./_AntiAwsWafBase";
+import type { AntiAwsWafTaskBaseParams } from "./Base/_AntiAwsWafBase";
+import { AntiAwsWafTaskBase } from "./Base/_AntiAwsWafBase";
 
-type AntiAwsWafTaskParams = ProxyRequiredTaskParams<Omit<AntiAwsWafTaskBaseParams, "_endpoint" | "type">>;
+type AntiAwsWafTaskParams = ProxyRequiredTaskParams<AntiAwsWafTaskBaseParams>;
 
 /**
  * @classdesc AntiAwsWafTask this task type require your own proxies.
@@ -16,9 +16,9 @@ type AntiAwsWafTaskParams = ProxyRequiredTaskParams<Omit<AntiAwsWafTaskBaseParam
 export class AntiAwsWafTask extends AntiAwsWafTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isAntiAwsWafTask - Only used for correct method overloading intellisense
- */
-  readonly _isAntiAwsWafTask = true;
+  * @type {boolean} _isAntiAwsWafTask - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiAwsWafTask: _IsTaskType["_isAntiAwsWafTask"] = true;
 
   /**
    * Create AntiAwsWafTask - this task type require your own proxies.
@@ -29,9 +29,22 @@ export class AntiAwsWafTask extends AntiAwsWafTaskBase implements _IsTaskType {
    * @param {string=} [params.awsIv] - When the status code returned by the websiteURL page is 405, you need to pass in awsIv
    * @param {string=} [params.awsKey] - When the status code returned by the websiteURL page is 405, you need to pass in awsKey
    * @param {string} [params.proxy] - proxy
+   * @param {string} [params.proxyAddress] - proxyAddress
+   * @param {string} [params.proxyLogin] - proxyLogin
+   * @param {string} [params.proxyPassword] - proxyPassword
+   * @param {string} [params.proxyPort] - proxyPort
+   * @param {string} [params.proxyType] - proxyType
    * @param {string} [params.websiteURL] - The URL of the page that returns the captcha info
    */
   constructor(params: AntiAwsWafTaskParams) {
     super(params, "AntiAwsWafTask");
   }
 }
+new AntiAwsWafTask({
+
+  // proxy: "",
+  proxyAddress: "",
+  proxyPort: 14,
+  proxyType: "http",
+  websiteURL: ""
+});

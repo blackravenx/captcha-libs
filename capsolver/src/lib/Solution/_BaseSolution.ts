@@ -1,4 +1,3 @@
-
 export interface CapSolverSolution<Solution> {
   errorCode?: string;
   errorDescription?: string;

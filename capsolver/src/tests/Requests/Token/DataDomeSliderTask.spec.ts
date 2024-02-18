@@ -4,7 +4,11 @@ describe("DataDomeSliderTask", () => {
   it("To be equal to object", () => {
     const task = new DataDomeSliderTask({
       captchaUrl: "https://some-url.com",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       userAgent: "some-userAgent"
     });
 
@@ -12,7 +16,12 @@ describe("DataDomeSliderTask", () => {
       _endpoint: "createTask",
       _isDataDomeSliderTask: true,
       captchaUrl: "https://some-url.com",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "DataDomeSliderTask",
       userAgent: "some-userAgent"
     });

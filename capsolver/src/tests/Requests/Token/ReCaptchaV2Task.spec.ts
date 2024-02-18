@@ -17,7 +17,11 @@ describe("ReCaptchaV2Task", () => {
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
       isInvisible: false,
       pageAction: "some-action",
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       userAgent: "some-userAgent",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"
@@ -40,7 +44,12 @@ describe("ReCaptchaV2Task", () => {
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
       isInvisible: false,
       pageAction: "some-action",
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "ReCaptchaV2Task",
       userAgent: "some-userAgent",
       websiteKey: "some-websiteKey",
@@ -49,7 +58,11 @@ describe("ReCaptchaV2Task", () => {
   });
   it("To be equal to object without optional params", () => {
     const task = new ReCaptchaV2Task({
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       websiteKey: "some-websiteKey",
       websiteURL: "https://some-url.com"
     });
@@ -62,7 +75,12 @@ describe("ReCaptchaV2Task", () => {
       enterprisePayload: undefined,
       isInvisible: false,
       pageAction: undefined,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       type: "ReCaptchaV2Task",
       userAgent: undefined,
       websiteKey: "some-websiteKey",

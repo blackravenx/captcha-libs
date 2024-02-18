@@ -3,7 +3,7 @@ import type {
 } from "../_BaseTaskRequest";
 import {
   GeeTestTaskBase, type GeeTestTaskBaseParams
-} from "./_GeeTestTaskBase";
+} from "./Base/_GeeTestTaskBase";
 
 type GeeTestTaskProxyLessParams = ProxylessTaskParams<GeeTestTaskBaseParams>;
 
@@ -18,9 +18,9 @@ type GeeTestTaskProxyLessParams = ProxylessTaskParams<GeeTestTaskBaseParams>;
 export class GeeTestTaskProxyLess extends GeeTestTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isGeeTestTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isGeeTestTaskProxyLess = true;
+  * @type {boolean} _isGeeTestTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isGeeTestTaskProxyLess: _IsTaskType["_isGeeTestTaskProxyLess"] = true;
 
   /**
    * Create GeeTestTaskProxyLess this task type require your own proxies.

@@ -1,4 +1,5 @@
 
+import { AntiAkamaiBMPTask } from "./AntiAkamaiBMPTask";
 import { AntiAkamaiPowTask } from "./AntiAkamaiPowTask";
 import { AntiAkamaiSensorTask } from "./AntiAkamaiSensorTask";
 import { AntiAkamaiWebTask } from "./AntiAkamaiWebTask";
@@ -64,5 +65,6 @@ export {
   ReCaptchaV3EnterpriseTaskProxyLess,
   ReCaptchaV3M1TaskProxyLess,
   ReCaptchaV3Task,
-  ReCaptchaV3TaskProxyLess
+  ReCaptchaV3TaskProxyLess,
+  AntiAkamaiBMPTask
 };

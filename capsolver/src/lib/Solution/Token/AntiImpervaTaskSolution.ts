@@ -1,0 +1,1 @@
+export interface AntiImpervaTaskSolution { token: string }

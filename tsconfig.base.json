@@ -12,6 +12,7 @@
     "module": "esnext",
     "lib": ["es2020" ],
     "skipLibCheck": true,
+    "strict": true,
     "baseUrl": ".",
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
@@ -24,9 +25,5 @@
       "@captcha-libs/twocaptcha": ["twocaptcha/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  "exclude": ["node_modules", "tmp"]
 }

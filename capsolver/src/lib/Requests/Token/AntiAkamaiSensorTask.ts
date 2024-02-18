@@ -1,7 +1,6 @@
-import {
-  BaseTask, _IsTaskType
-} from "../_BaseTaskRequest";
-import { AntiAkamaiBMPTaskParams } from "./AntiAkamaiBMPTask";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
+import type { AntiAkamaiBMPTaskParams } from "./AntiAkamaiBMPTask";
 
 type AntiAkamaiSensorTaskParams = Omit<AntiAkamaiBMPTaskParams, "pow"> & Required<Pick<AntiAkamaiBMPTaskParams, "packageName" | "version">>;
 
@@ -14,9 +13,9 @@ type AntiAkamaiSensorTaskParams = Omit<AntiAkamaiBMPTaskParams, "pow"> & Require
 export class AntiAkamaiSensorTask extends BaseTask implements AntiAkamaiSensorTaskParams, _IsTaskType {
 
   /**
- * @type {boolean} _isAntiAkamaiBMPTask - Only used for correct method overloading intellisense
- */
-  readonly _isAntiAkamaiBMPTask = true;
+  * @type {boolean} _isAntiAkamaiBMPTask - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiAkamaiBMPTask: _IsTaskType["_isAntiAkamaiBMPTask"] = true;
 
   /**
    * Create AntiAkamaiSensorTask

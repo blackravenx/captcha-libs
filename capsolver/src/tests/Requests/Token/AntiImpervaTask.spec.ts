@@ -3,7 +3,11 @@ import { AntiImpervaTask } from "../../../lib/Requests/Token/AntiImpervaTask";
 describe("AntiImpervaTask", () => {
   it("To be equal to object", () => {
     const task = new AntiImpervaTask({
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       reese84: true,
       reeseScriptUrl: "some-reeseScriptUrl",
       reeseToken: "some-reeseToken",
@@ -15,7 +19,12 @@ describe("AntiImpervaTask", () => {
     expect(task).toEqual({
       _endpoint: "createTask",
       _isAntiImpervaTask: true,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       reese84: true,
       reeseScriptUrl: "some-reeseScriptUrl",
       reeseToken: "some-reeseToken",
@@ -27,7 +36,11 @@ describe("AntiImpervaTask", () => {
   });
   it("To be equal to object without optional params", () => {
     const task = new AntiImpervaTask({
-      proxy: "proxy",
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       userAgent: "some-userAgent",
       websiteUrl: "https://some-url.com"
     });
@@ -35,7 +48,12 @@ describe("AntiImpervaTask", () => {
     expect(task).toEqual({
       _endpoint: "createTask",
       _isAntiImpervaTask: true,
-      proxy: "proxy",
+      proxy: undefined,
+      proxyAddress: "some-proxyAddress",
+      proxyLogin: "some-proxyLogin",
+      proxyPassword: "some-proxyPassword",
+      proxyPort: 1010,
+      proxyType: "http",
       reese84: false,
       reeseScriptUrl: undefined,
       reeseToken: undefined,

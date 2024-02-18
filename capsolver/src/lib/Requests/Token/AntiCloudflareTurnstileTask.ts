@@ -1,16 +1,16 @@
 
-import { _IsTaskType } from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
 import {
   AntiCloudflareTaskBase, type AntiCloudflareTaskBaseParams
-} from "./_AntiCloudflareBase";
+} from "./Base/_AntiCloudflareBase";
 
 type AntiCloudflareTurnstileTaskTypes = "challenge" | "turnstile";
 
-export type AntiCloudflareTurnstileTaskMetadata = {
+export interface AntiCloudflareTurnstileTaskMetadata {
   action?: string;
   cdata?: string;
   type: AntiCloudflareTurnstileTaskTypes;
-};
+}
 
 export type AntiCloudflareTurnstileTaskParams = AntiCloudflareTaskBaseParams & {
   metadata: AntiCloudflareTurnstileTaskMetadata;
@@ -26,9 +26,9 @@ export type AntiCloudflareTurnstileTaskParams = AntiCloudflareTaskBaseParams & {
 export class AntiCloudflareTurnstileTask extends AntiCloudflareTaskBase implements AntiCloudflareTurnstileTaskParams, _IsTaskType {
 
   /**
- * @type {boolean} _isAntiCloudflareTask - Only used for correct method overloading intellisense
- */
-  readonly _isAntiCloudflareTask = true;
+  * @type {boolean} _isAntiCloudflareTask - Only used for correct method overloading intellisense
+  */
+  readonly _isAntiCloudflareTask: _IsTaskType["_isAntiCloudflareTask"] = true;
 
   /**
    * Create AntiCloudflareTurnstileTask
@@ -40,9 +40,14 @@ export class AntiCloudflareTurnstileTask extends AntiCloudflareTaskBase implemen
    * @param {string} [params.metadata.type] - challenge or turnstile fixed value, default: "turnstile"
    * @param {string} [params.metadata.cdata] - The value of the data-cdata attribute of the Turnstile element if it exists.
    * @param {string} [params.proxy] - proxy
+   * @param {string} [params.proxyAddress] - proxyAddress
+   * @param {string} [params.proxyLogin] - proxyLogin
+   * @param {string} [params.proxyPassword] - proxyPassword
+   * @param {string} [params.proxyPort] - proxyPort
+   * @param {string} [params.proxyType] - proxyType
    */
   constructor({
-    websiteURL, proxy, metadata, websiteKey
+    websiteURL, proxy, metadata, websiteKey, proxyAddress, proxyLogin, proxyPassword, proxyPort, proxyType
   }: AntiCloudflareTurnstileTaskParams) {
     const {
       action, type = "turnstile", cdata
@@ -50,6 +55,11 @@ export class AntiCloudflareTurnstileTask extends AntiCloudflareTaskBase implemen
 
     super({
       proxy,
+      proxyAddress,
+      proxyLogin,
+      proxyPassword,
+      proxyPort,
+      proxyType,
       websiteURL
     }, "AntiCloudflareTask");
     this.websiteKey = websiteKey;

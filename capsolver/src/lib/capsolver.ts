@@ -1,5 +1,3 @@
-#!/usr/bin/env node --no-warnings
-import { MtCaptchaTask } from "./Requests/Token/MtCaptchaTask";
 import type { $Fetch } from "ofetch";
 import {
   FetchError, ofetch
@@ -10,63 +8,70 @@ import {
 import type {
   CapSolverCreateTaskResponse, CaptchaClientParams, CapSolverBalanceResponse, FeedbackTaskParams, FeedbackResponse
 } from "./types";
-import { ReCaptchaV3TaskProxyLess } from "./Requests/Token/ReCaptchaV3TaskProxyLess";
-import { ReCaptchaV3M1TaskProxyLess } from "./Requests/Token/ReCaptchaV3M1TaskProxyLess";
-import { ReCaptchaV3EnterpriseTask } from "./Requests/Token/ReCaptchaV3EnterpriseTask";
-import { ReCaptchaV3EnterpriseTaskProxyLess } from "./Requests/Token/ReCaptchaV3EnterpriseTaskProxyLess";
-import { ReCaptchaV3Task } from "./Requests/Token/ReCaptchaV3Task";
-import { ReCaptchaV2EnterpriseTask } from "./Requests/Token/ReCaptchaV2EnterpriseTask";
-import { ReCaptchaV2EnterpriseTaskProxyLess } from "./Requests/Token/ReCaptchaV2EnterpriseTaskProxyLess";
-import { ReCaptchaV2Task } from "./Requests/Token/ReCaptchaV2Task";
-import { ReCaptchaV2TaskProxyLess } from "./Requests/Token/ReCaptchaV2TaskProxyLess";
-import { MtCaptchaTaskProxyLess } from "./Requests/Token/MtCaptchaTaskProxyLess";
-import { MtCaptchaTaskSolution } from "./Solution/TokenSolution/MtCaptchaTaskSolution";
-import { ReCaptchaV2TaskSolution } from "./Solution/TokenSolution/ReCaptchaV2TaskSolution";
-import { ReCaptchaV3TaskSolution } from "./Solution/TokenSolution/ReCaptchaV3TaskSolution";
-import { CapSolverSolution } from "./Solution/_BaseSolution";
-import { HCaptchaTask } from "./Requests/Token/HCaptchaTask";
-import { HCaptchaTaskProxyLess } from "./Requests/Token/HCaptchaTaskProxyLess";
-import { HCaptchaTaskSolution } from "./Solution/TokenSolution/HCaptchaTaskSolution";
-import { AwsWafClassification } from "./Requests/Classification/AwsWafClassification";
-import { HCaptchaClassification } from "./Requests/Classification/HCaptchaClassification";
-import { ImageToTextTask } from "./Requests/Classification/ImageToTextTask";
-import { ReCaptchaV2Classification } from "./Requests/Classification/ReCaptchaV2Classification";
-import { AntiAwsWafTaskProxyLess } from "./Requests/Token/AntiAwsWafTaskProxyLess";
-import { AntiCloudflareChallengeTask } from "./Requests/Token/AntiCloudflareChallengeTask";
-import { AntiCloudflareTurnstileTask } from "./Requests/Token/AntiCloudflareTurnstileTask";
-import { AntiCyberSiAraTask } from "./Requests/Token/AntiCyberSiAraTask";
-import { AntiCyberSiAraTaskProxyLess } from "./Requests/Token/AntiCyberSiAraTaskProxyLess";
-import { AntiImpervaTask } from "./Requests/Token/AntiImpervaTask";
-import { AntiImpervaTaskProxyLess } from "./Requests/Token/AntiImpervaTaskProxyLess";
-import { DataDomeSliderTask } from "./Requests/Token/DataDomeSliderTask";
-import { FunCaptchaTaskProxyLess } from "./Requests/Token/FunCaptchaTaskProxyLess";
-import { GeeTestV3Task } from "./Requests/Token/GeeTestV3Task";
-import { GeeTestV3TaskProxyLess } from "./Requests/Token/GeeTestV3TaskProxyLess";
-import { GeeTestV4Task } from "./Requests/Token/GeeTestV4Task";
-import { GeeTestV4TaskProxyLess } from "./Requests/Token/GeeTestV4TaskProxyLess";
-import { AwsWafClassificationSolution } from "./Solution/ClassificationSolution/AwsWafClassificationSolution";
-import { HCaptchaClassificationSolution } from "./Solution/ClassificationSolution/HCaptchaClassificationSolution";
-import { ReCaptchaV2ClassificationSolution } from "./Solution/ClassificationSolution/ReCaptchaV2ClassificationSolution";
-import { AntiAwsWafTaskSolution } from "./Solution/TokenSolution/AntiAwsWafTaskSolution";
-import { AntiCyberSiAraTaskSolution } from "./Solution/TokenSolution/AntiCyberSiAraTaskSolution";
-import { AntiImpervaTaskSolution } from "./Solution/TokenSolution/AntiImpervaTaskSolution";
-import { DataDomeSliderTaskSolution } from "./Solution/TokenSolution/DataDomeSliderTaskSolution";
-import { FunCaptchaTaskSolution } from "./Solution/TokenSolution/FunCaptchaTaskSolution";
-import { ImageToTextSolution } from "./Solution/ClassificationSolution/ImageToTextSolution";
-import { AntiCloudflareTaskSolution } from "./Solution/TokenSolution/AntiCloudflareTaskSolution";
-import { Requests } from "./Requests";
-import { AntiAwsWafTask } from "./Requests/Token/AntiAwsWafTask";
-import { AntiAkamaiPowTask } from "./Requests/Token/AntiAkamaiPowTask";
-import { AntiAkamaiSensorTask } from "./Requests/Token/AntiAkamaiSensorTask";
-import { AntiAkamaiWebTask } from "./Requests/Token/AntiAkamaiWebTask";
-import { AntiAkamaiPowTaskSolution } from "./Solution/TokenSolution/AntiAkamaiPowTaskSolution";
-import { AntiAkamaiSensorTaskSolution } from "./Solution/TokenSolution/AntiAkamaiSensorTaskSolution";
-import { AntiAkamaiWebTaskSolution } from "./Solution/TokenSolution/AntiAkamaiWebTaskSolution";
-import { GeeTestV3TaskSolution } from "./Solution/TokenSolution/GeeTestV3TaskSolution";
-import { GeeTestV4TaskSolution } from "./Solution/TokenSolution/GeeTestV4TaskSolution";
-import { AntiAkamaiBMPTask } from "./Requests/Token/AntiAkamaiBMPTask";
-import { GeeTestTask } from "./Requests/Token/GeeTestTask";
-import { GeeTestTaskProxyLess } from "./Requests/Token/GeeTestTaskProxyLess";
+import type {
+  AntiAkamaiPowTaskSolution,
+  AntiAkamaiSensorTaskSolution,
+  AntiAkamaiWebTaskSolution,
+  AntiAwsWafTaskSolution,
+  AntiCloudflareTaskSolution,
+  AntiCyberSiAraTaskSolution,
+  AntiImpervaTaskSolution,
+  DataDomeSliderTaskSolution,
+  FunCaptchaTaskSolution,
+  GeeTestV3TaskSolution,
+  GeeTestV4TaskSolution,
+  HCaptchaTaskSolution,
+  MtCaptchaTaskSolution,
+  ReCaptchaV2TaskSolution,
+  ReCaptchaV3TaskSolution,
+  AwsWafClassificationSolution,
+  HCaptchaClassificationSolution,
+  ImageToTextSolution,
+  ReCaptchaV2ClassificationSolution,
+  FunCaptchaClassificationSolution
+} from "./Solution";
+import type {
+  AntiAkamaiPowTask,
+  AntiAkamaiSensorTask,
+  AntiAkamaiWebTask,
+  AntiAwsWafTask,
+  AntiAwsWafTaskProxyLess,
+  AntiCloudflareChallengeTask,
+  AntiCloudflareTurnstileTask,
+  AntiCyberSiAraTask,
+  AntiCyberSiAraTaskProxyLess,
+  AntiImpervaTask,
+  AntiImpervaTaskProxyLess,
+  DataDomeSliderTask,
+  FunCaptchaTaskProxyLess,
+  GeeTestTask,
+  GeeTestTaskProxyLess,
+  FunCaptchaClassification,
+  GeeTestV3Task,
+  GeeTestV3TaskProxyLess,
+  GeeTestV4Task,
+  GeeTestV4TaskProxyLess,
+  HCaptchaTask,
+  HCaptchaTaskProxyLess,
+  MtCaptchaTask,
+  MtCaptchaTaskProxyLess,
+  Requests,
+  ReCaptchaV2EnterpriseTask,
+  ReCaptchaV2EnterpriseTaskProxyLess,
+  ReCaptchaV2Task,
+  ReCaptchaV2TaskProxyLess,
+  ReCaptchaV3EnterpriseTask,
+  ReCaptchaV3EnterpriseTaskProxyLess,
+  ReCaptchaV3M1TaskProxyLess,
+  ReCaptchaV3Task,
+  ReCaptchaV3TaskProxyLess,
+  AntiAkamaiBMPTask,
+  AwsWafClassification,
+  HCaptchaClassification,
+  ImageToTextTask,
+  ReCaptchaV2Classification
+} from "./Requests";
+import type { CapSolverSolution } from "./Solution/_BaseSolution";
 process.removeAllListeners("warning");
 
 /**
@@ -194,7 +199,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
   /**
   * @param {ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess} request - task payload to create task
-  * @return {Promise<CapSolverSolution<ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess | ReCaptchaV3M1TaskProxyLess>>} - response of createTask
+  * @return {Promise<CapSolverSolution<ReCaptchaV3TaskSolution>>} - response of createTask
   */
   public async solve(request: ReCaptchaV3EnterpriseTask | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess | ReCaptchaV3Task | ReCaptchaV3TaskProxyLess): Promise<CapSolverSolution<ReCaptchaV3TaskSolution>>;
 
@@ -313,6 +318,12 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   public async solve(request: ReCaptchaV2Classification): Promise<CapSolverSolution<ReCaptchaV2ClassificationSolution>>;
 
   /**
+  * @param {FunCaptchaClassification} request - task payload to create task
+  * @return {Promise<CapSolverSolution<FunCaptchaClassificationSolution>>} - response of createTask
+  */
+  public async solve(request: FunCaptchaClassification): Promise<CapSolverSolution<FunCaptchaClassificationSolution>>;
+
+  /**
   * @param {Requests} request - task payload to create task
   * @return {Promise<CapSolverSolution<TSolution>>} - response of createTask
   */
@@ -363,8 +374,6 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       _isReCaptchaV3TaskProxyLess = false,
       ...payload
     } = { ...request };
-
-    console.log({ payload });
 
     const createTaskResponse = await this.createTask<TSolution>(payload as Requests);
 

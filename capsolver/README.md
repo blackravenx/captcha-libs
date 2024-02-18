@@ -16,7 +16,7 @@ yarn
 ### Usage
 ```javascript
 //import CapSolver client and desired task 
-import { CapSolver, ReCaptchaV3EnterpriseTask } from "@captcha-libs/capsolver";
+import { CapSolver, ReCaptchaV3EnterpriseTaskProxyLess } from "@captcha-libs/capsolver";
 
 const capsolverClient = new CapSolver({
   clientKey: "<YOUR_CLIENT_KEY>",
@@ -25,8 +25,7 @@ const capsolverClient = new CapSolver({
 });
 
 // Pass captcha params to solve
-const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
-  proxy: "http:ip:port:user:pass",
+const reCaptchaV3Request = new ReCaptchaV3EnterpriseTaskProxyLess({
   websiteKey: "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
   websiteURL: "https://www.google.com/recaptcha/api2/demo"
 });
@@ -57,7 +56,28 @@ const feedback = await capsolverClient.feedbackTask({
 //to get balance
 const balance = await capsolverClient.getBalance()
 ```
+### [Usage with proxies](https://docs.capsolver.com/guide/api-how-to-use-proxy.html)
+```javascript
+const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
+  websiteKey: "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
+  websiteURL: "https://www.google.com/recaptcha/api2/demo",
+  
+  //------> You can send the proxy information with one of these proxy format, please read carefully
+  
+  //pass proxy connection string
+  proxy: "socks5:192.191.100.10:4780:user:pwd",
+  //or
+  proxy: "198.199.100.10:4780:user:pwd",
 
+  //or use object format
+  proxyAddress: "198.199.100.10",
+  proxyType: "https", // socks5 | http | https
+  proxyLogin: "user",
+  proxyPassword: "pass",
+  proxyPort: 3949,
+});
+
+```
 ### Features
 * Supports all captcha types, solutions and methods from CapSolver docs (updated at Feb. 2024)
 * TypeScript-first design

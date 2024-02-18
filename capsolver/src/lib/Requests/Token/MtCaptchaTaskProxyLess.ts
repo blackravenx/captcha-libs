@@ -1,9 +1,10 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import { MtCaptchaTaskBase } from "./_MtCaptchaTaskBase";
+import type { MtCaptchaTaskBaseParams } from "./Base/_MtCaptchaTaskBase";
+import { MtCaptchaTaskBase } from "./Base/_MtCaptchaTaskBase";
 
-type MtCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<MtCaptchaTaskBase, "_endpoint" | "type">>;
+type MtCaptchaTaskProxyLessParams = ProxylessTaskParams<MtCaptchaTaskBaseParams>;
 
 /**
  * @classdesc MtCaptchaTaskProxyLess is using the server's built-in proxy.
@@ -14,9 +15,9 @@ type MtCaptchaTaskProxyLessParams = ProxylessTaskParams<Omit<MtCaptchaTaskBase, 
 export class MtCaptchaTaskProxyLess extends MtCaptchaTaskBase implements _IsTaskType {
 
   /**
- * @type {boolean} _isMtCaptchaTaskProxyLess - Only used for correct method overloading intellisense
- */
-  readonly _isMtCaptchaTaskProxyLess = true;
+  * @type {boolean} _isMtCaptchaTaskProxyLess - Only used for correct method overloading intellisense
+  */
+  readonly _isMtCaptchaTaskProxyLess: _IsTaskType["_isMtCaptchaTaskProxyLess"] = true;
 
   /**
    * Create MtCaptchaTaskBase
