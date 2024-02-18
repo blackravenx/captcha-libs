@@ -1,9 +1,8 @@
-import {
+import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  AntiCyberSiAraTaskBase, AntiCyberSiAraTaskBaseParams
-} from "./_AntiCyberSiAraTaskBase";
+import type { AntiCyberSiAraTaskBaseParams } from "./Base/_AntiCyberSiAraTaskBase";
+import { AntiCyberSiAraTaskBase } from "./Base/_AntiCyberSiAraTaskBase";
 
 type AntiCyberSiAraTaskProxylessParams = ProxylessTaskParams<AntiCyberSiAraTaskBaseParams>;
 

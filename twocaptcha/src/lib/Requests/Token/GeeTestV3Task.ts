@@ -1,8 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import { GeeTestV3TaskParams as _GeeTestV3TaskParams } from "./_GeeTestTaskBase";
-import { GeeTestV3TaskBase } from "./_GeeTestV3TaskBase";
+import type { GeeTestV3TaskParams as _GeeTestV3TaskParams } from "./Base/_GeeTestTaskBase";
+import { GeeTestV3TaskBase } from "./Base/_GeeTestV3TaskBase";
 
 type GeeTestV3TaskParams = ProxyRequiredTaskParams<_GeeTestV3TaskParams>;
 

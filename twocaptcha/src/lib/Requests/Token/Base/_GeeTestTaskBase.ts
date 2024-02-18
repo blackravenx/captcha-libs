@@ -1,9 +1,9 @@
 import type {
   ProxyCredentials, ProxyTypes, TaskTypes
-} from "../_BaseTaskRequest";
+} from "../../_BaseTaskRequest";
 import {
   BaseTask, _IsTaskType
-} from "../_BaseTaskRequest";
+} from "../../_BaseTaskRequest";
 
 export type GeetestV3TaskBaseParams = {
   challenge: string;

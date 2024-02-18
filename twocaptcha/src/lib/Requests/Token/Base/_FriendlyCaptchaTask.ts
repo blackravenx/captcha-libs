@@ -1,18 +1,19 @@
-import {
-  BaseTask, ProxyCredentials, ProxyTypes, TaskTypes
-} from "../_BaseTaskRequest";
+import type {
+  ProxyCredentials, ProxyTypes, TaskTypes
+} from "../../_BaseTaskRequest";
+import { BaseTask } from "../../_BaseTaskRequest";
 
-export type MtCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
+export type FriendlyCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
   websiteKey: string;
   websiteURL: string;
 };
 
 /**
- * Base class for MtCaptchaTask
+ * Base class for FriendlyCaptchaTask
  * @extends {BaseTask}
- * {@link https://2captcha.com/api-docs/mtcaptcha}
+ * {@link https://2captcha.com/api-docs/friendly-captcha}
  */
-export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTaskBaseParams {
+export abstract class FriendlyCaptchaTaskBase extends BaseTask implements FriendlyCaptchaTaskBaseParams {
 
   /**
    * @type {string} websiteURL - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users
@@ -20,7 +21,7 @@ export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTas
   websiteURL: string;
 
   /**
-   * @type {string} websiteKey - The MTCaptcha sitekey value found in the page code.
+   * @type {string} websiteKey - Capy Puzzle Captcha captchakey.
    */
   websiteKey: string;
   proxyAddress?: string;
@@ -28,14 +29,13 @@ export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTas
   proxyPassword?: string;
   proxyPort?: number;
   proxyType?: ProxyTypes;
-  proxy?: string;
 
   /**
-  * Create MtCaptchaTaskBase
-  * {@link https://2captcha.com/api-docs/mtcaptcha}
-  * @param {Object} params - MtCaptchaTaskParams
+  * Create FriendlyCaptchaTaskBase
+  * {@link https://2captcha.com/api-docs/friendly-captcha}
+  * @param {Object} params - FriendlyCaptchaTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users
-  * @param {string} [params.websiteKey] - The MTCaptcha sitekey value found in the page code.
+  * @param {string} [params.websiteKey] - Capy Puzzle Captcha captchakey.
   * @param {string} [params.proxyAddress] -	Proxy IP address or hostname
   * @param {string} [params.proxyLogin] - Login for basic authentication on the proxy
   * @param {string} [params.proxyPassword] - Password for basic authentication on the proxy
@@ -44,7 +44,7 @@ export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTas
   */
   constructor({
     websiteKey, websiteURL, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword
-  }: MtCaptchaTaskBaseParams, type: TaskTypes) {
+  }: FriendlyCaptchaTaskBaseParams, type: TaskTypes) {
     super({ type });
     this.websiteKey = websiteKey;
     this.websiteURL = websiteURL;
@@ -54,5 +54,4 @@ export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTas
     this.proxyPort = proxyPort;
     this.proxyType = proxyType;
   }
-
 }

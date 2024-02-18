@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  LeminTaskBase, LeminTaskBaseParams
-} from "./_LeminTaskBase";
+import type { LeminTaskBaseParams } from "./Base/_LeminTaskBase";
+import { LeminTaskBase } from "./Base/_LeminTaskBase";
 
 type LeminTaskParams = ProxyRequiredTaskParams<LeminTaskBaseParams>;
 

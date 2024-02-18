@@ -1,4 +1,3 @@
-
 const _TaskTypes = [
   "ImageToTextTask",
   "TextCaptchaTask",

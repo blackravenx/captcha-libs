@@ -1,6 +1,7 @@
+import type { TaskTypes } from "../../_BaseTaskRequest";
 import {
-  BaseTask, ProxyCredentials, TaskTypes
-} from "../_BaseTaskRequest";
+  BaseTask, ProxyCredentials
+} from "../../_BaseTaskRequest";
 
 export type RecaptchaV3TaskBaseParams = {
   apiDomain?: string;

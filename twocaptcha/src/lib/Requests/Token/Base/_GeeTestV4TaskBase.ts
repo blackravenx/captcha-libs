@@ -1,24 +1,20 @@
-import {
-  BaseTask, ProxyTypes, TaskTypes
-} from "../_BaseTaskRequest";
-import { GeeTestV3TaskParams } from "./_GeeTestTaskBase";
+import type {
+  ProxyTypes, TaskTypes
+} from "../../_BaseTaskRequest";
+import { BaseTask } from "../../_BaseTaskRequest";
+import type { GeeTestV4TaskParams } from "./_GeeTestTaskBase";
 
 /**
  * Base class for geetest
  * @extends {BaseTask}
  * {@link https://2captcha.com/api-docs/geetest}
  */
-export abstract class GeeTestV3TaskBase extends BaseTask implements GeeTestV3TaskParams {
+export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4TaskParams {
 
   /**
-    * @type {boolean} challenge - 	GeeTest challenge value.
+   * @type {object} initParameters - Required for GeeTest V4. Captcha parameters passed to initGeetest4 call, must contain captcha_id value
    */
-  challenge: string;
-
-  /**
-   * @type {string} gt - GeeTest gt value
-   */
-  gt: string;
+  initParameters: GeeTestV4TaskParams["initParameters"];
 
   /**
    * @type {string} userAgent - User-Agent of your browser will be used to load the captcha. Use only modern browser's User-Agents
@@ -29,12 +25,7 @@ export abstract class GeeTestV3TaskBase extends BaseTask implements GeeTestV3Tas
    * @type {string} websiteURL - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users
    */
   websiteURL?: string;
-
-  /**
-   * @type {string} geetestApiServerSubdomain - Only for GeeTest V3. Custom GeeTest API domain, for example: api-na.geetest.com. Can be defined inside initGeetest call. Also you can check the domain used to load the scripts, the default domain is api.geetest.com.
-   */
-  geetestApiServerSubdomain?: string;
-  version = 3;
+  version = 4;
   proxyAddress?: string;
   proxyLogin?: string;
   proxyPassword?: string;
@@ -42,30 +33,25 @@ export abstract class GeeTestV3TaskBase extends BaseTask implements GeeTestV3Tas
   proxyType?: ProxyTypes;
 
   /**
-  * Create GeeTestV3TaskBase
+  * Create GeeTestV4TaskBase
   * {@link https://2captcha.com/api-docs/geetest}
-  * @param {Object} params - GeeTestV3TaskBaseParams
-  * @param {string} [params.gt] -	GeeTest gt value
-  * @param {boolean}[params.challenge] - 	GeeTest challenge value.
+  * @param {Object} params - GeeTestV4TaskParams
+  * @param {object} [params.initParameters] - Required for GeeTest V4. Captcha parameters passed to initGeetest4 call, must contain captcha_id value
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users
   * @param {string} [params.userAgent] - User-Agent of your browser will be used to load the captcha. Use only modern browser's User-Agents
-  * @param {string} [params.geetestApiServerSubdomain] - Only for GeeTest V3. Custom GeeTest API domain, for example: api-na.geetest.com. Can be defined inside initGeetest call. Also you can check the domain used to load the scripts, the default domain is api.geetest.com.
   * @param {string} [params.proxyAddress] -	Proxy IP address or hostname
   * @param {string} [params.proxyLogin] - Login for basic authentication on the proxy
   * @param {string} [params.proxyPassword] - Password for basic authentication on the proxy
   * @param {string} [params.proxyType] - Type of your proxy: HTTP, HTTPS, SOCKS4, SOCKS5
   * @param {string} [params.proxyPort] - Proxy port
-  *
   */
   constructor({
-    gt, websiteURL, challenge, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword, userAgent, geetestApiServerSubdomain
-  }: GeeTestV3TaskParams, type: TaskTypes) {
+    websiteURL, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword, userAgent, initParameters
+  }: GeeTestV4TaskParams, type: TaskTypes) {
     super({ type });
-    this.gt = gt;
     this.websiteURL = websiteURL;
-    this.challenge = challenge;
+    this.initParameters = initParameters;
     this.userAgent = userAgent;
-    this.geetestApiServerSubdomain = geetestApiServerSubdomain;
     this.proxyAddress = proxyAddress;
     this.proxyLogin = proxyLogin;
     this.proxyPassword = proxyPassword;

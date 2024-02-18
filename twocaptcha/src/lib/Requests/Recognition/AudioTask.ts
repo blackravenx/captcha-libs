@@ -1,5 +1,6 @@
+import type { _IsTaskType } from "../_BaseTaskRequest";
 import {
-  BaseTask, type BaseParams, _IsTaskType
+  BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
 type AudioLangs = "de" | "el" | "en" | "fr" | "pt" | "ru";

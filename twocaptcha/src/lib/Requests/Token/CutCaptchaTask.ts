@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  CutCaptchaTaskBase, CutCaptchaTaskBaseParams
-} from "./_CutCaptchaTask";
+import type { CutCaptchaTaskBaseParams } from "./Base/_CutCaptchaTask";
+import { CutCaptchaTaskBase } from "./Base/_CutCaptchaTask";
 
 type CutCaptchaTaskParams = ProxyRequiredTaskParams<CutCaptchaTaskBaseParams>;
 

@@ -8,7 +8,7 @@ import {
 import type {
   TwoCaptchaCreateTaskResponse, CaptchaClientParams, TwoCaptchaBalanceResponse, TwoCaptchaSuccessResponse, TwoCaptchaReportTaskResponse, TwoCaptchaReportTaskSuccessResponse
 } from "./types";
-import {
+import type {
   AmazonTask,
   AmazonTaskProxyless,
   AntiCyberSiAraTask,
@@ -53,10 +53,10 @@ import {
   CutCaptchaTask,
   CutCaptchaTaskProxyless
 } from "./Requests";
-import {
+import type {
   TwoCaptchaSolution, TwoCaptchaSuccessSolution
 } from "./Solutions/_BaseSolution";
-import {
+import type {
   AudioTaskSolution,
   BoundingBoxTaskSolution,
   CoordinatesTaskSolution,
@@ -82,7 +82,7 @@ import {
   TurnstileTaskSolution,
   ImageToTextTaskSolution
 } from "./Solutions";
-import { CutCaptchaTaskSolution } from "./Solutions/Token/CutCaptchaTaskSolution";
+import type { CutCaptchaTaskSolution } from "./Solutions/Token/CutCaptchaTaskSolution";
 process.removeAllListeners("warning");
 
 /**

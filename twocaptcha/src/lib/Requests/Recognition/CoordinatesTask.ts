@@ -1,6 +1,5 @@
-import {
-  BaseTask, _IsTaskType
-} from "../_BaseTaskRequest";
+import type { _IsTaskType } from "../_BaseTaskRequest";
+import { BaseTask } from "../_BaseTaskRequest";
 
 type CoordinatesTaskParams = {
   body: string;

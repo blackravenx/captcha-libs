@@ -1,5 +1,6 @@
+import type { _IsTaskType } from "../_BaseTaskRequest";
 import {
-  BaseTask, type BaseParams, _IsTaskType
+  BaseTask, type BaseParams
 } from "../_BaseTaskRequest";
 
 type RotateTaskParams = Omit<BaseParams, "type"> & {
