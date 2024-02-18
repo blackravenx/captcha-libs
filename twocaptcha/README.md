@@ -1,4 +1,5 @@
-![2Captcha logo](2captcha-logo.png){: width="50px"}
+<img alt="2Captcha logo" src="2captcha-logo.png" height="64px" />
+
 # 2captcha NodeJS captcha client - use 2captcha with ease 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/maxshydev)
 [![GitHub stars](https://img.shields.io/github/stars/blackravenx/captcha-libs.svg?style=social&label=Star)](https://github.com/blackravenx/captcha-libs)
