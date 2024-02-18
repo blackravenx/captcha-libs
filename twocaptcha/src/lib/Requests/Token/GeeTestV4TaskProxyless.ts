@@ -1,8 +1,8 @@
-import {
+import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import { GeeTestV4TaskParams as _GeeTestV4TaskParams } from "./_GeeTestTaskBase";
-import { GeeTestV4TaskBase } from "./_GeeTestV4TaskBase";
+import type { GeeTestV4TaskParams as _GeeTestV4TaskParams } from "./Base/_GeeTestTaskBase";
+import { GeeTestV4TaskBase } from "./Base/_GeeTestV4TaskBase";
 
 type GeeTestV4TaskProxylessParams = ProxylessTaskParams<_GeeTestV4TaskParams>;
 

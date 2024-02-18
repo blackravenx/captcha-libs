@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  RecaptchaV2TaskBase, RecaptchaV2TaskBaseParams
-} from "./_RecaptchaV2TaskBase";
+import type { RecaptchaV2TaskBaseParams } from "./Base/_RecaptchaV2TaskBase";
+import { RecaptchaV2TaskBase } from "./Base/_RecaptchaV2TaskBase";
 
 export interface _RecaptchaV2EnterpriseTaskParams {
   enterprisePayload?: Record<string, string>;

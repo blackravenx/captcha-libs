@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  HCaptchaTaskBase, HCaptchaTaskBaseParams
-} from "./_HCaptchaTaskBase";
+import type { HCaptchaTaskBaseParams } from "./Base/_HCaptchaTaskBase";
+import { HCaptchaTaskBase } from "./Base/_HCaptchaTaskBase";
 
 type HCaptchaTaskParams = ProxyRequiredTaskParams<HCaptchaTaskBaseParams>;
 

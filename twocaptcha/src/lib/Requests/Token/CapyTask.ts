@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  CapyTaskBase, CapyTaskBaseParams
-} from "./_CapyTaskBase";
+import type { CapyTaskBaseParams } from "./Base/_CapyTaskBase";
+import { CapyTaskBase } from "./Base/_CapyTaskBase";
 
 type CapyTaskParams = ProxyRequiredTaskParams<CapyTaskBaseParams>;
 

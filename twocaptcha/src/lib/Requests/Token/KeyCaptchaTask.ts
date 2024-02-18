@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  KeyCaptchaTaskBase, KeyCaptchaTaskBaseParams
-} from "./_KeyCaptchaTaskBase";
+import type { KeyCaptchaTaskBaseParams } from "./Base/_KeyCaptchaTaskBase";
+import { KeyCaptchaTaskBase } from "./Base/_KeyCaptchaTaskBase";
 
 type KeyCaptchaTaskParams = ProxyRequiredTaskParams<KeyCaptchaTaskBaseParams>;
 

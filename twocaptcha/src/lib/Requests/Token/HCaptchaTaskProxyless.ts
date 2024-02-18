@@ -1,9 +1,8 @@
-import {
+import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  HCaptchaTaskBase, HCaptchaTaskBaseParams
-} from "./_HCaptchaTaskBase";
+import type { HCaptchaTaskBaseParams } from "./Base/_HCaptchaTaskBase";
+import { HCaptchaTaskBase } from "./Base/_HCaptchaTaskBase";
 
 type HCaptchaTaskProxylessParams = ProxylessTaskParams<HCaptchaTaskBaseParams>;
 

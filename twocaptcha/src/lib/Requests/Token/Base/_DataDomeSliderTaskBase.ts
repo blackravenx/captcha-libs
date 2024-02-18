@@ -1,6 +1,7 @@
-import {
-  BaseTask, ProxyRequiredTaskParams, ProxyTypes, TaskTypes
-} from "../_BaseTaskRequest";
+import type {
+  ProxyRequiredTaskParams, ProxyTypes, TaskTypes
+} from "../../_BaseTaskRequest";
+import { BaseTask } from "../../_BaseTaskRequest";
 
  type _DataDomeSliderTaskBaseParams = {
    captchaUrl: string;

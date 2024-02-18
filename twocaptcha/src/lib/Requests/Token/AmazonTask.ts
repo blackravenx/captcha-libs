@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  AmazonTaskBase, AmazonTaskBaseParams
-} from "./_AmazonTaskBase";
+import type { AmazonTaskBaseParams } from "./Base/_AmazonTaskBase";
+import { AmazonTaskBase } from "./Base/_AmazonTaskBase";
 
 type AmazonTaskParams = ProxyRequiredTaskParams<AmazonTaskBaseParams>;
 

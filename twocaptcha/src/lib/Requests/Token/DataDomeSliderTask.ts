@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  DataDomeSliderTaskBase, DataDomeSliderTaskBaseParams
-} from "./_DataDomeSliderTaskBase";
+import type { DataDomeSliderTaskBaseParams } from "./Base/_DataDomeSliderTaskBase";
+import { DataDomeSliderTaskBase } from "./Base/_DataDomeSliderTaskBase";
 
 type DataDomeSliderTaskParams = ProxyRequiredTaskParams<DataDomeSliderTaskBaseParams>;
 

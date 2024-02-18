@@ -1,9 +1,8 @@
-import {
+import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  RecaptchaV3TaskBase, RecaptchaV3TaskBaseParams
-} from "./_RecaptchaV3TaskBase";
+import type { RecaptchaV3TaskBaseParams } from "./Base/_RecaptchaV3TaskBase";
+import { RecaptchaV3TaskBase } from "./Base/_RecaptchaV3TaskBase";
 
 type RecaptchaV3TaskProxylessParams = ProxylessTaskParams<RecaptchaV3TaskBaseParams>;
 

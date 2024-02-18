@@ -1,4 +1,4 @@
-import { TwoCaptchaErrorResponse } from "../types";
+import type { TwoCaptchaErrorResponse } from "../types";
 
 export type TwoCaptchaSuccessSolution<TSolution> = {
   cost: string;

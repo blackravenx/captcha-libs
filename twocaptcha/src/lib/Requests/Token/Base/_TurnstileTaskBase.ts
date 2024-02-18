@@ -1,6 +1,7 @@
-import {
-  BaseTask, ProxyCredentials, ProxyTypes, TaskTypes
-} from "../_BaseTaskRequest";
+import type {
+  ProxyCredentials, ProxyTypes, TaskTypes
+} from "../../_BaseTaskRequest";
+import { BaseTask } from "../../_BaseTaskRequest";
 
 export type TurnstileTaskBaseParams = Partial<ProxyCredentials> & {
   action?: string;

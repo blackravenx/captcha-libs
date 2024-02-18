@@ -1,10 +1,11 @@
-import {
-  ProxyCredentials, ProxylessTaskParams, _IsTaskType
+import type {
+  ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
+import { ProxyCredentials } from "../_BaseTaskRequest";
+import type {
   GeeTestV3TaskParams, GeeTestV4TaskParams
-} from "./_GeeTestTaskBase";
-import { GeeTestTaskBase } from "./_GeeTestTaskBase";
+} from "./Base/_GeeTestTaskBase";
+import { GeeTestTaskBase } from "./Base/_GeeTestTaskBase";
 
 type GeeTestTaskProxylessParams = ProxylessTaskParams<GeeTestV3TaskParams> | ProxylessTaskParams<GeeTestV4TaskParams>;
 

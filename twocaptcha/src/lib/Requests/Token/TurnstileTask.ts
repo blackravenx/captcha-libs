@@ -1,9 +1,8 @@
-import {
+import type {
   ProxyRequiredTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  TurnstileTaskBase, TurnstileTaskBaseParams
-} from "./_TurnstileTaskBase";
+import type { TurnstileTaskBaseParams } from "./Base/_TurnstileTaskBase";
+import { TurnstileTaskBase } from "./Base/_TurnstileTaskBase";
 
 type TurnstileTaskParams = ProxyRequiredTaskParams<TurnstileTaskBaseParams>;
 

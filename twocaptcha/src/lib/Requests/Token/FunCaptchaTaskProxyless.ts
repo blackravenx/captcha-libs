@@ -1,9 +1,8 @@
-import {
+import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import {
-  FunCaptchaTaskBase, FunCaptchaTaskBaseParams
-} from "./_FunCaptchaTaskBase";
+import type { FunCaptchaTaskBaseParams } from "./Base/_FunCaptchaTaskBase";
+import { FunCaptchaTaskBase } from "./Base/_FunCaptchaTaskBase";
 
 type FunCaptchaTaskProxylessParams = ProxylessTaskParams<FunCaptchaTaskBaseParams>;
 

@@ -1,8 +1,7 @@
-import { _IsTaskType } from "./../_BaseTaskRequest";
-import { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
-import {
-  RecaptchaV2TaskBase, RecaptchaV2TaskBaseParams
-} from "./_RecaptchaV2TaskBase";
+import type { _IsTaskType } from "./../_BaseTaskRequest";
+import type { ProxyRequiredTaskParams } from "../_BaseTaskRequest";
+import type { RecaptchaV2TaskBaseParams } from "./Base/_RecaptchaV2TaskBase";
+import { RecaptchaV2TaskBase } from "./Base/_RecaptchaV2TaskBase";
 
 type RecaptchaV2TaskParams = ProxyRequiredTaskParams<RecaptchaV2TaskBaseParams>;
 
