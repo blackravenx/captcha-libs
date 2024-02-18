@@ -5,11 +5,11 @@
 Docs: https://2captcha.com/api-docs
 
 ## Installation
-Via [npm](https://www.npmjs.com/package/@captcha-libs/twocaptcha)
+* [npm](https://www.npmjs.com/package/@captcha-libs/twocaptcha)
     ```$ npm i @captcha-libs/twocaptcha```
-pnpm
+* pnpm
     ```$ pnpm i @captcha-libs/twocaptcha```
-yarn
+* yarn
     ```$ yarn add @captcha-libs/twocaptcha```
 
 ### Usage
