@@ -5,6 +5,7 @@ import { BaseTask } from "../../_BaseTaskRequest";
 
 export type HCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
   enterprisePayload?: Record<string, string>;
+  getCaptcha?: unknown;
   isInvisible?: boolean;
   proxy?: string;
   userAgent?: string;
@@ -37,7 +38,7 @@ export abstract class HCaptchaTaskBase extends BaseTask implements HCaptchaTaskB
    * @param {string} [params.proxyType] - proxyType
    */
   constructor({
-    isInvisible = false, websiteKey, websiteURL, proxy, enterprisePayload, userAgent, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword
+    isInvisible = false, websiteKey, websiteURL, proxy, enterprisePayload, userAgent, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword, getCaptcha
   }: HCaptchaTaskBaseParams, type: TaskTypes) {
     super({ type });
     this.websiteKey = websiteKey;
@@ -51,6 +52,7 @@ export abstract class HCaptchaTaskBase extends BaseTask implements HCaptchaTaskB
     this.proxyPort = proxyPort;
     this.proxyType = proxyType;
     this.proxyPassword = proxyPassword;
+    this.getCaptcha = getCaptcha;
   }
 
   /**
@@ -87,4 +89,5 @@ export abstract class HCaptchaTaskBase extends BaseTask implements HCaptchaTaskB
   proxyPassword?: string;
   proxyPort?: number;
   proxyType?: ProxyCredentials["proxyType"];
+  getCaptcha?: unknown;
 }

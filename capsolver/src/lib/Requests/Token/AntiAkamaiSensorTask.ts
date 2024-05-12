@@ -9,6 +9,7 @@ type AntiAkamaiSensorTaskParams = Omit<AntiAkamaiBMPTaskParams, "pow"> & Require
  * @class
  * @extends {BaseTask}
  * {@link https://docs.capsolver.com/guide/antibots/akamaibmp.html}
+  * @deprecated deleted from service support
  */
 export class AntiAkamaiSensorTask extends BaseTask implements AntiAkamaiSensorTaskParams, _IsTaskType {
 

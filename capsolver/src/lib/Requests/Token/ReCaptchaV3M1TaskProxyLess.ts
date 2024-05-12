@@ -11,6 +11,7 @@ type ReCaptchaV3M1TaskProxyLessParams = ProxylessTaskParams<RecaptchaV3TaskBaseP
  * @class
  * @extends {RecaptchaV3TaskBase}
  * {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV3.html}
+ * @deprecated removed from service support
  */
 export class ReCaptchaV3M1TaskProxyLess extends RecaptchaV3TaskBase implements _IsTaskType {
 

@@ -13,6 +13,7 @@ type AntiAkamaiWebTaskParams ={
  * @class
  * @extends {AntiAkamaiWebTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/akamaibmp.html}
+ * @deprecated deleted from service support
  */
 export class AntiAkamaiWebTask extends BaseTask implements AntiAkamaiWebTaskParams, _IsTaskType {
 

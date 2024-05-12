@@ -40,11 +40,3 @@ export class AntiAwsWafTask extends AntiAwsWafTaskBase implements _IsTaskType {
     super(params, "AntiAwsWafTask");
   }
 }
-new AntiAwsWafTask({
-
-  // proxy: "",
-  proxyAddress: "",
-  proxyPort: 14,
-  proxyType: "http",
-  websiteURL: ""
-});

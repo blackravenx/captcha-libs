@@ -4,6 +4,7 @@ describe("HCaptchaTask test", () => {
   it("To be equal to object", () => {
     const task = new HCaptchaTask({
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
+      getCaptcha: "some-getCaptcha",
       isInvisible: false,
       proxyAddress: "some-proxyAddress",
       proxyLogin: "some-proxyLogin",
@@ -19,6 +20,7 @@ describe("HCaptchaTask test", () => {
       _endpoint: "createTask",
       _isHCaptchaTask: true,
       enterprisePayload: { s: "SOME_ADDITIONAL_TOKEN" },
+      getCaptcha: "some-getCaptcha",
       isInvisible: false,
       proxy: undefined,
       proxyAddress: "some-proxyAddress",
@@ -34,6 +36,7 @@ describe("HCaptchaTask test", () => {
   });
   it("To be equal to object without optional params", () => {
     const task = new HCaptchaTask({
+      getCaptcha: "some-getCaptcha",
       proxyAddress: "some-proxyAddress",
       proxyLogin: "some-proxyLogin",
       proxyPassword: "some-proxyPassword",
@@ -47,6 +50,7 @@ describe("HCaptchaTask test", () => {
       _endpoint: "createTask",
       _isHCaptchaTask: true,
       enterprisePayload: undefined,
+      getCaptcha: "some-getCaptcha",
       isInvisible: false,
       proxy: undefined,
       proxyAddress: "some-proxyAddress",

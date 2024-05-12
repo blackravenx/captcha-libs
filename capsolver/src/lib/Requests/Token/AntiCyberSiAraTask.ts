@@ -12,6 +12,7 @@ type AntiCyberSiAraTaskParams = ProxyRequiredTaskParams<AntiCyberSiAraTaskBasePa
  * @class
  * @extends {AntiCyberSiAraTaskBase}
  * {@link https://docs.capsolver.com/guide/captcha/CyberSiara.html}
+ * @deprecated deleted from service support
  */
 export class AntiCyberSiAraTask extends AntiCyberSiAraTaskBase implements _IsTaskType {
 

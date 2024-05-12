@@ -7,7 +7,7 @@ Docs: https://docs.capsolver.com
 
 ## Installation
 Via [npm](https://www.npmjs.com/package/@captcha-libs/capsolver)
-    ```npm i @captcha-libs/capsolver```
+    ```$ npm i @captcha-libs/capsolver```
 pnpm
     ```$ pnpm i @captcha-libs/capsolver```
 yarn
@@ -62,7 +62,7 @@ const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
   websiteKey: "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
   websiteURL: "https://www.google.com/recaptcha/api2/demo",
   
-  //------> You can send the proxy information with one of these proxy format, please read carefully
+  //You can send the proxy information with one of these proxy format, please read carefully
   
   //pass proxy connection string
   proxy: "socks5:192.191.100.10:4780:user:pwd",
@@ -79,10 +79,11 @@ const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
 
 ```
 ### Features
-* Supports all captcha types, solutions and methods from CapSolver docs (updated at Feb. 2024)
+* Supports all captcha types, solutions and methods from CapSolver docs (updated at May 2024)
 * TypeScript-first design
 * Automatically waits for solution
 * Fully tested task payloads
+* Only one dependency (ofetch)
 
 ### Currently supported task payloads
 What 'custom' does mean? Custom means that the parameters and solutions have been narrowed down from the official documentation from more general cases. However, you can still use classes strictly according to the official documentation.
@@ -100,18 +101,16 @@ What 'custom' does mean? Custom means that the parameters and solutions have bee
         * Custom - [GeeTestV3Task | GeeTestV3TaskProxyLess](https://docs.capsolver.com/guide/captcha/Geetest.html)
         * Custom - [GeeTestV4Task | GeeTestV4TaskProxyLess](https://docs.capsolver.com/guide/captcha/Geetest.html)
     * [ReCaptchaV2Task | ReCaptchaV2EnterpriseTask | ReCaptchaV2TaskProxyLess | ReCaptchaV2EnterpriseTaskProxyLess](https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html)
-    * [ReCaptchaV3Task | ReCaptchaV3EnterpriseTask | ReCaptchaV3TaskProxyLess | ReCaptchaV3EnterpriseTaskProxyLess | ReCaptchaV3M1TaskProxyLess](https://docs.capsolver.com/guide/captcha/ReCaptchaV3.html)
+    * [ReCaptchaV3Task | ReCaptchaV3EnterpriseTask | ReCaptchaV3TaskProxyLess | ReCaptchaV3EnterpriseTaskProxyLess | ~~DEPRECATED (ReCaptchaV3M1TaskProxyLess)~~](https://docs.capsolver.com/guide/captcha/ReCaptchaV3.html)
     * [DatadomeSliderTask](https://docs.capsolver.com/guide/antibots/datadome.html)
     * [AntiAwsWafTask | AntiAwsWafTaskProxyLess](https://docs.capsolver.com/guide/captcha/awsWaf.html)
-    * [AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess](https://docs.capsolver.com/guide/captcha/CyberSiara.html)
+    * DEPRECATED ~~[AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess](https://docs.capsolver.com/guide/captcha/CyberSiara.html)~~
     * [AntiImpervaTask | AntiImpervaTaskProxyLess](https://docs.capsolver.com/guide/antibots/imperva.html)
     * [AntiCloudflareTurnstileTask](https://docs.capsolver.com/guide/antibots/cloudflare_turnstile.html)
     * [AntiCloudflareChallengeTask](https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html)
-    * [AntiAkamaiBMPTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)
-        * Custom - [AntiAkamaiPowTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)
-        * Custom - [AntiAkamaiSensorTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)
-    * [AntiAkamaiWebTask](https://docs.capsolver.com/guide/antibots/akamaiweb.html)
+    * DEPRECATED. ~~[AntiAkamaiBMPTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)~~
+        * DEPRECATED. ~~Custom - [AntiAkamaiPowTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)~~
+        * DEPRECATED. ~~Custom - [AntiAkamaiSensorTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)~~
+    * DEPRECATED ~~[AntiAkamaiWebTask](https://docs.capsolver.com/guide/antibots/akamaiweb.html)~~
     
-
-
-
+ ~~DEPRECATED~~ = task type removed from service support, but you can still try to send task
