@@ -17,6 +17,7 @@ export interface AntiAkamaiBMPTaskParams {
  * @class
  * @extends {AntiAkamaiBMPTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/akamaibmp.html}
+ * @deprecated deleted from service support
  */
 export class AntiAkamaiBMPTask extends BaseTask implements AntiAkamaiBMPTaskParams, _IsTaskType {
 

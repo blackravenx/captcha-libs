@@ -28,7 +28,7 @@ export class FunCaptchaClassification extends BaseTask implements FunCaptchaClas
    * @param {Object} params - ImageToTextParams
    * @param {string} [params.question] - Question name. this param value from API response game_variant field. Exmaple: maze,maze2,flockCompass,3d_rollball_animals
    * @param {string} [params.images] - Base64 encoded image, can be a screenshot (pass only the hexagonal image, do not pass the rest of the content)
-   * @param {string} [params.module] - module name {@link https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html}
+   * @param {string} [params.module] - module name {@see https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html}
    * @param {string} [params.websiteURL] - Page source url to improve accuracy
    * @param {string} [params.websiteKey] - 	Website key to improve accuracy
    */

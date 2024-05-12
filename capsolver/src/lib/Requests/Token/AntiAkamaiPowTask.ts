@@ -9,6 +9,7 @@ type AntiAkamaiPowTaskParams = Required<Pick<AntiAkamaiBMPTaskParams, "deviceId"
  * @class
  * @extends {BaseTask}
  * {@link https://docs.capsolver.com/guide/antibots/akamaibmp.html}
+ * @deprecated deleted from service support
  */
 export class AntiAkamaiPowTask extends BaseTask implements AntiAkamaiPowTaskParams, _IsTaskType {
 

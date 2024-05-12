@@ -12,6 +12,7 @@ type AntiCyberSiAraTaskProxyLessParams = ProxylessTaskParams<AntiCyberSiAraTaskB
  * @class
  * @extends {AntiCyberSiAraTaskBase}
  * {@link https://docs.capsolver.com/guide/captcha/CyberSiara.html}
+ * @deprecated deleted from service support
  */
 export class AntiCyberSiAraTaskProxyLess extends AntiCyberSiAraTaskBase implements _IsTaskType {
 

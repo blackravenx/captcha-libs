@@ -16,7 +16,8 @@ const _ImageToTextModules = [
   "queue-it",
   "webde-imap",
   "webde-login",
-  "webde-register"
+  "webde-register",
+  "module001"
 ] as const;
 
 type ImageToTextModules = typeof _ImageToTextModules[number];
@@ -75,7 +76,7 @@ export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsT
 
   /**
    * @type {ImageToTextModules=} module - Specifies the module. Currently, the supported modules are common and queueit
-   * {@link https://docs.capsolver.com/guide/recognition/ImageToTextTask.html}
+   * {@see https://docs.capsolver.com/guide/recognition/ImageToTextTask.html}
    */
   module?: ImageToTextModules;
 
