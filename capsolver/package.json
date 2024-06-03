@@ -1,28 +1,28 @@
 {
   "name": "@captcha-libs/capsolver",
-  "version": "1.1.5",
+  "version": "1.1.7",
   "keywords": [
-      "CapSolver",
-      "Captcha recognition",
-      "Captcha solving",
-      "ReCaptcha captcha",
-      "DataDome captcha",
-      "HCaptcha captcha",
-      "GeeTest captcha",
-      "MtCaptcha",
-      "AWS WAF captcha",
-      "Cloudflare captcha"
+    "CapSolver",
+    "Captcha recognition",
+    "Captcha solving",
+    "ReCaptcha captcha",
+    "DataDome captcha",
+    "HCaptcha captcha",
+    "GeeTest captcha",
+    "MtCaptcha",
+    "AWS WAF captcha",
+    "Cloudflare captcha"
   ],
   "license": "ISC",
   "author": "Max Shy",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/blackravenx/captcha-libs.git",
-      "directory": "capsolver"
+    "type": "git",
+    "url": "https://github.com/blackravenx/captcha-libs.git",
+    "directory": "capsolver"
   },
   "dependencies": {
-      "@captcha-libs/captcha-client": "latest",
-      "ofetch": "^1.3.3"
+    "@captcha-libs/captcha-client": "latest",
+    "ofetch": "^1.3.3"
   },
   "description": "CapSolver NodeJS client, captcha recognition service"
 }

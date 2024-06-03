@@ -28,7 +28,8 @@ import type {
   HCaptchaClassificationSolution,
   ImageToTextSolution,
   ReCaptchaV2ClassificationSolution,
-  FunCaptchaClassificationSolution
+  FunCaptchaClassificationSolution,
+  VisionEngineSolution
 } from "./Solution";
 import type {
   AntiAkamaiPowTask,
@@ -69,7 +70,8 @@ import type {
   AwsWafClassification,
   HCaptchaClassification,
   ImageToTextTask,
-  ReCaptchaV2Classification
+  ReCaptchaV2Classification,
+  VisionEngine
 } from "./Requests";
 import type { CapSolverSolution } from "./Solution/_BaseSolution";
 process.removeAllListeners("warning");
@@ -324,6 +326,12 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   public async solve(request: FunCaptchaClassification): Promise<CapSolverSolution<FunCaptchaClassificationSolution>>;
 
   /**
+  * @param {VisionEngine} request - task payload to create task
+  * @return {Promise<CapSolverSolution<VisionEngineSolution>>} - response of createTask
+  */
+  public async solve(request: VisionEngine): Promise<CapSolverSolution<VisionEngineSolution>>;
+
+  /**
   * @param {Requests} request - task payload to create task
   * @return {Promise<CapSolverSolution<TSolution>>} - response of createTask
   */
@@ -372,6 +380,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       _isReCaptchaV3M1TaskProxyLess = false,
       _isReCaptchaV3Task = false,
       _isReCaptchaV3TaskProxyLess = false,
+      _isVisionEngine = false,
       ...payload
     } = { ...request };
 
