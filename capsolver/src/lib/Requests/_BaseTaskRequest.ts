@@ -31,7 +31,8 @@ const _TaskTypes = [
   "HCaptchaTaskProxyLess",
   "FunCaptchaTaskProxyLess",
   "GeeTestTask",
-  "GeeTestTaskProxyLess"
+  "GeeTestTaskProxyLess",
+  "VisionEngine"
 ] as const;
 
 export type TaskTypes = typeof _TaskTypes[number];

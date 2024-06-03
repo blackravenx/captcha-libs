@@ -79,7 +79,7 @@ const reCaptchaV3Request = new ReCaptchaV3EnterpriseTask({
 
 ```
 ### Features
-* Supports all captcha types, solutions and methods from CapSolver docs (updated at May 2024)
+* Supports all captcha types, solutions and methods from CapSolver docs (updated at June 2024)
 * TypeScript-first design
 * Automatically waits for solution
 * Fully tested task payloads
@@ -94,6 +94,7 @@ What 'custom' does mean? Custom means that the parameters and solutions have bee
     * [FunCaptchaClassification](https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html)
     * [ReCaptchaClassification](https://docs.capsolver.com/guide/recognition/ReCaptchaClassification.html)
     * [AwsWafClassification](https://docs.capsolver.com/guide/recognition/AwsWafClassification.html)
+    * [VisionEngine](https://docs.capsolver.com/guide/recognition/VisionEngine.html)
 2. Token
     * [HCaptchaTask | HCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/HCaptcha.html)
     * [FunCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/FunCaptcha.html)

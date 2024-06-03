@@ -1,13 +1,15 @@
-import type { AwsWafClassification } from "./AwsWafClassification";
-import type { FunCaptchaClassification } from "./FunCaptchaClassification";
-import type { HCaptchaClassification } from "./HCaptchaClassification";
-import type { ImageToTextTask } from "./ImageToTextTask";
-import type { ReCaptchaV2Classification } from "./ReCaptchaV2Classification";
+import { AwsWafClassification } from "./AwsWafClassification";
+import { FunCaptchaClassification } from "./FunCaptchaClassification";
+import { HCaptchaClassification } from "./HCaptchaClassification";
+import { ImageToTextTask } from "./ImageToTextTask";
+import { ReCaptchaV2Classification } from "./ReCaptchaV2Classification";
+import { VisionEngine } from "./VisionEngine";
 
 export {
   AwsWafClassification,
   FunCaptchaClassification,
   HCaptchaClassification,
   ImageToTextTask,
-  ReCaptchaV2Classification
+  ReCaptchaV2Classification,
+  VisionEngine
 };
