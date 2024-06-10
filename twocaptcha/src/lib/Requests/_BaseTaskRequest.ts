@@ -36,7 +36,11 @@ const _TaskTypes = [
   "CutCaptchaTaskProxyless",
   "DataDomeSliderTask",
   "FriendlyCaptchaTask",
-  "FriendlyCaptchaTaskProxyless"
+  "FriendlyCaptchaTaskProxyless",
+  "TencentTask",
+  "TencentTaskProxyless",
+  "AtbCaptchaTask",
+  "AtbCaptchaTaskProxyless"
 ] as const;
 
 export type TaskTypes = typeof _TaskTypes[number];

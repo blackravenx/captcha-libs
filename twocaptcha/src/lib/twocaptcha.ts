@@ -51,7 +51,11 @@ import type {
   CoordinatesTask,
   DrawAroundTask,
   CutCaptchaTask,
-  CutCaptchaTaskProxyless
+  CutCaptchaTaskProxyless,
+  TencentTask,
+  TencentTaskProxyless,
+  AtbCaptchaTaskProxyless,
+  AtbCaptchaTask
 } from "./Requests";
 import type {
   TwoCaptchaSolution, TwoCaptchaSuccessSolution
@@ -80,9 +84,12 @@ import type {
   RotateTaskSolution,
   TextCaptchaTaskSolution,
   TurnstileTaskSolution,
-  ImageToTextTaskSolution
+  ImageToTextTaskSolution,
+  TencentTaskSolution,
+  AtbCaptchaTaskSolution,
+  CutCaptchaTaskSolution
 } from "./Solutions";
-import type { CutCaptchaTaskSolution } from "./Solutions/Token/CutCaptchaTaskSolution";
+
 process.removeAllListeners("warning");
 
 /**
@@ -300,7 +307,7 @@ export class TwoCaptcha extends CaptchaClient<TwoCaptchaCreateTaskResponse, Requ
 
   /**
   * @param {CutCaptchaTask | CutCaptchaTaskProxyless} request - task payload to create CutCaptchaTask or CutCaptchaTaskProxyless
-  * {@link https://2captcha.com/api-docs/capy-puzzle-captcha}
+  * {@link https://2captcha.com/api-docs/cutcaptcha}
   * @return {Promise<TwoCaptchaSuccessSolution<CutCaptchaTaskSolution>>} - response of createTask
   */
   public async solve(request: CutCaptchaTask | CutCaptchaTaskProxyless): Promise<TwoCaptchaSuccessSolution<CutCaptchaTaskSolution>>;
@@ -398,6 +405,20 @@ export class TwoCaptcha extends CaptchaClient<TwoCaptchaCreateTaskResponse, Requ
   public async solve(request: TurnstileTask | TurnstileTaskProxyless): Promise<TwoCaptchaSuccessSolution<TurnstileTaskSolution>>;
 
   /**
+  * @param {TencentTask | TencentTaskProxyless} request - task payload to create TencentTask or TencentTaskProxyless
+  * {@link https://2captcha.com/api-docs/tencent}
+  * @return {Promise<TwoCaptchaSuccessSolution<TencentTaskSolution>>} - response of createTask
+  */
+  public async solve(request: TencentTask | TencentTaskProxyless): Promise<TwoCaptchaSuccessSolution<TencentTaskSolution>>;
+
+  /**
+  * @param {AtbCaptchaTask | AtbCaptchaTaskProxyless} request - task payload to create AtbCaptchaTask or AtbCaptchaTaskProxyless
+  * {@link https://2captcha.com/api-docs/atb-captcha}
+  * @return {Promise<TwoCaptchaSuccessSolution<AtbCaptchaTaskSolution>>} - response of createTask
+  */
+  public async solve(request: AtbCaptchaTask | AtbCaptchaTaskProxyless): Promise<TwoCaptchaSuccessSolution<AtbCaptchaTaskSolution>>;
+
+  /**
   * @param {Requests} request - task payload to create task or taskProxyless
   * @return {Promise<TwoCaptchaSuccessSolution<TSolution>>} - response of createTask
   */
@@ -450,6 +471,10 @@ export class TwoCaptcha extends CaptchaClient<TwoCaptchaCreateTaskResponse, Requ
       _isBoundingBoxTask = false,
       _isCoordinatesTask = false,
       _isDrawAroundTask = false,
+      _isAtbCaptchaTask = false,
+      _isAtbCaptchaTaskProxyless = false,
+      _isTencentTask = false,
+      _isTencentTaskProxyless = false,
       ...payload
     } = { ...request };
 
