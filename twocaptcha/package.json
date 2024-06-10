@@ -1,6 +1,6 @@
 {
   "name": "@captcha-libs/twocaptcha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "TwoCaptcha",
     "Captcha recognition",
@@ -17,7 +17,9 @@
     "AntiCyberSiAra captcha",
     "MtCaptcha",
     "AWS WAF captcha",
-    "Cloudflare captcha"
+    "Cloudflare captcha",
+    "Tencent captcha",
+    "ATB captcha"
   ],
   "license": "ISC",
   "author": "Max Shy",

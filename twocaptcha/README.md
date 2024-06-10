@@ -1,5 +1,4 @@
-<img alt="2Captcha logo" src="2captcha-logo.png" height="64px" />
-
+![2Captcha logo](2captcha-logo.png){: width="50px"}
 # 2captcha NodeJS captcha client - use 2captcha with ease 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/paypalme/maxshydev)
 [![GitHub stars](https://img.shields.io/github/stars/blackravenx/captcha-libs.svg?style=social&label=Star)](https://github.com/blackravenx/captcha-libs)
@@ -71,10 +70,11 @@ const reCaptchaV2Request = new RecaptchaV2Task({
 
 ```
 ### Features
-* Supports all captcha types, solutions and methods from 2captcha docs (updated at Feb. 2024)
+* Supports all captcha types, solutions and methods from CapSolver docs (updated at June 2024)
 * TypeScript-first design
 * Automatically waits for solution
 * Fully tested task payloads
+* Only one dependency (ofetch)
 
 ### Currently supported task payloads
 What 'custom' does mean? Custom means that the parameters and solutions have been narrowed down from the official documentation from more general cases. However, you can still use classes strictly according to the official documentation.
@@ -107,6 +107,8 @@ What 'custom' does mean? Custom means that the parameters and solutions have bee
     * [CutCaptchaTask | CutCaptchaTaskProxyLess](https://2captcha.com/api-docs/cutcaptcha)
     * [DataDomeSliderTask](https://2captcha.com/api-docs/datadome-slider-captcha)
     * [FriendlyCaptchaTask | FriendlyCaptchaTaskProxyLess](https://2captcha.com/api-docs/friendly-captcha)
+    * [AtbCaptchaTask | AtbCaptchaTaskProxyLess](https://2captcha.com/api-docs/atb-captcha)
+    * [TencentTask | TencentTaskProxyLess](https://2captcha.com/api-docs/tencent)
 
 #### Looking for another captcha recognition service? Check our other libraries: 
 * [CapSolver](https://www.npmjs.com/package/@captcha-libs/capsolver)
