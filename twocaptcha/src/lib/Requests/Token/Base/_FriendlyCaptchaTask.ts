@@ -31,7 +31,7 @@ export abstract class FriendlyCaptchaTaskBase extends BaseTask implements Friend
   proxyType?: ProxyTypes;
 
   /**
-  * Create FriendlyCaptchaTaskBase
+  * FriendlyCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/friendly-captcha}
   * @param {Object} params - FriendlyCaptchaTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

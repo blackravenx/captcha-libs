@@ -16,7 +16,7 @@ export class CapyTaskProxyless extends CapyTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isCapyTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isCapyTaskProxyless = true;
+  readonly _isCapyTaskProxyless: _IsTaskType["_isCapyTaskProxyless"] = true;
 
   /**
   * Create CapyTaskProxyless

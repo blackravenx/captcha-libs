@@ -16,7 +16,7 @@ export class FunCaptchaTask extends FunCaptchaTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isFunCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isFunCaptchaTask = true;
+  readonly _isFunCaptchaTask: _IsTaskType["_isFunCaptchaTask"] = true;
 
   /**
   * Create FunCaptchaTask

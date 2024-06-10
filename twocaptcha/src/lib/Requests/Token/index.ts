@@ -1,3 +1,7 @@
+import { TencentTaskProxyless } from "./TencentTaskProxyless";
+import { TencentTask } from "./TencentTask";
+import { AtbCaptchaTaskProxyless } from "./AtbCaptchaTaskProxyless";
+import { AtbCaptchaTask } from "./AtbCaptchaTask";
 import { CutCaptchaTaskProxyless } from "./CutCaptchaTaskProxyless";
 import { CutCaptchaTask } from "./CutCaptchaTask";
 import { TurnstileTaskProxyless } from "./TurnstileTaskProxyless";
@@ -67,5 +71,9 @@ export {
   RecaptchaV2EnterpriseTaskProxyless,
   RecaptchaV3TaskProxyless,
   TurnstileTask,
-  TurnstileTaskProxyless
+  TurnstileTaskProxyless,
+  AtbCaptchaTask,
+  AtbCaptchaTaskProxyless,
+  TencentTask,
+  TencentTaskProxyless
 };

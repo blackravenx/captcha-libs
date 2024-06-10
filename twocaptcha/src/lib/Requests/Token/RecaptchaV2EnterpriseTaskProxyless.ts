@@ -17,7 +17,7 @@ export class RecaptchaV2EnterpriseTaskProxyless extends RecaptchaV2TaskBase impl
   /**
   * @type {boolean} _isRecaptchaV2EnterpriseTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isRecaptchaV2EnterpriseTaskProxyless = true;
+  readonly _isRecaptchaV2EnterpriseTaskProxyless: _IsTaskType["_isRecaptchaV2EnterpriseTaskProxyless"] = true;
   enterprisePayload?: Record<string, string>;
 
   /**

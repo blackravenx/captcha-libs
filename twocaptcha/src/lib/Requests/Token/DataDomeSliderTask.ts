@@ -16,7 +16,7 @@ export class DataDomeSliderTask extends DataDomeSliderTaskBase implements _IsTas
   /**
   * @type {boolean} _isDataDomeSliderTask - Only used for correct method overloading intellisense
   */
-  readonly _isDataDomeSliderTask = true;
+  readonly _isDataDomeSliderTask: _IsTaskType["_isDataDomeSliderTask"] = true;
 
   /**
   * Create DataDomeSliderTask

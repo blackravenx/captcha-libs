@@ -16,7 +16,7 @@ export class KeyCaptchaTaskProxyless extends KeyCaptchaTaskBase implements _IsTa
   /**
   * @type {boolean} _isKeyCaptchaTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isKeyCaptchaTaskProxyless = true;
+  readonly _isKeyCaptchaTaskProxyless: _IsTaskType["_isKeyCaptchaTaskProxyless"] = true;
 
   /**
   * Create KeyCaptchaTaskProxyless

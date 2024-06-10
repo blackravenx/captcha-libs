@@ -17,7 +17,7 @@ export class RecaptchaV2TaskProxyless extends RecaptchaV2TaskBase implements _Is
   /**
   * @type {boolean} _isRecaptchaV2TaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isRecaptchaV2TaskProxyless = true;
+  readonly _isRecaptchaV2TaskProxyless: _IsTaskType["_isRecaptchaV2TaskProxyless"] = true;
 
   /**
   * Create RecaptchaV2TaskProxyless

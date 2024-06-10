@@ -16,7 +16,7 @@ export class AmazonTask extends AmazonTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isAmazonTask - Only used for correct method overloading intellisense
   */
-  readonly _isAmazonTask = true;
+  readonly _isAmazonTask: _IsTaskType["_isAmazonTask"] = true;
 
   /**
   * Create AmazonTask

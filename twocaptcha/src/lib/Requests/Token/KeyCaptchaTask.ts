@@ -16,7 +16,7 @@ export class KeyCaptchaTask extends KeyCaptchaTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isKeyCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isKeyCaptchaTask = true;
+  readonly _isKeyCaptchaTask: _IsTaskType["_isKeyCaptchaTask"] = true;
 
   /**
   * Create KeyCaptchaTask

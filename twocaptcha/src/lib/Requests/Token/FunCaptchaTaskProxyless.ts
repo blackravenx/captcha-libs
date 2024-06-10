@@ -16,7 +16,7 @@ export class FunCaptchaTaskProxyless extends FunCaptchaTaskBase implements _IsTa
   /**
   * @type {boolean} _isFunCaptchaTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isFunCaptchaTaskProxyless = true;
+  readonly _isFunCaptchaTaskProxyless: _IsTaskType["_isFunCaptchaTaskProxyless"] = true;
 
   /**
   * Create FunCaptchaTaskProxyless

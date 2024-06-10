@@ -33,7 +33,7 @@ export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4Tas
   proxyType?: ProxyTypes;
 
   /**
-  * Create GeeTestV4TaskBase
+  * GeeTestV4TaskBase
   * {@link https://2captcha.com/api-docs/geetest}
   * @param {Object} params - GeeTestV4TaskParams
   * @param {object} [params.initParameters] - Required for GeeTest V4. Captcha parameters passed to initGeetest4 call, must contain captcha_id value

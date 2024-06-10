@@ -16,7 +16,7 @@ export class TurnstileTask extends TurnstileTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isTurnstileTask - Only used for correct method overloading intellisense
   */
-  readonly _isTurnstileTask = true;
+  readonly _isTurnstileTask: _IsTaskType["_isTurnstileTask"] = true;
 
   /**
   * Create TurnstileTask

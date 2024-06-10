@@ -16,7 +16,7 @@ export class GeeTestV3TaskProxyless extends GeeTestV3TaskBase implements _IsTask
   /**
   * @type {boolean} _isGeeTestTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isGeeTestTaskProxyless = true;
+  readonly _isGeeTestTaskProxyless: _IsTaskType["_isGeeTestTaskProxyless"] = true;
 
   /**
   * Create GeeTestV3TaskProxyless

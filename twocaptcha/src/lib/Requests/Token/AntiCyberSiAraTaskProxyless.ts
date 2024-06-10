@@ -16,7 +16,7 @@ export class AntiCyberSiAraTaskProxyless extends AntiCyberSiAraTaskBase implemen
   /**
   * @type {boolean} _isAntiCyberSiAraTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isAntiCyberSiAraTaskProxyless = true;
+  readonly _isAntiCyberSiAraTaskProxyless: _IsTaskType["_isAntiCyberSiAraTaskProxyless"] = true;
 
   /**
   * Create AntiCyberSiAraTaskProxyless

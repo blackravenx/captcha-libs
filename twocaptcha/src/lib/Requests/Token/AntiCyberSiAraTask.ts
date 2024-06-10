@@ -16,7 +16,7 @@ export class AntiCyberSiAraTask extends AntiCyberSiAraTaskBase implements _IsTas
   /**
   * @type {boolean} _isAntiCyberSiAraTask - Only used for correct method overloading intellisense
   */
-  readonly _isAntiCyberSiAraTask = true;
+  readonly _isAntiCyberSiAraTask: _IsTaskType["_isAntiCyberSiAraTask"] = true;
 
   /**
   * Create AntiCyberSiAraTask

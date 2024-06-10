@@ -16,7 +16,7 @@ export class HCaptchaTaskProxyless extends HCaptchaTaskBase implements _IsTaskTy
   /**
   * @type {boolean} _isHCaptchaTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isHCaptchaTaskProxyless = true;
+  readonly _isHCaptchaTaskProxyless: _IsTaskType["_isHCaptchaTaskProxyless"] = true;
 
   /**
   * Create HCaptchaTaskProxyless

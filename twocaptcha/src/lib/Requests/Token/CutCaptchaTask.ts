@@ -16,7 +16,7 @@ export class CutCaptchaTask extends CutCaptchaTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isCutCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isCutCaptchaTask = true;
+  readonly _isCutCaptchaTask: _IsTaskType["_isCutCaptchaTask"] = true;
 
   /**
   * Create CutCaptchaTask

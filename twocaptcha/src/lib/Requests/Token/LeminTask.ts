@@ -16,7 +16,7 @@ export class LeminTask extends LeminTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isLeminTask - Only used for correct method overloading intellisense
   */
-  readonly _isLeminTask = true;
+  readonly _isLeminTask: _IsTaskType["_isLeminTask"] = true;
 
   /**
   * Create LeminTask

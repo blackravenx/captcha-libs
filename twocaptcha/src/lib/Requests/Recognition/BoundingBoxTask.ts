@@ -40,7 +40,7 @@ export class BoundingBoxTask extends BaseTask implements _IsTaskType, BoundingBo
   /**
   * @type {boolean} _isBoundingBoxTask - Only used for correct method overloading intellisense
   */
-  readonly _isBoundingBoxTask = true;
+  readonly _isBoundingBoxTask: _IsTaskType["_isBoundingBoxTask"] = true;
 
   /**
   * Create BoundingBoxTask

@@ -1,3 +1,5 @@
+import { TencentTaskSolution } from "./TencentTaskSolution";
+import { AtbCaptchaTaskSolution } from "./AtbCaptchaTaskSolution";
 import { TurnstileTaskSolution } from "./TurnstileTaskSolution";
 import { RecaptchaV3TaskSolution } from "./RecaptchaV3TaskSolution";
 import { RecaptchaV2TaskSolution } from "./RecaptchaV2TaskSolution";
@@ -14,6 +16,7 @@ import { CapyTaskSolution } from "./CapyTaskSolution";
 import { AntiCyberSiAraTaskSolution } from "./AntiCyberSiAraTaskSolution";
 import { AmazonTaskSolution } from "./AmazonTaskSolution";
 import { GeeTestV4TaskSolution } from "./GeeTestV4TaskSolution";
+import { CutCaptchaTaskSolution } from "./CutCaptchaTaskSolution";
 
 export {
   AmazonTaskSolution,
@@ -31,5 +34,8 @@ export {
   MtCaptchaTaskSolution,
   RecaptchaV2TaskSolution,
   RecaptchaV3TaskSolution,
-  TurnstileTaskSolution
+  CutCaptchaTaskSolution,
+  TurnstileTaskSolution,
+  TencentTaskSolution,
+  AtbCaptchaTaskSolution
 };

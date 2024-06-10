@@ -30,7 +30,7 @@ export class AudioTask extends BaseTask implements _IsTaskType, AudioTaskParams 
   /**
    * @type {boolean} _isAudioTask - Only used for correct method overloading intellisense
   */
-  readonly _isAudioTask = true;
+  readonly _isAudioTask: _IsTaskType["_isAudioTask"] = true;
 
   /**
   * Create AudioTask

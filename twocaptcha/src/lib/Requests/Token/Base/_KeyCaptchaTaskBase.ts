@@ -50,7 +50,7 @@ export abstract class KeyCaptchaTaskBase extends BaseTask implements KeyCaptchaT
   proxyType?: ProxyTypes;
 
   /**
-  * Create KeyCaptchaTaskBase
+  * KeyCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/keycaptcha}
   * @param {Object} params - KeyCaptchaTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

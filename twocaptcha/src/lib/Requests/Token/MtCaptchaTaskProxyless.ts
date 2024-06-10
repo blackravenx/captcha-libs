@@ -1,22 +1,22 @@
 import type {
   ProxylessTaskParams, _IsTaskType
 } from "../_BaseTaskRequest";
-import type { CapyTaskBaseParams } from "./Base/_CapyTaskBase";
-import { CapyTaskBase } from "./Base/_CapyTaskBase";
+import type { MtCaptchaTaskBaseParams } from "./Base/_MtCaptchaTaskBase";
+import { MtCaptchaTaskBase } from "./Base/_MtCaptchaTaskBase";
 
-type MtCaptchaTaskProxylessParams = ProxylessTaskParams<CapyTaskBaseParams>;
+type MtCaptchaTaskProxylessParams = ProxylessTaskParams<MtCaptchaTaskBaseParams>;
 
 /**
- * Token-based method for automated solving of Capy Puzzle Captcha.
- * @extends {CapyTaskBase}
+ * Token-based method for automated solving of MTCaptcha.
+ * @extends {MtCaptchaTaskBase}
  * {@link https://2captcha.com/api-docs/mtcaptcha}
  */
-export class MtCaptchaTaskProxyless extends CapyTaskBase implements _IsTaskType {
+export class MtCaptchaTaskProxyless extends MtCaptchaTaskBase implements _IsTaskType {
 
   /**
   * @type {boolean} _isMtCaptchaTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isMtCaptchaTaskProxyless = true;
+  readonly _isMtCaptchaTaskProxyless: _IsTaskType["_isMtCaptchaTaskProxyless"] = true;
 
   /**
   * Create MtCaptchaTaskProxyless
