@@ -10,7 +10,9 @@
     "importHelpers": false,
     "target": "ES6",
     "module": "esnext",
-    "lib": ["es2020" ],
+    "lib": [
+      "es2020"
+    ],
     "skipLibCheck": true,
     "strict": true,
     "baseUrl": ".",
@@ -19,11 +21,22 @@
     "noImplicitAny": false,
     "incremental": true,
     "paths": {
-      "@captcha-libs/capguru": ["capguru/index.ts"],
-      "@captcha-libs/capsolver": ["capsolver/index.ts"],
-      "@captcha-libs/captcha-client": ["captcha-client/index.ts"],
-      "@captcha-libs/twocaptcha": ["twocaptcha/index.ts"]
+      "@captcha-libs/capguru": [
+        "capguru/index.ts"
+      ],
+      "@captcha-libs/capsolver": [
+        "capsolver/index.ts"
+      ],
+      "@captcha-libs/captcha-client": [
+        "captcha-client/index.ts"
+      ],
+      "@captcha-libs/twocaptcha": [
+        "twocaptcha/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

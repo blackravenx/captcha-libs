@@ -3,8 +3,13 @@
   "targetDefaults": {
     "build": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "lint": {
       "cache": true,
@@ -17,7 +22,11 @@
     },
     "@nx/jest:jest": {
       "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ],
       "options": {
         "passWithNoTests": true
       },
@@ -30,7 +39,10 @@
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -43,5 +55,6 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudAccessToken": "ZjU0MTRkZmEtNGU5MS00MjBhLThiYmQtNGQ1MTA3NTg1NjZhfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "ZjU0MTRkZmEtNGU5MS00MjBhLThiYmQtNGQ1MTA3NTg1NjZhfHJlYWQtd3JpdGU=",
+  "useInferencePlugins": false
 }
