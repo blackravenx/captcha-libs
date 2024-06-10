@@ -32,7 +32,7 @@ export abstract class MtCaptchaTaskBase extends BaseTask implements MtCaptchaTas
   proxy?: string;
 
   /**
-  * Create MtCaptchaTaskBase
+  * MtCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/mtcaptcha}
   * @param {Object} params - MtCaptchaTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users
