@@ -16,7 +16,7 @@ export class FriendlyCaptchaTaskProxyless extends FriendlyCaptchaTaskBase implem
   /**
   * @type {boolean} _isFriendlyCaptchaTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isFriendlyCaptchaTaskProxyless = true;
+  readonly _isFriendlyCaptchaTaskProxyless: _IsTaskType["_isFriendlyCaptchaTaskProxyless"] = true;
 
   /**
   * Create FriendlyCaptchaTaskProxyless

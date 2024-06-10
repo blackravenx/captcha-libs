@@ -16,7 +16,7 @@ export class FriendlyCaptchaTask extends FriendlyCaptchaTaskBase implements _IsT
   /**
   * @type {boolean} _isFriendlyCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isFriendlyCaptchaTask = true;
+  readonly _isFriendlyCaptchaTask: _IsTaskType["_isFriendlyCaptchaTask"] = true;
 
   /**
   * Create FriendlyCaptchaTask

@@ -16,7 +16,7 @@ export class AmazonTaskProxyless extends AmazonTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isKeyCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isAmazonTaskProxyless = true;
+  readonly _isAmazonTaskProxyless: _IsTaskType["_isAmazonTaskProxyless"] = true;
 
   /**
   * Create AmazonTaskProxyless

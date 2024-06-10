@@ -20,7 +20,7 @@ export class RecaptchaV2EnterpriseTask extends RecaptchaV2TaskBase implements _R
   /**
   * @type {boolean} _isRecaptchaV2EnterpriseTask - Only used for correct method overloading intellisense
   */
-  readonly _isRecaptchaV2EnterpriseTask = true;
+  readonly _isRecaptchaV2EnterpriseTask: _IsTaskType["_isRecaptchaV2EnterpriseTask"] = true;
 
   /**
    * @type {string} enterprisePayload - Additional parameters passed to grecaptcha.enterprise.render call. For example, there can be an object containing s value

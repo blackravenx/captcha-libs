@@ -61,7 +61,7 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
   proxyType?: ProxyTypes;
 
   /**
-  * Create RecaptchaV2TaskBase
+  * RecaptchaV2TaskBase
   * {@link https://2captcha.com/api-docs/recaptcha-v2}
   * @param {Object} params - RecaptchaV2TaskBaseParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

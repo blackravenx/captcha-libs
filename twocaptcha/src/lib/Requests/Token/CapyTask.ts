@@ -16,7 +16,7 @@ export class CapyTask extends CapyTaskBase implements _IsTaskType {
   /**
    * @type {boolean} _isCapyTask - Only used for correct method overloading intellisense
   */
-  readonly _isCapyTask = true;
+  readonly _isCapyTask: _IsTaskType["_isCapyTask"] = true;
 
   /**
   * Create CapyTask

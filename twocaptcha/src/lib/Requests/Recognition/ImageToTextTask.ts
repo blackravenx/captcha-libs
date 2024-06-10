@@ -78,7 +78,7 @@ export class ImageToTextTask extends BaseTask implements _IsTaskType, ImageToTex
   /**
   * @type {boolean} _isImageToTextTask - Only used for correct method overloading intellisense
   */
-  readonly _isImageToTextTask = true;
+  readonly _isImageToTextTask: _IsTaskType["_isImageToTextTask"] = true;
 
   /**
   * Create ImageToTextTask

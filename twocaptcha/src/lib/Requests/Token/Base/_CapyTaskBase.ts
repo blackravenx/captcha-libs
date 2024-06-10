@@ -37,7 +37,7 @@ export abstract class CapyTaskBase extends BaseTask implements CapyTaskBaseParam
   proxyType?: ProxyTypes;
 
   /**
-  * Create CapyTaskBase
+  * CapyTaskBase
   * {@link https://2captcha.com/api-docs/capy-puzzle-captcha}
   * @param {Object} params - CapyTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

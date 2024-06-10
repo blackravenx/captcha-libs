@@ -55,7 +55,7 @@ export abstract class TurnstileTaskBase extends BaseTask implements TurnstileTas
   proxyType?: ProxyTypes;
 
   /**
-  * Create TurnstileTaskBase
+  * TurnstileTaskBase
   * {@link https://2captcha.com/api-docs/cloudflare-turnstile}
   * @param {Object} params - TurnstileTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

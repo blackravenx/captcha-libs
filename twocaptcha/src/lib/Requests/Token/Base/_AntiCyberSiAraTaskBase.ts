@@ -37,7 +37,7 @@ export abstract class AntiCyberSiAraTaskBase extends BaseTask implements AntiCyb
   proxyType?: ProxyTypes;
 
   /**
-  * Create AntiCyberSiAraTaskBase
+  * AntiCyberSiAraTaskBase
   * {@link https://2captcha.com/api-docs/anti-cyber-siara}
   * @param {Object} params - CapyTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

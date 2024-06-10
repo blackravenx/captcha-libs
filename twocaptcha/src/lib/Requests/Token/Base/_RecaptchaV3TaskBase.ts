@@ -50,7 +50,7 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
   isEnterprise?: boolean;
 
   /**
-  * Create RecaptchaV3TaskBase
+  * RecaptchaV3TaskBase
   * {@link https://2captcha.com/api-docs/recaptcha-v3}
   * @param {Object} params - RecaptchaV3TaskBaseParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

@@ -56,7 +56,7 @@ export abstract class AmazonTaskBase extends BaseTask implements AmazonTaskBaseP
   proxyType?: ProxyTypes;
 
   /**
-  * Create AmazonTaskBase
+  * AmazonTaskBase
   * {@link https://2captcha.com/api-docs/amazon-aws-waf-captcha}
   * @param {Object} params - AmazonTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

@@ -16,7 +16,7 @@ export class CutCaptchaTaskProxyless extends CutCaptchaTaskBase implements _IsTa
   /**
   * @type {boolean} _isCutCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isCutCaptchaTaskProxyless = true;
+  readonly _isCutCaptchaTaskProxyless: _IsTaskType["_isCutCaptchaTaskProxyless"] = true;
 
   /**
   * Create CutCaptchaTaskProxyless

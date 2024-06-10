@@ -38,7 +38,7 @@ export abstract class CutCaptchaTaskBase extends BaseTask implements CutCaptchaT
   proxyType?: ProxyTypes;
 
   /**
-  * Create CutCaptchaTaskBase
+  * CutCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/cutcaptcha}
   * @param {Object} params - CutCaptchaTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

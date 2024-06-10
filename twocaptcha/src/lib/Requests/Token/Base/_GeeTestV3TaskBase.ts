@@ -43,7 +43,7 @@ export abstract class GeeTestV3TaskBase extends BaseTask implements GeeTestV3Tas
   proxyType?: ProxyTypes;
 
   /**
-  * Create GeeTestV3TaskBase
+  * GeeTestV3TaskBase
   * {@link https://2captcha.com/api-docs/geetest}
   * @param {Object} params - GeeTestV3TaskBaseParams
   * @param {string} [params.gt] -	GeeTest gt value

@@ -23,7 +23,7 @@ export class TextCaptchaTask extends BaseTask implements _IsTaskType, TextCaptch
   /**
   * @type {boolean} _isTextCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isTextCaptchaTask = true;
+  readonly _isTextCaptchaTask: _IsTaskType["_isTextCaptchaTask"] = true;
 
   /**
   * Create TextCaptchaTask

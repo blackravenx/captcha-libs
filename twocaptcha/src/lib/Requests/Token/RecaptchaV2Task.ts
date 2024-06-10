@@ -15,7 +15,7 @@ export class RecaptchaV2Task extends RecaptchaV2TaskBase implements _IsTaskType 
   /**
   * @type {boolean} _isRecaptchaV2Task - Only used for correct method overloading intellisense
   */
-  readonly _isRecaptchaV2Task = true;
+  readonly _isRecaptchaV2Task: _IsTaskType["_isRecaptchaV2Task"] = true;
 
   /**
   * Create RecaptchaV2Task

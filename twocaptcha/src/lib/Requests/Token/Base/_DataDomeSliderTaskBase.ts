@@ -39,7 +39,7 @@ export abstract class DataDomeSliderTaskBase extends BaseTask implements DataDom
   proxyType: ProxyTypes;
 
   /**
-  * Create DataDomeSliderTaskBase
+  * DataDomeSliderTaskBase
   * {@link https://2captcha.com/api-docs/datadome-slider-captcha}
   * @param {Object} params - DataDomeSliderTaskParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

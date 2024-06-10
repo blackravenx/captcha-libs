@@ -32,7 +32,7 @@ export class CoordinatesTask extends BaseTask implements _IsTaskType, Coordinate
   /**
   * @type {boolean} _isCoordinatesTask - Only used for correct method overloading intellisense
   */
-  readonly _isCoordinatesTask = true;
+  readonly _isCoordinatesTask: _IsTaskType["_isCoordinatesTask"] = true;
 
   /**
   * Create CoordinatesTask

@@ -48,7 +48,7 @@ export abstract class HCaptchaTaskBase extends BaseTask implements HCaptchaTaskB
   proxyType?: ProxyTypes;
 
   /**
-  * Create HCaptchaTaskBase
+  * HCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/hcaptcha}
   * @param {Object} params - HCaptchaTaskBaseParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

@@ -49,7 +49,7 @@ export abstract class FunCaptchaTaskBase extends BaseTask implements FunCaptchaT
   proxyType?: ProxyTypes;
 
   /**
-  * Create FunCaptchaTaskBase
+  * FunCaptchaTaskBase
   * {@link https://2captcha.com/api-docs/arkoselabs-funcaptcha}
   * @param {Object} params - FunCaptchaTaskBaseParams
   * @param {string} [params.websiteURL] - The full URL of target web page where the captcha is loaded. We do not open the page, not a problem if it is available only for authenticated users

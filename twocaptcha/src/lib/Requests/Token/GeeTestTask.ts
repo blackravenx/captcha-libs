@@ -18,7 +18,7 @@ export class GeeTestTask extends GeeTestTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isGeeTestTask - Only used for correct method overloading intellisense
   */
-  readonly _isGeeTestTask = true;
+  readonly _isGeeTestTask: _IsTaskType["_isGeeTestTask"] = true;
 
   /**
   * Create GeeTestTask

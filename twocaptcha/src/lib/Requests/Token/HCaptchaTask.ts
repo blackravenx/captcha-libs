@@ -16,7 +16,7 @@ export class HCaptchaTask extends HCaptchaTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isHCaptchaTask - Only used for correct method overloading intellisense
   */
-  readonly _isHCaptchaTask = true;
+  readonly _isHCaptchaTask: _IsTaskType["_isHCaptchaTask"] = true;
 
   /**
   * Create HCaptchaTask

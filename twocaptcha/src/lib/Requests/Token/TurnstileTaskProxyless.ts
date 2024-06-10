@@ -16,7 +16,7 @@ export class TurnstileTaskProxyless extends TurnstileTaskBase implements _IsTask
   /**
   * @type {boolean} _isTurnstileTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isTurnstileTaskProxyless = true;
+  readonly _isTurnstileTaskProxyless: _IsTaskType["_isTurnstileTaskProxyless"] = true;
 
   /**
   * Create TurnstileTaskProxyless

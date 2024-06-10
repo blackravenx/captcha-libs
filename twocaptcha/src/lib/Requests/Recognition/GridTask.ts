@@ -48,7 +48,7 @@ export class GridTask extends BaseTask implements _IsTaskType, GridTaskParams {
   /**
   * @type {boolean} _isGridTask - Only used for correct method overloading intellisense
   */
-  readonly _isGridTask = true;
+  readonly _isGridTask: _IsTaskType["_isGridTask"] = true;
 
   /**
   * Create GridTask

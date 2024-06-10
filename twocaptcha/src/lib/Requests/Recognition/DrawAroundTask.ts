@@ -40,7 +40,7 @@ export class DrawAroundTask extends BaseTask implements _IsTaskType, DrawAroundT
   /**
   * @type {boolean} _isDrawAroundTask - Only used for correct method overloading intellisense
   */
-  readonly _isDrawAroundTask = true;
+  readonly _isDrawAroundTask: _IsTaskType["_isDrawAroundTask"] = true;
 
   /**
   * Create DrawAroundTask

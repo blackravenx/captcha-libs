@@ -40,7 +40,7 @@ export class RotateTask extends BaseTask implements _IsTaskType, RotateTaskParam
   /**
   * @type {boolean} _isRotateTask - Only used for correct method overloading intellisense
   */
-  readonly _isRotateTask = true;
+  readonly _isRotateTask: _IsTaskType["_isRotateTask"] = true;
 
   /**
   * Create RotateTask

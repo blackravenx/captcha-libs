@@ -16,7 +16,7 @@ export class LeminTaskProxyless extends LeminTaskBase implements _IsTaskType {
   /**
   * @type {boolean} _isLeminTaskProxyless - Only used for correct method overloading intellisense
   */
-  readonly _isLeminTaskProxyless = true;
+  readonly _isLeminTaskProxyless: _IsTaskType["_isLeminTaskProxyless"] = true;
 
   /**
   * Create LeminTaskProxyless
