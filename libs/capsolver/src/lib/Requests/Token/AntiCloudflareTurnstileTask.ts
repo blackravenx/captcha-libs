@@ -22,6 +22,8 @@ export type AntiCloudflareTurnstileTaskParams = AntiCloudflareTaskBaseParams & {
  * @class
  * @extends {AntiCloudflareTaskBase}
  * {@link https://docs.capsolver.com/guide/antibots/cloudflare_turnstile.html}
+ * @deprecated deleted from service support,
+ * @see AntiTurnstileTaskProxyLess
  */
 export class AntiCloudflareTurnstileTask extends AntiCloudflareTaskBase implements AntiCloudflareTurnstileTaskParams, _IsTaskType {
 

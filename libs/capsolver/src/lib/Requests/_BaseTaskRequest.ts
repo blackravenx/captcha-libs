@@ -30,9 +30,11 @@ const _TaskTypes = [
   "HCaptchaTask",
   "HCaptchaTaskProxyLess",
   "FunCaptchaTaskProxyLess",
+  "FunCaptchaTask",
   "GeeTestTask",
   "GeeTestTaskProxyLess",
-  "VisionEngine"
+  "VisionEngine",
+  "AntiTurnstileTaskProxyLess"
 ] as const;
 
 export type TaskTypes = typeof _TaskTypes[number];
@@ -52,7 +54,7 @@ export interface ProxyCredentials {
   proxyType: ProxyTypes;
 }
 
-export type ProxylessTaskParams<T> = Omit<T, keyof ProxyCredentials & "proxy">;
+export type ProxylessTaskParams<T> = Omit<T, keyof ProxyCredentials | "proxy">;
 
 export type ProxyRequiredTaskParams<T> = ProxyCredentials & T & { proxy?: never } | T & { [PC in keyof ProxyCredentials]?: never } & { proxy: string };
 

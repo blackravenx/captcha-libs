@@ -7,12 +7,14 @@ import { AntiAwsWafTask } from "./AntiAwsWafTask";
 import { AntiAwsWafTaskProxyLess } from "./AntiAwsWafTaskProxyLess";
 import { AntiCloudflareChallengeTask } from "./AntiCloudflareChallengeTask";
 import { AntiCloudflareTurnstileTask } from "./AntiCloudflareTurnstileTask";
+import { AntiTurnstileTaskProxyLess } from "./AntiTurnstileTaskProxyLess";
 import { AntiCyberSiAraTask } from "./AntiCyberSiAraTask";
 import { AntiCyberSiAraTaskProxyLess } from "./AntiCyberSiAraTaskProxyLess";
 import { AntiImpervaTask } from "./AntiImpervaTask";
 import { AntiImpervaTaskProxyLess } from "./AntiImpervaTaskProxyLess";
 import { DataDomeSliderTask } from "./DataDomeSliderTask";
 import { FunCaptchaTaskProxyLess } from "./FunCaptchaTaskProxyLess";
+import { FunCaptchaTask } from "./FunCaptchaTask";
 import { GeeTestTask } from "./GeeTestTask";
 import { GeeTestTaskProxyLess } from "./GeeTestTaskProxyLess";
 import { GeeTestV3Task } from "./GeeTestV3Task";
@@ -66,5 +68,7 @@ export {
   ReCaptchaV3M1TaskProxyLess,
   ReCaptchaV3Task,
   ReCaptchaV3TaskProxyLess,
-  AntiAkamaiBMPTask
+  AntiAkamaiBMPTask,
+  FunCaptchaTask,
+  AntiTurnstileTaskProxyLess
 };

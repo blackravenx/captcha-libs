@@ -71,7 +71,9 @@ import type {
   HCaptchaClassification,
   ImageToTextTask,
   ReCaptchaV2Classification,
-  VisionEngine
+  VisionEngine,
+  AntiTurnstileTaskProxyLess,
+  FunCaptchaTask
 } from "./Requests";
 import type { CapSolverSolution } from "./Solution/_BaseSolution";
 process.removeAllListeners("warning");
@@ -218,10 +220,10 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   public async solve(request: AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess): Promise<CapSolverSolution<AntiCyberSiAraTaskSolution>>;
 
   /**
-  * @param {FunCaptchaTaskProxyLess} request - task payload to create task
+  * @param {FunCaptchaTask | FunCaptchaTaskProxyLess} request - task payload to create task
   * @return {Promise<CapSolverSolution<FunCaptchaTaskSolution>>} - response of createTask
   */
-  public async solve(request: FunCaptchaTaskProxyLess): Promise<CapSolverSolution<FunCaptchaTaskSolution>>;
+  public async solve(request: FunCaptchaTask | FunCaptchaTaskProxyLess): Promise<CapSolverSolution<FunCaptchaTaskSolution>>;
 
   /**
   * @param {GeeTestV3Task | GeeTestV3TaskProxyLess} request - task payload to create task
@@ -254,10 +256,10 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   public async solve(request: MtCaptchaTask | MtCaptchaTaskProxyLess): Promise<CapSolverSolution<MtCaptchaTaskSolution>>;
 
   /**
-  * @param {AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask} request - task payload to create task
+  * @param {AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess} request - task payload to create task
   * @return {Promise<CapSolverSolution<AntiCloudflareTaskSolution>>} - response of createTask
   */
-  public async solve(request: AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask): Promise<CapSolverSolution<AntiCloudflareTaskSolution>>;
+  public async solve(request: AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess): Promise<CapSolverSolution<AntiCloudflareTaskSolution>>;
 
   /**
   * @param {AntiImpervaTask | AntiImpervaTaskProxyLess} request - task payload to create task
@@ -381,6 +383,8 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       _isReCaptchaV3Task = false,
       _isReCaptchaV3TaskProxyLess = false,
       _isVisionEngine = false,
+      _isFunCaptchaTask = false,
+      _isAntiTurnstileTaskProxyLess = false,
       ...payload
     } = { ...request };
 
