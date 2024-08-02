@@ -1,7 +1,7 @@
 {
   "name": "capsolver",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "capsolver/src",
+  "sourceRoot": "libs/capsolver/src",
   "projectType": "library",
   "targets": {
     "lint": {
@@ -15,7 +15,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "capsolver/jest.config.ts"
+        "jestConfig": "libs/capsolver/jest.config.ts"
       }
     },
     "build": {
@@ -23,11 +23,11 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/capsolver",
-        "main": "capsolver/index.ts",
-        "tsConfig": "capsolver/tsconfig.lib.json",
+        "main": "libs/capsolver/index.ts",
+        "tsConfig": "libs/capsolver/tsconfig.lib.json",
         "generatePackageJson": true,
-        "assets": [ "capsolver/README.md" ],
-        "rootDir": "capsolver"
+        "assets": [ "libs/capsolver/README.md" ],
+        "rootDir": "libs/capsolver"
       }
     }
   },
