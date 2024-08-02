@@ -1,7 +1,7 @@
 {
   "name": "twocaptcha",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "twocaptcha/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/twocaptcha/src",
   "projectType": "library",
   "targets": {
     "lint": {
@@ -15,7 +15,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "twocaptcha/jest.config.ts"
+        "jestConfig": "libs/twocaptcha/jest.config.ts"
       }
     },
     "build": {
@@ -23,11 +23,11 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/twocaptcha",
-        "main": "twocaptcha/index.ts",
-        "tsConfig": "twocaptcha/tsconfig.lib.json",
+        "main": "libs/twocaptcha/index.ts",
+        "tsConfig": "libs/twocaptcha/tsconfig.lib.json",
         "generatePackageJson": true,
-        "assets": [ "twocaptcha/README.md", "twocaptcha/2captcha-logo.png" ],
-        "rootDir": "twocaptcha"
+        "assets": [ "libs/twocaptcha/README.md", "libs/twocaptcha/2captcha-logo.png" ],
+        "rootDir": "libs/twocaptcha"
       }
     }
   },
