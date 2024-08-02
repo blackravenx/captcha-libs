@@ -8,8 +8,6 @@
       "url": "https://github.com/blackravenx/captcha-libs.git",
       "directory": "captcha-client"
   },
-  "dependencies": {
-      "ofetch": "^1.3.3"
-  },
+  "dependencies": {},
   "description": "Base class of all captcha clients in monorepo"
 }

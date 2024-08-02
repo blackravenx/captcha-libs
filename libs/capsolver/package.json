@@ -21,7 +21,7 @@
     "directory": "capsolver"
   },
   "dependencies": {
-    "@captcha-libs/captcha-client": "latest",
+    "@captcha-libs/captcha-client": "0.0.7",
     "ofetch": "^1.3.3"
   },
   "description": "CapSolver NodeJS client, captcha recognition service"

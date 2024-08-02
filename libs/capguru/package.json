@@ -27,8 +27,7 @@
       "directory": "capguru"
   },
   "dependencies": {
-      "@captcha-libs/captcha-client": "^0.0.7",
-      "ofetch": "^1.3.3"
+      "@captcha-libs/captcha-client": "^0.0.7"
   },
   "description": "CapGuru NodeJS client, captcha recognition service"
 }

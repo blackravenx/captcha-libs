@@ -21,18 +21,10 @@
     "noImplicitAny": false,
     "incremental": true,
     "paths": {
-      "@captcha-libs/capguru": [
-        "capguru/index.ts"
-      ],
-      "@captcha-libs/capsolver": [
-        "capsolver/index.ts"
-      ],
-      "@captcha-libs/captcha-client": [
-        "captcha-client/index.ts"
-      ],
-      "@captcha-libs/twocaptcha": [
-        "twocaptcha/index.ts"
-      ]
+      "@captcha-libs/capguru": ["libs/capguru/index.ts"],
+      "@captcha-libs/capsolver": ["libs/capsolver/index.ts"],
+      "@captcha-libs/captcha-client": ["libs/captcha-client/index.ts"],
+      "@captcha-libs/twocaptcha": ["libs/twocaptcha/index.ts"]
     }
   },
   "exclude": [

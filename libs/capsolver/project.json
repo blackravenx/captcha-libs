@@ -1,6 +1,6 @@
 {
   "name": "capsolver",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/capsolver/src",
   "projectType": "library",
   "targets": {

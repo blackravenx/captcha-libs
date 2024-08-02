@@ -12,7 +12,10 @@ module.exports = {
   overrides: [
     {
       files: [ "*.json" ],
-      parser: "jsonc-eslint-parser"
+      parser: "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": "off"
+      }
     },
     {
       files: [ "*.ts", "*.tsx", "*.js", "*.jsx" ],
@@ -208,7 +211,7 @@ module.exports = {
       env: { jest: true },
       files: [ "*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx" ],
       rules: {}
-    }
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
