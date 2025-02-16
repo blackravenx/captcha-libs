@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "incremental": false,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "rootDir": "."
+  },
+  "files": [],
+  "include": ["index.ts", "src/**/*.ts"], 
+  "exclude": ["node_modules", "coverage", "dist", "**/*.test.ts", "**/*.spec.ts", "vitest.config.ts", "./src/tests/**/.ts"],
+  "references": []
+}

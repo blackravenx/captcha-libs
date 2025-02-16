@@ -1,0 +1,27 @@
+{
+  "name": "@captcha-libs/eslint-config",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "type": "module",
+  "peerDependencies": {
+    "eslint": "9.20.0",
+    "eslint-config-prettier": "10.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsonc": "^2.19.1",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^3.1.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "@stylistic/eslint-plugin": "3.1.0",
+    "@typescript-eslint/eslint-plugin": "7.9.0",
+    "@typescript-eslint/parser": "7.9.0"
+  },
+  "packageManager": "pnpm@10.2.0",
+  "exports":{
+    "./base": "./base.js"
+  }
+}

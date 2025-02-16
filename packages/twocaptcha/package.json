@@ -1,0 +1,55 @@
+{
+  "name": "@captcha-libs/twocaptcha",
+  "version": "1.0.3",
+  "scripts": {
+            "lint": "eslint --config ./eslint.config.js --fix  --ignore-pattern '**/node_modules/**'  --ignore-pattern '**/dist/**'  --ignore-pattern '**/*.json/**' .",
+    "test": "vitest run .",
+    "build": "tsup"
+  },
+  "keywords": [
+    "TwoCaptcha",
+    "Captcha recognition",
+    "Captcha solving",
+    "ReCaptcha captcha",
+    "DataDome captcha",
+    "HCaptcha captcha",
+    "GeeTest captcha",
+    "FriendlyCaptcha",
+    "FunCaptcha",
+    "KeyCaptcha",
+    "CutCaptcha",
+    "CapyCaptcha",
+    "AntiCyberSiAra captcha",
+    "MtCaptcha",
+    "AWS WAF captcha",
+    "Cloudflare captcha",
+    "Tencent captcha",
+    "ATB captcha"
+  ],
+  "license": "ISC",
+  "author": "Max Shy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackravenx/captcha-libs.git",
+    "directory": "twocaptcha"
+  },
+  "dependencies": {
+    "@captcha-libs/captcha-client": "workspace:",
+    "node-fetch": "catalog:"
+  },
+  "devDependencies": {
+    "@captcha-libs/eslint-config": "workspace:^"
+  },
+  "description": "TwoCaptcha NodeJS client, captcha recognition service",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist/"
+  ]
+}
