@@ -1,0 +1,6 @@
+packages:
+  - "packages/**"
+  - "tooling/**"
+catalog:
+  "typescript": latest
+  "node-fetch": "^3.3.2"

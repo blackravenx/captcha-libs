@@ -1,0 +1,53 @@
+{
+    "name": "@captcha-libs/capguru",
+    "scripts": {
+        "lint": "eslint --config ./eslint.config.js --fix  --ignore-pattern '**/node_modules/**'  --ignore-pattern '**/dist/**'  --ignore-pattern '**/*.json/**' .",
+        "test": "vitest run .",
+        "build": "tsup"
+    },
+    "version": "1.0.0",
+    "keywords": [
+        "CapGuru",
+        "Captcha recognition",
+        "Captcha solving",
+        "Puzzle solving",
+        "TikTok captcha",
+        "Amazon captcha",
+        "AWS WAF captcha",
+        "Geetest captcha",
+        "Binance captcha",
+        "Buxmoney captcha",
+        "HCaptcha",
+        "Worldcash captcha",
+        "SeoFast captcha",
+        "Linkvertise captcha",
+        "ReCaptcha",
+        "FunCaptcha"
+    ],
+    "license": "ISC",
+    "author": "Max Shy",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/blackravenx/captcha-libs.git",
+        "directory": "capguru"
+    },
+    "dependencies": {
+        "@captcha-libs/captcha-client": "workspace:",
+        "node-fetch": "catalog:"
+    },
+    "devDependencies": {
+        "@captcha-libs/eslint-config": "workspace:^"
+    },
+    "description": "CapGuru NodeJS client, captcha recognition service",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+    },
+    "files": [
+        "dist/"
+    ]
+}

@@ -7,7 +7,7 @@ tmp
 
 # dependencies
 node_modules
-
+coverage
 # IDEs and editors
 /.idea
 .project
@@ -37,6 +37,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.nx/cache
-.nx/workspace-data
+.turbo
+*.tgz
