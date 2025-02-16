@@ -1,6 +1,6 @@
 {
   "name": "@captcha-libs/captcha-client",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "scripts": {
     "lint": "eslint --config ./eslint.config.js --fix ."
   },

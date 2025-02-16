@@ -1,6 +1,6 @@
 {
   "name": "@captcha-libs/eslint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "keywords": [],
   "author": "",
@@ -21,7 +21,7 @@
     "@typescript-eslint/parser": "7.9.0"
   },
   "packageManager": "pnpm@10.2.0",
-  "exports":{
+  "exports": {
     "./base": "./base.js"
   }
 }
