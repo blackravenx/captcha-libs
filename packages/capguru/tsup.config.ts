@@ -11,5 +11,6 @@ export default defineConfig({
   "sourcemap": true,
   "clean": true,
   "minify": false,
-  "outDir": "dist"
+  "outDir": "dist",
+  "noExternal": [ "@captcha-libs/captcha-client" ]
 });
