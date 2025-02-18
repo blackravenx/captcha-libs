@@ -1,6 +1,6 @@
 {
   "name": "@captcha-libs/twocaptcha",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "lint": "eslint --config ./eslint.config.js --fix  --ignore-pattern '**/node_modules/**'  --ignore-pattern '**/dist/**'  --ignore-pattern '**/*.json/**' .",
     "test": "vitest run .",
