@@ -42,7 +42,7 @@ const balance = await capsolverClient.getBalance();
 ```  
 
 ### Features  
-- Supports all captcha types, solutions, and methods from CapSolver docs (updated Feb 2025)  
+- Supports all captcha types, solutions, and methods from CapSolver docs (updated Nov 2025)  
 - TypeScript-first design  
 - Automatically waits for solution  
 - Fully tested task payloads
