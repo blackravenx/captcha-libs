@@ -7,9 +7,10 @@ export type AntiAwsWafTaskBaseParams = Partial<ProxyCredentials> & {
   "awsContext"?: string;
   "awsIv"?: string;
   "awsKey"?: string;
-  "proxy"?: string;
   "websiteURL": string;
 };
+
+type Type = Extract<TaskTypes, "AntiAwsWafTask" | "AntiAwsWafTaskProxyLess">;
 
 /**
  * @classdesc Base class for AntiAwsWafTask
@@ -36,7 +37,7 @@ export abstract class AntiAwsWafTaskBase extends BaseTask implements AntiAwsWafT
   // @param {string} [params.proxyType] - proxyType
   //
   //
-  constructor ({ awsChallengeJS, awsContext, awsIv, awsKey, proxy, websiteURL, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: AntiAwsWafTaskBaseParams, type: TaskTypes) {
+  constructor ({ awsChallengeJS, awsContext, awsIv, awsKey, proxy, websiteURL, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: AntiAwsWafTaskBaseParams, type: Type) {
     super({ type });
 
     this.awsChallengeJS = awsChallengeJS;

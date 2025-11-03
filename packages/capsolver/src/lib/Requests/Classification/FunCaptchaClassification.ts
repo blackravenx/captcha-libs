@@ -13,6 +13,7 @@ interface FunCaptchaClassificationParams {
 /**
  * @classdesc FunCaptcha Images Recognize
  * @class
+ * @deprecated deleted from service support
  * @extends {BaseTask}
  * @see {@link https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html}
  * @deprecated deleted from service support

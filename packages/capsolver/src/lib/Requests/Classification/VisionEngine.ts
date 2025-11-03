@@ -5,9 +5,8 @@ import { BaseTask } from "../_BaseTaskRequest";
 const _VisionEngineModules = [
   "slider_1",
   "rotate_1",
-  "space_detection",
-  "slider_temu_plus",
-  "select_temu"
+  "rotate_2",
+  "shein"
 ] as const;
 
 type VisionEngineModules = typeof _VisionEngineModules[number];

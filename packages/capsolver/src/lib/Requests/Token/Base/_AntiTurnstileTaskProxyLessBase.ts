@@ -13,6 +13,8 @@ export type AntiTurnstileTaskProxyLessBaseParams = {
   "websiteURL": string;
 };
 
+type Task = Extract<TaskTypes, "AntiTurnstileTaskProxyLess">;
+
 /**
  * @classdesc Base class for AntiTurnstileTaskProxyLess
  * @class
@@ -32,7 +34,7 @@ export abstract class AntiTurnstileTaskProxyLessBase extends BaseTask implements
    * @param {string=} [params.metdata.action] - The value of the data-action attribute of the Turnstile element if it exists.
    * @param {string=} [params.metadata.cdata] - The value of the data-cdata attribute of the Turnstile element if it exists.
    */
-  constructor ({ websiteURL, websiteKey, metadata }: AntiTurnstileTaskProxyLessBaseParams, type: TaskTypes) {
+  constructor ({ websiteURL, websiteKey, metadata }: AntiTurnstileTaskProxyLessBaseParams, type: Task) {
     super({ type });
 
     this.websiteURL = websiteURL;

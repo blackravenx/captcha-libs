@@ -14,7 +14,7 @@ type DataDomeSliderTaskParams = ProxyRequiredTaskParams<_DataDomeSliderTaskParam
  * @classdesc DataDome: solving DataDome captcha
  * @class
  * @extends {BaseTask}
- * @see {@link https://docs.capsolver.com/guide/antibots/datadome.html}
+ * @see {@link https://docs.capsolver.com/en/guide/captcha/datadome}
  */
 export class DataDomeSliderTask extends BaseTask implements _IsTaskType, _DataDomeSliderTaskParams {
 
@@ -25,7 +25,7 @@ export class DataDomeSliderTask extends BaseTask implements _IsTaskType, _DataDo
 
   /**
    * Create DataDome: solving DataDome captcha
-   * @see {@link https://docs.capsolver.com/guide/antibots/dataDome.html}
+   * @see {@link https://docs.capsolver.com/en/guide/captcha/datadome}
    * @param {object} params -	DataDomeSliderTaskParams
    * @param {string} [params.captchaUrl] - If the url contains t=bv that means that your ip must be banned, t should be t=fe
    * @param {string} [params.userAgent] - You need to keep your userAgent consistent with the one used to request the captchaUrl. Currently, we only support two fixed userAgents.

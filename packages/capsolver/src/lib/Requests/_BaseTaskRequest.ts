@@ -52,11 +52,12 @@ export interface ProxyCredentials {
   "proxyPassword"?: string;
   "proxyPort": number;
   "proxyType": ProxyTypes;
+  "proxy": string;
 }
 
 export type ProxylessTaskParams<T> = Omit<T, keyof ProxyCredentials | "proxy">;
 
-export type ProxyRequiredTaskParams<T> = ProxyCredentials & T & { "proxy"?: never } | T & { [PC in keyof ProxyCredentials]?: never } & { "proxy": string };
+export type ProxyRequiredTaskParams<T> = Omit<ProxyCredentials, "proxy"> & T & { "proxy"?: never } | T & { [PC in keyof ProxyCredentials]?: never } & { "proxy": string };
 
 /**
  * @type {_IsTaskType} _IsTaskType - Only used for correct method overloading intellisense

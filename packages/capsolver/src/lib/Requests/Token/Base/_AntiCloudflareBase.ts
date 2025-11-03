@@ -2,10 +2,9 @@ import type { ProxyCredentials, TaskTypes } from "../../_BaseTaskRequest";
 
 import { BaseTask } from "../../_BaseTaskRequest";
 
-export type AntiCloudflareTaskBaseParams = Partial<ProxyCredentials> & {
-  "proxy"?: string;
-  "websiteURL": string;
-};
+export type AntiCloudflareTaskBaseParams = Partial<ProxyCredentials> & { "websiteURL": string };
+
+type Type = Extract<TaskTypes, "AntiCloudflareTask">;
 
 /**
  * @classdesc Base class for AntiCloudflareTask
@@ -28,7 +27,7 @@ export abstract class AntiCloudflareTaskBase extends BaseTask implements AntiClo
    * @param {number} [params.proxyPort] - proxyPort
    * @param {string} [params.proxyType] - proxyType
    */
-  constructor ({ websiteURL, proxy, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: AntiCloudflareTaskBaseParams, type: TaskTypes) {
+  constructor ({ websiteURL, proxy, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: AntiCloudflareTaskBaseParams, type: Type) {
     super({ type });
 
     this.websiteURL = websiteURL;

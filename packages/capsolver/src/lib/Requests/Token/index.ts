@@ -10,7 +10,7 @@ import { AntiAwsWafTask } from "./AntiAwsWafTask";
 
 import { AntiAwsWafTaskProxyLess } from "./AntiAwsWafTaskProxyLess";
 
-import { AntiCloudflareChallengeTask } from "./AntiCloudflareChallengeTask";
+import { AntiCloudflareTask } from "./AntiCloudflareTask";
 
 import { AntiCloudflareTurnstileTask } from "./AntiCloudflareTurnstileTask";
 
@@ -74,7 +74,7 @@ export {
   AntiAkamaiWebTask,
   AntiAwsWafTask,
   AntiAwsWafTaskProxyLess,
-  AntiCloudflareChallengeTask,
+  AntiCloudflareTask,
   AntiCloudflareTurnstileTask,
   AntiCyberSiAraTask,
   AntiCyberSiAraTaskProxyLess,

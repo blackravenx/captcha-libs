@@ -1,10 +1,10 @@
-import { AntiCloudflareChallengeTask } from "../../../lib/Requests/Token/AntiCloudflareChallengeTask";
+import { AntiCloudflareTask } from "../../../lib/Requests/Token/AntiCloudflareTask";
 
 import { expect, it, describe } from "vitest";
 
-describe("AntiCloudflareChallengeTask", () => {
+describe("AntiCloudflareTask", () => {
   it("To be equal to object", () => {
-    const task = new AntiCloudflareChallengeTask({
+    const task = new AntiCloudflareTask({
       "proxyAddress": "some-proxyAddress",
       "proxyLogin": "some-proxyLogin",
       "proxyPassword": "some-proxyPassword",
@@ -28,7 +28,7 @@ describe("AntiCloudflareChallengeTask", () => {
   });
 
   it("To be equal to object without optional params", () => {
-    const task = new AntiCloudflareChallengeTask({ "websiteURL": "https://some-url.com" });
+    const task = new AntiCloudflareTask({ "websiteURL": "https://some-url.com" });
 
     expect(task).toEqual({
       "_endpoint": "createTask",

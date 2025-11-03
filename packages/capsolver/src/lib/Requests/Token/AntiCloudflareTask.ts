@@ -4,15 +4,15 @@ import type { AntiCloudflareTaskBaseParams } from "./Base/_AntiCloudflareBase";
 
 import { AntiCloudflareTaskBase } from "./Base/_AntiCloudflareBase";
 
-type AntiCloudflareChallengeTaskParams = AntiCloudflareTaskBaseParams;
+type AntiCloudflareTaskParams = AntiCloudflareTaskBaseParams;
 
 /**
- * @classdesc AntiCloudflareChallengeTask
+ * @classdesc AntiCloudflareTask
  * @class
  * @extends {AntiCloudflareTaskBase}
  * @see {@link https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html}
  */
-export class AntiCloudflareChallengeTask extends AntiCloudflareTaskBase implements _IsTaskType {
+export class AntiCloudflareTask extends AntiCloudflareTaskBase implements _IsTaskType {
 
   /**
   * @type {boolean} _isAntiCloudflareTask - Only used for correct method overloading intellisense
@@ -20,9 +20,9 @@ export class AntiCloudflareChallengeTask extends AntiCloudflareTaskBase implemen
   readonly _isAntiCloudflareTask: _IsTaskType["_isAntiCloudflareTask"] = true;
 
   /**
-   * Create AntiCloudflareChallengeTask
+   * Create AntiCloudflareTask
    * @see {@link https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html}
-   * @param {object} params -	AntiCloudflareChallengeTaskParams
+   * @param {object} params -	AntiCloudflareTaskParams
    * @param {string} [params.proxy] -	proxy
    * @param {string} [params.proxyAddress] - proxyAddress
    * @param {string} [params.proxyLogin] - proxyLogin
@@ -31,7 +31,7 @@ export class AntiCloudflareChallengeTask extends AntiCloudflareTaskBase implemen
    * @param {string} [params.proxyType] - proxyType
    * @param {string} [params.websiteURL] - The address of the target page.
    */
-  constructor (params: AntiCloudflareChallengeTaskParams) {
+  constructor (params: AntiCloudflareTaskParams) {
     super(params, "AntiCloudflareTask");
   }
 }

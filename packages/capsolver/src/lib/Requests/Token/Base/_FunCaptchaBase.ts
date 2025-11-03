@@ -4,7 +4,6 @@ import { BaseTask } from "../../_BaseTaskRequest";
 
 export type FunCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
   "data"?: string;
-  "proxy"?: string;
   "userAgent"?: string;
   "websitePublicKey": string;
   "websiteURL": string;

@@ -5,7 +5,6 @@ import { BaseTask } from "../../_BaseTaskRequest";
 export type GeeTestV4TaskBaseParams = Partial<ProxyCredentials> & {
   "captchaId": string;
   "geetestApiServerSubdomain"?: string;
-  "proxy"?: string;
   "userAgent"?: string;
   "websiteURL": string;
 };

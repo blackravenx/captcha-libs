@@ -1,5 +1,5 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/recognition/HCaptchaClassification.html#example-response}
+ * @deprecated removed from service support
  */
 export interface HCaptchaClassificationSolution {
   "box": Array<number>;

@@ -9,7 +9,7 @@ export type RecaptchaV3TaskBaseParams = Partial<ProxyCredentials> & {
   "enterprisePayload"?: Record<string, string>;
   "minScore"?: number;
   "pageAction": string;
-  "proxy"?: string;
+  "isSession"?: boolean;
   "reload"?: string;
   "userAgent"?: string;
   "websiteKey": string;
@@ -30,11 +30,12 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
    * @param {Object} params - RecaptchaV3TaskBaseParams
    * @param {string} [params.apiDomain] - Domain address from which to load reCAPTCHA Enterprise. For example: http://www.google.com/, http://www.recaptcha.net/. Don't use a parameter if you don't know why it's needed.
    * @param {Object=} [params.enterprisePayload] - Enterprise Payload
-   * @param {Object=} [params.cookies] - cookies
+   * @param {Object=} [params.cookies] - cookies - deprecated
    * @param {string} [params.websiteURL] - Web address of the website using recaptcha, generally it's fixed value. (Ex: https://google.com)
    * @param {string} [params.websiteKey] - The domain public key, rarely updated. (Ex: b989d9e8-0d14-41sda0-870f-97b5283ba67d)
    * @param {string=} [params.pageAction] - Widget action value. Website owner defines what user is doing on the page through this parameter. Default value: verify
-   * @param {number=} [params.minScore] - Value from 0.1 to 0.9.
+   * @param {boolean} [params.isSession] - Session mode, when enabled, will return a recaptcha-ca-t value, which is used as a cookie. It usually appears in v3. Note: Some websites require a recaptcha-ca-e value, which usually appears in v2. If this value is present, it will be automatically returned without any additional parameter settings.
+   * @param {number=} [params.minScore] - Value from 0.1 to 0.9. - deprecated
    * @param {string} [params.proxy] -	proxy
    * @param {string} [params.proxyAddress] - proxyAddress
    * @param {string} [params.proxyLogin] - proxyLogin
@@ -42,7 +43,7 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
    * @param {string} [params.proxyPort] - proxyPort
    * @param {string} [params.proxyType] - proxyType
    */
-  constructor ({ apiDomain, cookies, websiteKey, websiteURL, pageAction, proxy, minScore, enterprisePayload, userAgent, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: RecaptchaV3TaskBaseParams, type: TaskTypes) {
+  constructor ({ apiDomain, cookies, websiteKey, websiteURL, pageAction, proxy, minScore, enterprisePayload, userAgent, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword, anchor, reload }: RecaptchaV3TaskBaseParams, type: TaskTypes) {
     super({ type });
 
     this.apiDomain = apiDomain;
@@ -72,7 +73,21 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
     this.proxyType = proxyType;
 
     this.proxyPassword = proxyPassword;
+
+    this.reload = reload;
+
+    this.anchor = anchor;
   }
+
+  /**
+   * @deprecated
+   */
+  "anchor"?: string | undefined;
+
+  /**
+   * @deprecated
+   */
+  "reload"?: string | undefined;
 
   /**
    * Domain address from which to load reCAPTCHA Enterprise. For example: http://www.google.com/, http://www.recaptcha.net/. Don't use a parameter if you don't know why it's needed.
@@ -80,7 +95,8 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
   apiDomain?: string;
 
   /**
-   * Cookies
+   * @deprecated
+   * @type {object} cookies - cookies
    */
   cookies?: Record<string, string>[];
 
@@ -115,9 +131,15 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
   websiteURL: string;
 
   /**
+   * @deprecated
    * @type {number} minScore - description Value from 0.1 to 0.9.
    */
   minScore?: number;
+
+  /**
+   * @type {boolean} isSession - Session mode, when enabled, will return a recaptcha-ca-t value, which is used as a cookie. It usually appears in v3. Note: Some websites require a recaptcha-ca-e value, which usually appears in v2. If this value is present, it will be automatically returned without any additional parameter settings.
+   */
+  isSession?: boolean;
 
   proxyAddress?: string;
 

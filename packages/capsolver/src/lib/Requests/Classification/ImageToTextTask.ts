@@ -30,7 +30,10 @@ const _ImageToTextModules = [
   "module_026",
   "module_027",
   "module_028",
-  "module_029"
+  "module_029",
+  "module_030",
+  "module_031",
+  "module_032"
 ] as const;
 
 type ImageToTextModules = typeof _ImageToTextModules[number];
@@ -40,6 +43,7 @@ interface ImageToTextParams {
   "module"?: ImageToTextModules;
   "score"?: number;
   "websiteURL"?: string;
+  "images"?: string[];
 }
 
 /**
@@ -64,8 +68,9 @@ export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsT
    * @param {ImageToTextModules=} [params.module] - Specifies the module. Currently, the supported modules are common and queueit
    * @param {number=} [params.score] - 0.8 ~ 1, Identify the matching degree. If the recognition rate is not within the range, no deduction
    * @param {string} [params.websiteURL] - Page source url to improve accuracy
+   * @param {string[]} [params.images] - Only for number module, Support up to 9 base64 encoded images each time
    */
-  constructor ({ body, "module": _module, score, websiteURL }: ImageToTextParams) {
+  constructor ({ body, "module": _module, score, websiteURL, images }: ImageToTextParams) {
     super({ "type": "ImageToTextTask" });
 
     this.body = body;
@@ -75,6 +80,8 @@ export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsT
     this.module = _module;
 
     this.websiteURL = websiteURL;
+
+    this.images = images;
   }
 
   /**
@@ -102,4 +109,6 @@ export class ImageToTextTask extends BaseTask implements ImageToTextParams, _IsT
    * @type {string} websiteURL - Page source url to improve accuracy
    */
   websiteURL?: string;
+
+  images?: string[];
 }
