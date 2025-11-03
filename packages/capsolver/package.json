@@ -1,6 +1,6 @@
 {
   "name": "@captcha-libs/capsolver",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "scripts": {
     "lint": "eslint --config ./eslint.config.js --fix  --ignore-pattern '**/node_modules/**'  --ignore-pattern '**/dist/**'  --ignore-pattern '**/*.json/**' .",
     "test": "vitest run .",
