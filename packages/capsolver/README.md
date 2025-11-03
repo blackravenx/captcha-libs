@@ -58,17 +58,18 @@ const balance = await capsolverClient.getBalance();
 - ~~DEPRECATED~~ [FunCaptchaClassification](https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html)  
 
 #### Token  
-- [ReCaptchaV2Task | ReCaptchaV2EnterpriseTask | ReCaptchaV2TaskProxyLess | ReCaptchaV2EnterpriseTaskProxyLess](https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html)  
+- [GeeTestTaskProxyLess](https://docs.capsolver.com/en/guide/captcha/Geetest)  
+- [~~ReCaptchaV2Task~~ | ReCaptchaV2EnterpriseTask | ReCaptchaV2TaskProxyLess | ReCaptchaV2EnterpriseTaskProxyLess](https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2)  
 - [ReCaptchaV3Task | ReCaptchaV3EnterpriseTask | ReCaptchaV3TaskProxyLess | ReCaptchaV3EnterpriseTaskProxyLess](https://docs.capsolver.com/guide/captcha/ReCaptchaV3.html)  
-- [DatadomeSliderTask](https://docs.capsolver.com/guide/antibots/datadome.html)  
+- [DatadomeSliderTask](https://docs.capsolver.com/en/guide/captcha/datadome)  
 - [AntiAwsWafTask | AntiAwsWafTaskProxyLess](https://docs.capsolver.com/guide/captcha/awsWaf.html)  
-- [AntiCloudflareTurnstileTask](https://docs.capsolver.com/en/guide/captcha/cloudflare_turnstile/)  
+- [AntiTurnstileTaskProxyLess](https://docs.capsolver.com/en/guide/captcha/cloudflare_turnstile/)
+- [AntiCloudflareTask](https://docs.capsolver.com/en/guide/captcha/cloudflare_challenge)  
 - ~~DEPRECATED~~ [HCaptchaTask | HCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/HCaptcha.html)  
 - ~~DEPRECATED~~ [FunCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/FunCaptcha.html)  
 - ~~DEPRECATED~~ [GeeTestTask | GeeTestTaskProxyLess](https://docs.capsolver.com/guide/captcha/Geetest.html)  
 - ~~DEPRECATED~~ [AntiCyberSiAraTask | AntiCyberSiAraTaskProxyLess](https://docs.capsolver.com/guide/captcha/CyberSiara.html)  
 - ~~DEPRECATED~~ [AntiImpervaTask | AntiImpervaTaskProxyLess](https://docs.capsolver.com/guide/antibots/imperva.html)  
-- ~~DEPRECATED~~ [AntiCloudflareChallengeTask](https://docs.capsolver.com/guide/antibots/cloudflare_challenge.html)  
 - ~~DEPRECATED~~ [AntiAkamaiBMPTask](https://docs.capsolver.com/guide/antibots/akamaibmp.html)  
 - ~~DEPRECATED~~ [AntiAkamaiWebTask](https://docs.capsolver.com/guide/antibots/akamaiweb.html)  
 
