@@ -3,7 +3,6 @@ import type { ProxyCredentials, TaskTypes } from "../../_BaseTaskRequest";
 import { BaseTask } from "../../_BaseTaskRequest";
 
 export type MtCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
-  "proxy"?: string;
   "websiteKey": string;
   "websiteURL": string;
 };

@@ -1,5 +1,5 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/captcha/HCaptcha.html#example-response-1}
+ * @deprecated removed from service support
  */
 export interface HCaptchaTaskSolution {
   "captchaKey": string;

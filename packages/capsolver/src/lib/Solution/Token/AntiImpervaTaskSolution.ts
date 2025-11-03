@@ -1,4 +1,4 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/antibots/imperva.html#example-response-1}
+ * @deprecated removed from service support
  */
 export interface AntiImpervaTaskSolution { "token": string }

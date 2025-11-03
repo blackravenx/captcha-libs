@@ -1,4 +1,4 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/recognition/FunCaptchaClassification.html#example-response}
+ * @deprecated removed from service support
  */
 export interface FunCaptchaClassificationSolution { "objects": Array<number> }

@@ -7,7 +7,6 @@ export type GeeTestTaskBaseParams = Partial<ProxyCredentials> & {
   "challenge"?: string;
   "geetestApiServerSubdomain"?: string;
   "gt"?: string;
-  "proxy"?: string;
   "userAgent"?: string;
   "websiteURL": string;
 };

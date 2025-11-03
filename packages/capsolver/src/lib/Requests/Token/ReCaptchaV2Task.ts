@@ -8,9 +8,10 @@ type RecaptchaV2TaskParams = ProxyRequiredTaskParams<RecaptchaV2TaskBaseParams>;
 
 /**
  * @classdesc ReCaptchaV2Task this task type require your own proxies.
+ * @deprecated deleted from service support @see ReCaptchaV2TaskProxyLess instead
  * @class
  * @extends {RecaptchaV2TaskBase}
- * @see {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html}
+ * @see {@link https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2}
  */
 export class ReCaptchaV2Task extends RecaptchaV2TaskBase implements _IsTaskType {
 
@@ -21,7 +22,7 @@ export class ReCaptchaV2Task extends RecaptchaV2TaskBase implements _IsTaskType 
 
   /**
    * Create ReCaptchaV2Task
-   * @see {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html}
+   * @see {@link https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2}
    * @param {Object} params - RecaptchaV2TaskParams
    * @param {string} [params.apiDomain] - Domain address from which to load reCAPTCHA Enterprise. For example: http://www.google.com/, http://www.recaptcha.net/. Don't use a parameter if you don't know why it's needed.
    * @param {Object=} [params.enterprisePayload] - Enterprise Payload

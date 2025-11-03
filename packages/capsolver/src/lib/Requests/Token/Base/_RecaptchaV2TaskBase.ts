@@ -8,7 +8,7 @@ export type RecaptchaV2TaskBaseParams = Partial<ProxyCredentials> & {
   "enterprisePayload"?: Record<string, string>;
   "isInvisible"?: boolean;
   "pageAction"?: string;
-  "proxy"?: string;
+  "isSession"?: boolean;
   "userAgent"?: string;
   "websiteKey": string;
   "websiteURL": string;
@@ -17,23 +17,24 @@ export type RecaptchaV2TaskBaseParams = Partial<ProxyCredentials> & {
 /**
  * @classdesc Base class for Recaptcha V2 task
  * @class
- * @see {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html}
+ * @see {@link https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2}
  * @extends {BaseTask}
  */
 export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV2TaskBaseParams {
 
   /**
    * Create RecaptchaV2TaskBase
-   * @see {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html}
-   * @param {Object} params - RecaptchaV2TaskBaseParams
+   * @see {@link https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2}
+   * @param {object} params - RecaptchaV2TaskBaseParams
    * @param {string} params.apiDomain - Domain address from which to load reCAPTCHA Enterprise. For example: http://www.google.com/, http://www.recaptcha.net/. Don't use a parameter if you don't know why it's needed.
-   * @param {Object=} params.enterprisePayload - Enterprise Payload
-   * @param {Object=} params.cookies - cookies
+   * @param {object=} params.enterprisePayload - Enterprise Payload
+   * @param {object} [params.cookies] - cookies - deprecated
    * @param {string} params.websiteURL - Web address of the website using recaptcha, generally it's fixed value. (Ex: https://google.com)
    * @param {string} params.websiteKey - The domain public key, rarely updated. (Ex: b989d9e8-0d14-41sda0-870f-97b5283ba67d)
    * @param {string=} params.pageAction - some site in anchor endpoint have sa param ,it's action value
    * @param {boolean=} params.isInvisible - if recaptcha don't have pageAction, reload request body content flag have "fi"
    * @param {string} [params.userAgent] - Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".
+   * @param {boolean} [params.isSession] - Session mode, when enabled, will return a recaptcha-ca-t value, which is used as a cookie. It usually appears in v3. Note: Some websites require a recaptcha-ca-e value, which usually appears in v2. If this value is present, it will be automatically returned without any additional parameter settings.
    * @param {string=} params.proxy - proxy
    * @param {string} [params.proxyAddress] - proxyAddress
    * @param {string} [params.proxyLogin] - proxyLogin
@@ -41,7 +42,7 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
    * @param {number} [params.proxyPort] - proxyPort
    * @param {string} [params.proxyType] - proxyType
    */
-  constructor ({ apiDomain, cookies, isInvisible = false, websiteKey, websiteURL, pageAction, enterprisePayload, userAgent, ...proxyObject }: RecaptchaV2TaskBaseParams, type: TaskTypes) {
+  constructor ({ apiDomain, cookies, isInvisible = false, websiteKey, websiteURL, pageAction, enterprisePayload, userAgent, isSession, proxyAddress, proxyLogin, proxyPassword, proxyPort, proxyType, proxy }: RecaptchaV2TaskBaseParams, type: TaskTypes) {
     super({ type });
 
     this.apiDomain = apiDomain;
@@ -60,17 +61,19 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
 
     this.userAgent = userAgent;
 
-    this.proxy = proxyObject.proxy;
+    this.isSession = isSession;
 
-    this.proxyAddress = proxyObject.proxyAddress;
+    this.proxy = proxy;
 
-    this.proxyLogin = proxyObject.proxyLogin;
+    this.proxyAddress = proxyAddress;
 
-    this.proxyPort = proxyObject.proxyPort;
+    this.proxyLogin = proxyLogin;
 
-    this.proxyType = proxyObject.proxyType;
+    this.proxyPort = proxyPort;
 
-    this.proxyPassword = proxyObject.proxyPassword;
+    this.proxyType = proxyType;
+
+    this.proxyPassword = proxyPassword;
   }
 
   /**
@@ -79,7 +82,7 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
   apiDomain?: string;
 
   /**
-   * @type {object} cookies - cookies
+   * @deprecated @type {object} cookies - cookies
    */
   cookies?: Record<string, string>[];
 
@@ -117,6 +120,11 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
    * @type {string} websiteURL - Web address of the website using recaptcha, generally it's fixed value. (Ex: https://google.com)
    */
   websiteURL: string;
+
+  /**
+   * @type {boolean} isSession - Session mode, when enabled, will return a recaptcha-ca-t value, which is used as a cookie. It usually appears in v3. Note: Some websites require a recaptcha-ca-e value, which usually appears in v2. If this value is present, it will be automatically returned without any additional parameter settings.
+   */
+  isSession?: boolean;
 
   proxyAddress?: string;
 

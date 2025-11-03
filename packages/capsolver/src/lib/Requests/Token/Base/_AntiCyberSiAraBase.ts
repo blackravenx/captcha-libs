@@ -4,7 +4,6 @@ import { BaseTask } from "../../_BaseTaskRequest";
 
 export type AntiCyberSiAraTaskBaseParams = Partial<ProxyCredentials> & {
   "SlideMasterUrlId": string;
-  "proxy"?: string;
   "userAgent": string;
   "websiteURL": string;
 };

@@ -32,7 +32,7 @@ import type {
   AntiAkamaiWebTask,
   AntiAwsWafTask,
   AntiAwsWafTaskProxyLess,
-  AntiCloudflareChallengeTask,
+  AntiCloudflareTask,
   AntiCloudflareTurnstileTask,
   AntiCyberSiAraTask,
   AntiCyberSiAraTaskProxyLess,
@@ -248,10 +248,10 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
   public async solve (request: MtCaptchaTask | MtCaptchaTaskProxyLess): Promise<CapSolverSolution<MtCaptchaTaskSolution>>;
 
   /**
-  * @param {AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess} request - task payload to create task
+  * @param {AntiCloudflareTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess} request - task payload to create task
   * @return {Promise<CapSolverSolution<AntiCloudflareTaskSolution>>} - response of createTask
   */
-  public async solve (request: AntiCloudflareChallengeTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess): Promise<CapSolverSolution<AntiCloudflareTaskSolution>>;
+  public async solve (request: AntiCloudflareTask | AntiCloudflareTurnstileTask | AntiTurnstileTaskProxyLess): Promise<CapSolverSolution<AntiCloudflareTaskSolution>>;
 
   /**
   * @param {AntiImpervaTask | AntiImpervaTaskProxyLess} request - task payload to create task
@@ -341,7 +341,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       _isAntiAkamaiWebTask = false,
       _isAntiAwsWafTask = false,
       _isAntiAwsWafTaskProxyLess = false,
-      _isAntiCloudflareChallengeTask = false,
+      _isAntiCloudflareTask = false,
       _isAntiCloudflareTurnstileTask = false,
       _isAntiCyberSiAraTask = false,
       _isAntiCyberSiAraTaskProxyLess = false,
@@ -385,7 +385,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       "_isAntiAkamaiWebTask": false,
       "_isAntiAwsWafTask": false,
       "_isAntiAwsWafTaskProxyLess": false,
-      "_isAntiCloudflareChallengeTask": false,
+      "_isAntiCloudflareTask": false,
       "_isAntiCloudflareTurnstileTask": false,
       "_isAntiCyberSiAraTask": false,
       "_isAntiCyberSiAraTaskProxyLess": false,
@@ -434,18 +434,20 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
     try {
       while (!isAborted) {
-        const body = await fetch(`${this.baseUrl}/getTaskResult`, {
+        const response = await fetch(`${this.baseUrl}/getTaskResult`, {
           "body": JSON.stringify({ "taskId": createTaskResponse.taskId }),
           "method": "POST",
           "headers": { "Content-Type": "application/json" },
           "signal": abortSignal
         });
 
-        const response = await body.json() as CapSolverSolution<TSolution>;
+        if (!response.ok) throw new Error("Unexpected error");
 
-        if (response.solution) return response;
+        const body = await response.json() as CapSolverSolution<TSolution>;
 
-        else if (response.errorCode) throw new Error(`CapSolver: ${response.errorDescription}`);
+        if (body.solution) return body;
+
+        else if (body.errorCode) throw new Error(`CapSolver: ${body.errorDescription}`);
 
         await delay(this.pollingInterval);
       }

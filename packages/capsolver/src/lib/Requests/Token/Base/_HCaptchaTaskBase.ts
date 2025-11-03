@@ -6,7 +6,6 @@ export type HCaptchaTaskBaseParams = Partial<ProxyCredentials> & {
   "enterprisePayload"?: Record<string, string>;
   "getCaptcha"?: unknown;
   "isInvisible"?: boolean;
-  "proxy"?: string;
   "userAgent"?: string;
   "websiteKey": string;
   "websiteURL": string;

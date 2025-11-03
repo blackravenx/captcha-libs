@@ -1,8 +1,11 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/captcha/ReCaptchaV2.html#example-response-1}
+ * @see {@link https://docs.capsolver.com/en/guide/captcha/ReCaptchaV2#example-response-1}
  */
 export interface ReCaptchaV2TaskSolution {
-  "expireTime": number;
-  "gRecaptchaResponse": string;
   "userAgent": string;
+  "secChUa": string;
+  "createTime": number;
+  "gRecaptchaResponse": string;
+  "recaptcha-ca-t": string;
+  "recaptcha-ca-e": string;
 }

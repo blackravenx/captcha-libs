@@ -1,7 +1,4 @@
 /**
- * @see {@link https://docs.capsolver.com/guide/antibots/datadome.html#example-response-1}
+ * @see {@link https://docs.capsolver.com/en/guide/captcha/datadome#example-response-1}
  */
-export interface DataDomeSliderTaskSolution {
-  "cookie": string;
-  "userAgent": string;
-}
+export interface DataDomeSliderTaskSolution { "cookie": string }

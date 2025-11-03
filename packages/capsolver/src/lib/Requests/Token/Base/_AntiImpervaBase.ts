@@ -3,7 +3,6 @@ import type { ProxyCredentials, TaskTypes } from "../../_BaseTaskRequest";
 import { BaseTask } from "../../_BaseTaskRequest";
 
 export type AntiImpervaTaskBaseParams = Partial<ProxyCredentials> & {
-  "proxy"?: string;
   "reese84"?: boolean;
   "reeseScriptUrl"?: string;
   "reeseToken"?: string;

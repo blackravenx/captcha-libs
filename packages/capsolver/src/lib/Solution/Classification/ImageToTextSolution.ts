@@ -1,4 +1,7 @@
 /**
  * @see {@link https://docs.capsolver.com/guide/recognition/ImageToTextTask.html#example-response}
  */
-export interface ImageToTextSolution { "text": string }
+export interface ImageToTextSolution {
+  "text": string;
+  "answers": string[];
+}
