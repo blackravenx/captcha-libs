@@ -112,3 +112,4 @@ What 'custom' does mean? Custom means that the parameters and solutions have bee
 #### Looking for another captcha recognition service? Check our other libraries: 
 * [CapSolver](https://www.npmjs.com/package/@captcha-libs/capsolver)
 * [CapGuru](https://www.npmjs.com/package/@captcha-libs/capguru)
+* [CaptchaAI](https://www.npmjs.com/package/@captcha-libs/captchaai)

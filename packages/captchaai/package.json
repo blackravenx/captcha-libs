@@ -1,0 +1,47 @@
+{
+  "name": "@captcha-libs/captchaai",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint --config ./eslint.config.js --fix  --ignore-pattern '**/node_modules/**'  --ignore-pattern '**/dist/**'  --ignore-pattern '**/*.json/**' .",
+    "test": "vitest run .",
+    "build": "tsup"
+  },
+  "keywords": [
+    "CaptchaAI",
+    "Captcha recognition",
+    "Captcha solving",
+    "ReCaptcha captcha",
+    "ReCaptcha V2 captcha",
+    "ReCaptcha V3 captcha",
+    "ReCaptcha Enterprise captcha",
+    "Cloudflare captcha",
+    "Turnstile captcha",
+    "Image to text captcha"
+  ],
+  "license": "ISC",
+  "author": "Max Shy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackravenx/captcha-libs.git",
+    "directory": "captchaai"
+  },
+  "dependencies": {
+    "@captcha-libs/captcha-client": "workspace:",
+    "node-fetch": "catalog:"
+  },
+  "devDependencies": {
+    "@captcha-libs/eslint-config": "workspace:^"
+  },
+  "description": "CaptchaAI NodeJS client, captcha recognition service",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist/"
+  ]
+}

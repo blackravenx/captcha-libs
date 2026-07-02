@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    node-fetch:
+      specifier: ^3.3.2
+      version: 3.3.2
+
 importers:
 
   .:
@@ -96,6 +102,19 @@ importers:
       eslint:
         specifier: 8.57.0
         version: 8.57.0
+
+  packages/captchaai:
+    dependencies:
+      '@captcha-libs/captcha-client':
+        specifier: 'workspace:'
+        version: link:../captcha-client
+      node-fetch:
+        specifier: 'catalog:'
+        version: 3.3.2
+    devDependencies:
+      '@captcha-libs/eslint-config':
+        specifier: workspace:^
+        version: link:../../tooling/eslint-config
 
   packages/twocaptcha:
     dependencies:
@@ -2224,6 +2243,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@3.3.2:
     resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
