@@ -1,5 +1,11 @@
 # @captcha-libs/capsolver
 
+## 2.2.0
+
+### Minor Changes
+
+- 7deb640: Update Capsolver service tasks
+
 ## 2.1.1
 
 ### Patch Changes
