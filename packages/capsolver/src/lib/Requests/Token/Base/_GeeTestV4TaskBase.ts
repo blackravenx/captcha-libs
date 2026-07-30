@@ -5,7 +5,9 @@ import { BaseTask } from "../../_BaseTaskRequest";
 export type GeeTestV4TaskBaseParams = Partial<ProxyCredentials> & {
   "captchaId": string;
   "geetestApiServerSubdomain"?: string;
+  //@deprecated
   "userAgent"?: string;
+  "riskType": string;
   "websiteURL": string;
 };
 
@@ -34,7 +36,7 @@ export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4Tas
    * @param {number} [params.proxyPort] - proxyPort
    * @param {string} [params.proxyType] - proxyType
    */
-  constructor ({ websiteURL, proxy, geetestApiServerSubdomain, userAgent, captchaId, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: GeeTestV4TaskBaseParams, type: TaskTypes) {
+  constructor ({ websiteURL, proxy, geetestApiServerSubdomain, userAgent, captchaId, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword, riskType }: GeeTestV4TaskBaseParams, type: TaskTypes) {
     super({ type });
 
     this.websiteURL = websiteURL;
@@ -43,7 +45,7 @@ export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4Tas
 
     this.geetestApiServerSubdomain = geetestApiServerSubdomain;
 
-    this.userAgent = userAgent;
+    this.riskType = riskType;
 
     this.captchaId = captchaId;
 
@@ -79,10 +81,16 @@ export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4Tas
   captchaId: string;
 
   /**
+   * @deprecated
    * @type {string} userAgent - Browser userAgent
    */
   userAgent?: string;
 
+  /**
+   * @type {string} riskType - Browser riskType
+   */
+  riskType: string;
+  
   proxyAddress?: string;
 
   proxyLogin?: string;

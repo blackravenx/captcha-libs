@@ -4,6 +4,8 @@ import { BaseTask } from "../_BaseTaskRequest";
 
 const _ImageToTextModules = [
   "common",
+  "common2",
+  "number",
   "module_001",
   "module_002",
   "module_003",

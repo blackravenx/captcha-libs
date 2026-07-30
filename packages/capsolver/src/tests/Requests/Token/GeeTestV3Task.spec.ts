@@ -13,7 +13,6 @@ describe("GeeTestV3Task", () => {
       "proxyPassword": "some-proxyPassword",
       "proxyPort": 1010,
       "proxyType": "http",
-      "userAgent": "some-userAgent",
       "websiteURL": "https://some-url.com"
     });
 
@@ -30,7 +29,6 @@ describe("GeeTestV3Task", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "GeeTestTask",
-      "userAgent": "some-userAgent",
       "websiteURL": "https://some-url.com"
     });
   });

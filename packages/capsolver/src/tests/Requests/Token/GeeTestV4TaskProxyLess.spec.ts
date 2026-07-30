@@ -6,7 +6,8 @@ describe("GeeTestV4TaskProxyLess", () => {
   it("To be equal to object", () => {
     const task = new GeeTestV4TaskProxyLess({
       "captchaId": "some-captchaId",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
 
     expect(task).toEqual({
@@ -14,14 +15,16 @@ describe("GeeTestV4TaskProxyLess", () => {
       "_isGeeTestTaskProxyLess": true,
       "captchaId": "some-captchaId",
       "type": "GeeTestTaskProxyLess",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
   });
 
   it("To be equal to object without optional params", () => {
     const task = new GeeTestV4TaskProxyLess({
       "captchaId": "some-captchaId",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
 
     expect(task).toEqual({
@@ -29,7 +32,8 @@ describe("GeeTestV4TaskProxyLess", () => {
       "_isGeeTestTaskProxyLess": true,
       "captchaId": "some-captchaId",
       "type": "GeeTestTaskProxyLess",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
   });
 });

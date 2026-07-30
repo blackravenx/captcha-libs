@@ -6,16 +6,7 @@ describe("ReCaptchaV2EnterpriseTask", () => {
   it("To be equal to object", () => {
     const task = new ReCaptchaV2EnterpriseTask({
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
+      "recaptchaDataSValue": "data-s-value",
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -24,8 +15,6 @@ describe("ReCaptchaV2EnterpriseTask", () => {
       "proxyPassword": "some-proxyPassword",
       "proxyPort": 1010,
       "proxyType": "http",
-
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });
@@ -34,16 +23,7 @@ describe("ReCaptchaV2EnterpriseTask", () => {
       "_endpoint": "createTask",
       "_isReCaptchaV2EnterpriseTask": true,
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
+      "recaptchaDataSValue": "data-s-value",
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -54,7 +34,6 @@ describe("ReCaptchaV2EnterpriseTask", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "ReCaptchaV2EnterpriseTask",
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });
@@ -86,7 +65,6 @@ describe("ReCaptchaV2EnterpriseTask", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "ReCaptchaV2EnterpriseTask",
-      "userAgent": undefined,
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });

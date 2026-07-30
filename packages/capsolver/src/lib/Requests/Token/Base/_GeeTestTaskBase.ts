@@ -7,7 +7,7 @@ export type GeeTestTaskBaseParams = Partial<ProxyCredentials> & {
   "challenge"?: string;
   "geetestApiServerSubdomain"?: string;
   "gt"?: string;
-  "userAgent"?: string;
+  "riskType"?: string;
   "websiteURL": string;
 };
 
@@ -29,7 +29,7 @@ export abstract class GeeTestTaskBase extends BaseTask implements GeeTestTaskBas
    * @param {string} [params.challenge] - If you need to solve Geetest V4 you must use this parameter, don't need if you need to solve GeetestV3
    * @param {string} [param.geetestApiServerSubdomain] - Special api subdomain
    * @param {string} [params.captchaId] - If you need to solve Geetest V4 you must use this parameter, don't need if you need to solve GeetestV3
-   * @param {string} [params.userAgent] - Browser userAgent
+   * @param {string} [params.riskType] - only Geetest V4 is required
    * @param {string} [params.proxy] -	proxy
    * @param {string} [params.proxyAddress] - proxyAddress
    * @param {string} [params.proxyLogin] - proxyLogin
@@ -37,7 +37,7 @@ export abstract class GeeTestTaskBase extends BaseTask implements GeeTestTaskBas
    * @param {number} [params.proxyPort] - proxyPort
    * @param {string} [params.proxyType] - proxyType
    */
-  constructor ({ websiteURL, proxy, challenge, geetestApiServerSubdomain, gt, captchaId, userAgent, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: GeeTestTaskBaseParams, type: TaskTypes) {
+  constructor ({ websiteURL, proxy, challenge, geetestApiServerSubdomain, gt, captchaId, riskType, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: GeeTestTaskBaseParams, type: TaskTypes) {
     super({ type });
 
     this.websiteURL = websiteURL;
@@ -52,7 +52,7 @@ export abstract class GeeTestTaskBase extends BaseTask implements GeeTestTaskBas
 
     this.captchaId = captchaId;
 
-    this.userAgent = userAgent;
+    this.riskType = riskType;
 
     this.proxyAddress = proxyAddress;
 
@@ -96,9 +96,9 @@ export abstract class GeeTestTaskBase extends BaseTask implements GeeTestTaskBas
   captchaId?: string;
 
   /**
-   * @type {string} userAgent - Browser userAgent
+   * @type {string} riskType - only Geetest V4 is required
    */
-  userAgent?: string;
+  riskType?: string;
 
   proxyAddress?: string;
 

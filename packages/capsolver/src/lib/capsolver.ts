@@ -99,6 +99,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
   /**
    * @type {string} baseUrl - api base url
+   * @see {@link https://docs.capsolver.com/en/guide/api-server/}
    */
   protected baseUrl: string = "https://api.capsolver.com";
 
@@ -106,12 +107,13 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
 
   /**
    * @param {object} [params] - CaptchaClientParams
+   * @param {string} [params.baseUrl] - @see {@link https://docs.capsolver.com/en/guide/api-server/}
    * @param {string} [params.clientKey] - YOUR_API_KEY from dashboard
    * @param {number} [params.timeout] - max timeout to getTaskResult
    * @param {number} [params.pollingInterval] - polling interval to getTaskResult
    */
   constructor (params: CaptchaClientParams) {
-    const { clientKey, timeout = 120_000, pollingInterval = 5_000 } = params;
+    const { clientKey, timeout = 120_000, pollingInterval = 5_000, baseUrl = "https://api.capsolver.com" } = params;
 
     super();
 
@@ -120,6 +122,8 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
     this.pollingInterval = pollingInterval;
 
     this.timeout = timeout;
+    
+    this.baseUrl = baseUrl;
   }
 
   public async getBalance (): Promise<CapSolverBalanceSuccessResponse> {

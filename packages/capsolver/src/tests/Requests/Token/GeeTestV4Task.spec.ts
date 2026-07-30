@@ -37,7 +37,8 @@ describe("GeeTestV4Task", () => {
       "proxyPassword": "some-proxyPassword",
       "proxyPort": 1010,
       "proxyType": "http",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
 
     expect(task).toEqual({
@@ -51,7 +52,8 @@ describe("GeeTestV4Task", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "GeeTestTask",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      'riskType': 'risk'
     });
   });
 });
