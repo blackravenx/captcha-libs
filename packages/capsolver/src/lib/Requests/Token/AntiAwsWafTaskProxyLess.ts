@@ -27,6 +27,10 @@ export class AntiAwsWafTaskProxyLess extends AntiAwsWafTaskBase implements _IsTa
    * @param {string=} [params.awsContext] - When the status code returned by the websiteURL page is 405, you need to pass in awsContext
    * @param {string=} [params.awsIv] - When the status code returned by the websiteURL page is 405, you need to pass in awsIv
    * @param {string=} [params.awsKey] - When the status code returned by the websiteURL page is 405, you need to pass in awsKey
+   * @param {string=} [params.awsApiJs] - The jsapi.js link returned by the captcha page
+   * @param {string=} [params.awsProblemUrl] - The problem endpoint url containing keywords like problem, num_solutions_required, etc.
+   * @param {string=} [params.awsApiKey] - The api_key value of the problem endpoint
+   * @param {string=} [params.awsExistingToken] - The aws-waf-token used for the last verification
    * @param {string} [params.websiteURL] - The URL of the page that returns the captcha info
    */
   constructor (params: AntiAwsWafTaskProxyLessParams) {

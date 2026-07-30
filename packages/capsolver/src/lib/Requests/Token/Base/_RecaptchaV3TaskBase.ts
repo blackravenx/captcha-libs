@@ -5,12 +5,16 @@ import { BaseTask } from "../../_BaseTaskRequest";
 export type RecaptchaV3TaskBaseParams = Partial<ProxyCredentials> & {
   "anchor"?: string;
   "apiDomain"?: string;
+  // @deprecated
   "cookies"?: Array<Record<string, string>>;
   "enterprisePayload"?: Record<string, string>;
+  // @deprecated
   "minScore"?: number;
-  "pageAction": string;
+  "pageAction"?: string;
   "isSession"?: boolean;
+  // @deprecated
   "reload"?: string;
+  // @deprecated
   "userAgent"?: string;
   "websiteKey": string;
   "websiteURL": string;
@@ -106,9 +110,9 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
   enterprisePayload?: Record<string, string>;
 
   /**
-  * @type {string} pageAction - Widget action value. Website owner defines what user is doing on the page through this parameter. Default value: verify Example:
+  * @type {string} pageAction - For ReCaptchaV3: You can find the value of the action parameter by searching for grecaptcha.execute
   */
-  pageAction: string;
+  pageAction?: string;
 
   /**
    * @type {string} proxy - proxy
@@ -116,6 +120,7 @@ export abstract class RecaptchaV3TaskBase extends BaseTask implements RecaptchaV
   proxy?: string;
 
   /**
+   * @deprecated
    * @type {string} userAgent - Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".
    */
   userAgent?: string;

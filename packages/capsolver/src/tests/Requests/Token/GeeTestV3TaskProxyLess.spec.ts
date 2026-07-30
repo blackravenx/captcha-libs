@@ -8,7 +8,6 @@ describe("GeeTestV3TaskProxyLess", () => {
       "challenge": "some-challenge",
       "geetestApiServerSubdomain": "https://some-api-domain.com",
       "gt": "some-gt",
-      "userAgent": "some-userAgent",
       "websiteURL": "https://some-url.com"
     });
 
@@ -21,7 +20,6 @@ describe("GeeTestV3TaskProxyLess", () => {
       "gt": "some-gt",
       "proxy": undefined,
       "type": "GeeTestTaskProxyLess",
-      "userAgent": "some-userAgent",
       "websiteURL": "https://some-url.com"
     });
   });

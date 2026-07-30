@@ -6,7 +6,9 @@ const _VisionEngineModules = [
   "slider_1",
   "rotate_1",
   "rotate_2",
-  "shein"
+  "shein",
+  "ocr_gif",
+  "botdeflector"
 ] as const;
 
 type VisionEngineModules = typeof _VisionEngineModules[number];

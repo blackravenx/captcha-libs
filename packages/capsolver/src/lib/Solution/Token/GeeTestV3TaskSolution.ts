@@ -4,4 +4,6 @@
 export interface GeeTestV3TaskSolution {
   "challenge": string;
   "validate": string;
+  "seccode": string;
+  "userAgent": string
 }

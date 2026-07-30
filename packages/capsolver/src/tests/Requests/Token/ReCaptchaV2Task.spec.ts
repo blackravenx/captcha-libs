@@ -6,16 +6,6 @@ describe("ReCaptchaV2Task", () => {
   it("To be equal to object", () => {
     const task = new ReCaptchaV2Task({
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -24,25 +14,15 @@ describe("ReCaptchaV2Task", () => {
       "proxyPassword": "some-proxyPassword",
       "proxyPort": 1010,
       "proxyType": "http",
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      "recaptchaDataSValue": "data-s-value"
     });
 
     expect(task).toEqual({
       "_endpoint": "createTask",
       "_isReCaptchaV2Task": true,
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -53,9 +33,9 @@ describe("ReCaptchaV2Task", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "ReCaptchaV2Task",
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      "recaptchaDataSValue": "data-s-value"
     });
   });
 

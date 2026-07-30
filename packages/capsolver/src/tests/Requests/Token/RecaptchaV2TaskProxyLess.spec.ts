@@ -6,20 +6,10 @@ describe("ReCaptchaV2TaskProxyLess", () => {
   it("To be equal to object", () => {
     const task = new ReCaptchaV2TaskProxyLess({
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
+      'recaptchaDataSValue': 'data-s-value',
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });
@@ -28,21 +18,11 @@ describe("ReCaptchaV2TaskProxyLess", () => {
       "_endpoint": "createTask",
       "_isReCaptchaV2TaskProxyLess": true,
       "apiDomain": "https://some-api-domain.com",
-      "cookies": [
-        {
-          "name": "Cookie name",
-          "value": "Cookie value"
-        },
-        {
-          "name": "Cookie 2 name",
-          "value": "Cookie 2 value"
-        }
-      ],
+      'recaptchaDataSValue': 'data-s-value',
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
       "type": "ReCaptchaV2TaskProxyLess",
-      "userAgent": "some-userAgent",
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });
@@ -63,7 +43,7 @@ describe("ReCaptchaV2TaskProxyLess", () => {
       "isInvisible": false,
       "pageAction": undefined,
       "type": "ReCaptchaV2TaskProxyLess",
-      "userAgent": undefined,
+      'recaptchaDataSValue': undefined,
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });

@@ -10,7 +10,9 @@ describe("AntiCloudflareTask", () => {
       "proxyPassword": "some-proxyPassword",
       "proxyPort": 1010,
       "proxyType": "http",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "html": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title>...",
     });
 
     expect(task).toEqual({
@@ -23,7 +25,9 @@ describe("AntiCloudflareTask", () => {
       "proxyPort": 1010,
       "proxyType": "http",
       "type": "AntiCloudflareTask",
-      "websiteURL": "https://some-url.com"
+      "websiteURL": "https://some-url.com",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+      "html": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title>...",
     });
   });
 

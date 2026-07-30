@@ -2,6 +2,7 @@ export interface CaptchaClientParams {
   "clientKey": string;
   "pollingInterval"?: number;
   "timeout"?: number;
+  "baseUrl"?: string
 }
 
 export type CapSolverCreateTaskResponse<TSolution = unknown> = {
