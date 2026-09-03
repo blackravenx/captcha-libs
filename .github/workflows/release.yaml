@@ -1,0 +1,85 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+# Principle of least privilege: default deny all permissions
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false # Never abort an active release pipeline
+
+jobs:
+  release:
+    name: Release & Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Skip runs triggered by the automated version bump commit
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    permissions:
+      contents: write       # Push version bump commits and git tags
+      id-token: write       # Required for npm OIDC provenance attestation
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.2.0
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check for pending changesets
+        id: check_changesets
+        run: |
+          CHANGESETS=$(ls .changeset/*.md 2>/dev/null | grep -v README.md || true)
+          if [ -z "$CHANGESETS" ]; then
+            echo "No changesets found — skipping release."
+            echo "has_changesets=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Found changesets to release:"
+            echo "$CHANGESETS"
+            echo "has_changesets=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Version, Build & Publish to npm
+        if: steps.check_changesets.outputs.has_changesets == 'true'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: |
+          # 1. Configure git user identity
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 2. Consume changesets, bump package versions, and update CHANGELOG.md
+          pnpm changeset version
+
+          # 3. Build packages with new version numbers
+          pnpm build
+
+          # 4. Publish packages to npm (creates git tags automatically)
+          pnpm changeset publish --tag latest
+
+          # 5. Commit version bump and push tags back to main
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: version packages [skip ci]"
+            git push --follow-tags origin HEAD:main
+            echo "Successfully released and pushed version bump to main."
+          else
+            echo "No version changes to commit."
+          fi
