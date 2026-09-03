@@ -15,8 +15,7 @@
     "node-fetch": "catalog:"
   },
   "devDependencies": {
-    "@captcha-libs/eslint-config": "workspace:^",
-    "eslint": "8.57.0"
+    "@captcha-libs/eslint-config": "workspace:^"
   },
   "description": "Base class of all captcha clients in monorepo",
   "type": "module"
