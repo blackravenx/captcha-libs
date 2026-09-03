@@ -75,6 +75,7 @@ const balance = await capsolverClient.getBalance();
 - [AntiCloudflareTask](https://docs.capsolver.com/en/guide/captcha/cloudflare_challenge)
 - [MtCaptchaTask | MtCaptchaTaskProxyLess](https://docs.capsolver.com/en/guide/captcha/MtCaptcha/)
 - [DatadomeSliderTask](https://docs.capsolver.com/en/guide/captcha/datadome/)
+- [AntiBotdeflectorTaskProxyLess](https://docs.capsolver.com/en/guide/captcha/botdeflector/)
 - ~~DEPRECATED~~ [HCaptchaTask | HCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/HCaptcha.html)
 - ~~DEPRECATED~~ [FunCaptchaTaskProxyLess](https://docs.capsolver.com/guide/captcha/FunCaptcha.html)
 - ~~DEPRECATED~~ [GeeTestTask](https://docs.capsolver.com/guide/captcha/Geetest.html)

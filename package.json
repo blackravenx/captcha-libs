@@ -16,7 +16,10 @@
     "Captcha solving NodeJS"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
   },
   "dependencies": {
     "tslib": "^2.3.0",
@@ -30,6 +33,7 @@
     "@types/node": "18.16.9",
     "@vitest/coverage-v8": "^3.0.5",
     "esbuild": "^0.19.2",
+    "eslint": "^9.20.0",
     "husky": "^8.0.3",
     "inquirer": "8",
     "msw": "^2.7.0",

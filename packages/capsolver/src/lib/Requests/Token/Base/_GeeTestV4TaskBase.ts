@@ -5,7 +5,7 @@ import { BaseTask } from "../../_BaseTaskRequest";
 export type GeeTestV4TaskBaseParams = Partial<ProxyCredentials> & {
   "captchaId": string;
   "geetestApiServerSubdomain"?: string;
-  //@deprecated
+  // @deprecated
   "userAgent"?: string;
   "riskType": string;
   "websiteURL": string;
@@ -90,7 +90,7 @@ export abstract class GeeTestV4TaskBase extends BaseTask implements GeeTestV4Tas
    * @type {string} riskType - Browser riskType
    */
   riskType: string;
-  
+
   proxyAddress?: string;
 
   proxyLogin?: string;

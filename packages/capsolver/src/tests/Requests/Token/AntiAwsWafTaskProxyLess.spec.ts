@@ -13,7 +13,7 @@ describe("AntiAwsWafTaskProxyLess", () => {
       "awsApiJs": "https://9175c2fd4189.edge.captcha-sdk.awswaf.com/9175c2fd4189/jsapi.js",
       "awsProblemUrl": "https://ait...awswaf.com/ait/ait/ait/problem?kind=visual&...&problem=gridcaptcha-5-0.1-0&num_solutions_required=2",
       "awsApiKey": "Sps+L2gV...",
-      "awsExistingToken": "5na16dg6-216a-...",
+      "awsExistingToken": "5na16dg6-216a-..."
     });
 
     expect(task).toEqual({
@@ -28,7 +28,7 @@ describe("AntiAwsWafTaskProxyLess", () => {
       "awsApiJs": "https://9175c2fd4189.edge.captcha-sdk.awswaf.com/9175c2fd4189/jsapi.js",
       "awsProblemUrl": "https://ait...awswaf.com/ait/ait/ait/problem?kind=visual&...&problem=gridcaptcha-5-0.1-0&num_solutions_required=2",
       "awsApiKey": "Sps+L2gV...",
-      "awsExistingToken": "5na16dg6-216a-...",
+      "awsExistingToken": "5na16dg6-216a-..."
     });
   });
 
