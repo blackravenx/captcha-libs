@@ -9,8 +9,8 @@ updates:
       prefix: "ci"
       include: "scope"
 
-  # Automated security & version updates for pnpm workspace dependencies
-  - package-ecosystem: "pnpm"
+  # Automated security & version updates for workspace dependencies (pnpm)
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
