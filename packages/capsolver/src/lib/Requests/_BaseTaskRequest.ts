@@ -34,7 +34,8 @@ const _TaskTypes = [
   "GeeTestTask",
   "GeeTestTaskProxyLess",
   "VisionEngine",
-  "AntiTurnstileTaskProxyLess"
+  "AntiTurnstileTaskProxyLess",
+  "AntiBotdeflectorTaskProxyLess"
 ] as const;
 
 export type TaskTypes = typeof _TaskTypes[number];

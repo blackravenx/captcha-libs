@@ -381,6 +381,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       _isVisionEngine = false,
       _isFunCaptchaTask = false,
       _isAntiTurnstileTaskProxyLess = false,
+      _isAntiBotdeflectorTaskProxyLess = false,
       ...payload
     } = {
       "_isAntiAkamaiBMPTask": false,
@@ -425,6 +426,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
       "_isVisionEngine": false,
       "_isFunCaptchaTask": false,
       "_isAntiTurnstileTaskProxyLess": false,
+      "_isAntiBotdeflectorTaskProxyLess": false,
       ...request
     };
 

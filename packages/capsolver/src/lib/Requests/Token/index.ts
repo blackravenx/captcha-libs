@@ -68,6 +68,8 @@ import { ReCaptchaV3Task } from "./ReCaptchaV3Task";
 
 import { ReCaptchaV3TaskProxyLess } from "./ReCaptchaV3TaskProxyLess";
 
+import { AntiBotdeflectorTaskProxyLess } from "./AntiBotdeflectorTaskProxyLess";
+
 export {
   AntiAkamaiPowTask,
   AntiAkamaiSensorTask,
@@ -103,5 +105,6 @@ export {
   ReCaptchaV3TaskProxyLess,
   AntiAkamaiBMPTask,
   FunCaptchaTask,
-  AntiTurnstileTaskProxyLess
+  AntiTurnstileTaskProxyLess,
+  AntiBotdeflectorTaskProxyLess
 };
