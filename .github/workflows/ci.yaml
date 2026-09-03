@@ -41,11 +41,25 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint packages
-        run: pnpm turbo run lint
+      - name: Determine base git ref for affected filter
+        id: filter-base
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "base=origin/${{ github.base_ref }}" >> "$GITHUB_OUTPUT"
+          else
+            BEFORE="${{ github.event.before }}"
+            if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+              echo "base=$BEFORE" >> "$GITHUB_OUTPUT"
+            else
+              echo "base=HEAD~1" >> "$GITHUB_OUTPUT"
+            fi
+          fi
 
-      - name: Run tests
-        run: pnpm turbo run test
+      - name: Lint affected packages
+        run: pnpm turbo run lint --filter="...[${{ steps.filter-base.outputs.base }}]"
 
-      - name: Build packages
-        run: pnpm turbo run build
+      - name: Run tests on affected packages
+        run: pnpm turbo run test --filter="...[${{ steps.filter-base.outputs.base }}]"
+
+      - name: Build affected packages
+        run: pnpm turbo run build --filter="...[${{ steps.filter-base.outputs.base }}]"
