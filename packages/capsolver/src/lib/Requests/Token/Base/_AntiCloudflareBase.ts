@@ -2,10 +2,10 @@ import type { ProxyCredentials, TaskTypes } from "../../_BaseTaskRequest";
 
 import { BaseTask } from "../../_BaseTaskRequest";
 
-export type AntiCloudflareTaskBaseParams = Partial<ProxyCredentials> & { 
-  "websiteURL": string,
-  "userAgent"?: string,
-  "html"? :string 
+export type AntiCloudflareTaskBaseParams = Partial<ProxyCredentials> & {
+  "websiteURL": string;
+  "userAgent"?: string;
+  "html"?: string;
 };
 
 type Type = Extract<TaskTypes, "AntiCloudflareTask">;
@@ -37,9 +37,9 @@ export abstract class AntiCloudflareTaskBase extends BaseTask implements AntiClo
     super({ type });
 
     this.websiteURL = websiteURL;
-    
+
     this.userAgent = userAgent;
-    
+
     this.html = html;
 
     this.proxy = proxy;
@@ -64,17 +64,17 @@ export abstract class AntiCloudflareTaskBase extends BaseTask implements AntiClo
    * @type {string} websiteURL - The address of the target page.
    */
   websiteURL: string;
-  
+
   /**
    * @type {string} websiteURL - The user-agent you used to request the target website. Only Chrome’s userAgent is supported.
    */
   userAgent?: string;
-  
+
   /**
    * @type {string=} html - The response of requesting the target website, it usually contains “Just a moment…” and status code is 403. we need this html for some websites, please be sure to use your sticky proxy to dynamically scrape the HTML every time.
    */
   html?: string;
-  
+
   proxyAddress?: string;
 
   proxyLogin?: string;

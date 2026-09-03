@@ -7,7 +7,7 @@ describe("GeeTestV4TaskProxyLess", () => {
     const task = new GeeTestV4TaskProxyLess({
       "captchaId": "some-captchaId",
       "websiteURL": "https://some-url.com",
-      'riskType': 'risk'
+      "riskType": "risk"
     });
 
     expect(task).toEqual({
@@ -16,7 +16,7 @@ describe("GeeTestV4TaskProxyLess", () => {
       "captchaId": "some-captchaId",
       "type": "GeeTestTaskProxyLess",
       "websiteURL": "https://some-url.com",
-      'riskType': 'risk'
+      "riskType": "risk"
     });
   });
 
@@ -24,7 +24,7 @@ describe("GeeTestV4TaskProxyLess", () => {
     const task = new GeeTestV4TaskProxyLess({
       "captchaId": "some-captchaId",
       "websiteURL": "https://some-url.com",
-      'riskType': 'risk'
+      "riskType": "risk"
     });
 
     expect(task).toEqual({
@@ -33,7 +33,7 @@ describe("GeeTestV4TaskProxyLess", () => {
       "captchaId": "some-captchaId",
       "type": "GeeTestTaskProxyLess",
       "websiteURL": "https://some-url.com",
-      'riskType': 'risk'
+      "riskType": "risk"
     });
   });
 });

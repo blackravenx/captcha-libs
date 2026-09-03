@@ -3,10 +3,9 @@
  */
 export interface AntiCloudflareTaskSolution {
   "token": string;
-  /*
-  *@deprecated
-  */
+
+  // @deprecated
   "type": string;
   "userAgent": string;
-  "cookies": Record<string, string>
-};
+  "cookies": Record<string, string>;
+}

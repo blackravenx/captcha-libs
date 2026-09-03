@@ -14,7 +14,7 @@ export type RecaptchaV2TaskBaseParams = Partial<ProxyCredentials> & {
   "userAgent"?: string;
   "websiteKey": string;
   "websiteURL": string;
-  "recaptchaDataSValue"?: string
+  "recaptchaDataSValue"?: string;
 };
 
 /**
@@ -136,7 +136,7 @@ export abstract class RecaptchaV2TaskBase extends BaseTask implements RecaptchaV
    * @type {string} recaptchaDataSValue - For ReCaptchaV2 normal version, if there is an s parameter in the payload of the /anchor endpoint, please submit its value
    */
   recaptchaDataSValue?: string;
-  
+
   proxyAddress?: string;
 
   proxyLogin?: string;

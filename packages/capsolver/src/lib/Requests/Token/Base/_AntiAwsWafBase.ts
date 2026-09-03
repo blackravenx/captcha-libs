@@ -7,7 +7,7 @@ export type AntiAwsWafTaskBaseParams = Partial<ProxyCredentials> & {
   "awsContext"?: string;
   "awsIv"?: string;
   "awsKey"?: string;
-  "awsApiJs"?: string; 
+  "awsApiJs"?: string;
   "awsProblemUrl"?: string;
   "awsApiKey"?: string;
   "awsExistingToken"?: string;
@@ -44,7 +44,7 @@ export abstract class AntiAwsWafTaskBase extends BaseTask implements AntiAwsWafT
   * @param {string} [params.proxyPort] - proxyPort
   * @param {string} [params.proxyType] - proxyType
   */
-  
+
   constructor ({ awsChallengeJS, awsContext, awsIv, awsKey, awsApiJs, awsProblemUrl, awsApiKey, awsExistingToken, proxy, websiteURL, proxyAddress, proxyPort, proxyType, proxyLogin, proxyPassword }: AntiAwsWafTaskBaseParams, type: Type) {
     super({ type });
 
@@ -55,15 +55,15 @@ export abstract class AntiAwsWafTaskBase extends BaseTask implements AntiAwsWafT
     this.awsIv = awsIv;
 
     this.awsKey = awsKey;
-    
+
     this.awsApiJs = awsApiJs;
 
     this.awsProblemUrl = awsProblemUrl;
-    
+
     this.awsApiKey = awsApiKey;
-    
+
     this.awsExistingToken = awsExistingToken;
-    
+
     this.websiteURL = websiteURL;
 
     this.proxy = proxy;
@@ -118,17 +118,17 @@ export abstract class AntiAwsWafTaskBase extends BaseTask implements AntiAwsWafT
    * @type {string} websiteURL - The URL of the page that returns the captcha info
    */
   websiteURL: string;
-  
+
   /**
    * @type {string} awsApiJs - The jsapi.js link returned by the captcha page
    */
   awsApiJs?: string;
-  
+
   /**
    * @type {string} awsProblemUrl - The problem endpoint url containing keywords like problem, num_solutions_required, etc.
    */
   awsProblemUrl?: string;
-  
+
   /**
    * @type {string} awsApiKey - The api_key value of the problem endpoint
    */

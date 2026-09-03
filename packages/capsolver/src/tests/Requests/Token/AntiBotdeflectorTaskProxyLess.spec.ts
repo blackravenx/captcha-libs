@@ -6,7 +6,7 @@ describe("AntiBotdeflectorTaskProxyLess", () => {
   it("To be equal to object", () => {
     const task = new AntiBotdeflectorTaskProxyLess({
       "domain": "botdeflector.eu",
-      'flowToken': "some-token",
+      "flowToken": "some-token",
       "websiteURL": "https://some-url.com"
     });
 
@@ -15,7 +15,7 @@ describe("AntiBotdeflectorTaskProxyLess", () => {
       "_isAntiBotdeflectorTaskProxyLess": true,
       "type": "AntiBotdeflectorTaskProxyLess",
       "domain": "botdeflector.eu",
-      'flowToken': "some-token",
+      "flowToken": "some-token",
       "websiteURL": "https://some-url.com"
     });
   });

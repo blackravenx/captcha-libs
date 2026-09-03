@@ -6,7 +6,7 @@ describe("ReCaptchaV2TaskProxyLess", () => {
   it("To be equal to object", () => {
     const task = new ReCaptchaV2TaskProxyLess({
       "apiDomain": "https://some-api-domain.com",
-      'recaptchaDataSValue': 'data-s-value',
+      "recaptchaDataSValue": "data-s-value",
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -18,7 +18,7 @@ describe("ReCaptchaV2TaskProxyLess", () => {
       "_endpoint": "createTask",
       "_isReCaptchaV2TaskProxyLess": true,
       "apiDomain": "https://some-api-domain.com",
-      'recaptchaDataSValue': 'data-s-value',
+      "recaptchaDataSValue": "data-s-value",
       "enterprisePayload": { "s": "SOME_ADDITIONAL_TOKEN" },
       "isInvisible": false,
       "pageAction": "some-action",
@@ -43,7 +43,7 @@ describe("ReCaptchaV2TaskProxyLess", () => {
       "isInvisible": false,
       "pageAction": undefined,
       "type": "ReCaptchaV2TaskProxyLess",
-      'recaptchaDataSValue': undefined,
+      "recaptchaDataSValue": undefined,
       "websiteKey": "some-websiteKey",
       "websiteURL": "https://some-url.com"
     });

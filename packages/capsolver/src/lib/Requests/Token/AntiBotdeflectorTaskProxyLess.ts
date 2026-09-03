@@ -27,17 +27,15 @@ export class AntiBotdeflectorTaskProxyLess extends BaseTask implements AntiBotde
    * @param {string} [params.websiteURL] - The URL of the current website homepage
    * @param {string} [params.domain] - The domain name used by the pow/get or icon/get endpoints, for example: botdeflector.eu
    * @param {string} [params.flowToken] - On the website, it may be called botReflectorJwtToken, for example: eyJhbGciOiJ...
-   * 
+   *
    */
-  constructor ({websiteURL, domain, flowToken }: AntiBotdeflectorTaskProxyLessParams) {
-    super({
-      "type": "AntiBotdeflectorTaskProxyLess"
-    });
-    
+  constructor ({ websiteURL, domain, flowToken }: AntiBotdeflectorTaskProxyLessParams) {
+    super({ "type": "AntiBotdeflectorTaskProxyLess" });
+
     this.websiteURL = websiteURL;
-    
+
     this.domain = domain;
-    
+
     this.flowToken = flowToken;
   }
 

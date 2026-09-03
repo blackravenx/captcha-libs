@@ -122,7 +122,7 @@ export class CapSolver extends CaptchaClient<CapSolverCreateTaskResponse, Reques
     this.pollingInterval = pollingInterval;
 
     this.timeout = timeout;
-    
+
     this.baseUrl = baseUrl;
   }
 
