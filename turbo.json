@@ -7,11 +7,11 @@
     },
     "lint": {
       "outputs": [],
-      "cache": false
+      "cache": true
     },
     "test": {
       "outputs": [],
-      "cache": false
+      "cache": true
     }
   }
 }
