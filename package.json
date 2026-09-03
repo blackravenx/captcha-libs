@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.1",
-    "@swc-node/register": "1.9.2",
+    "@swc-node/register": "1.12.1",
     "@swc/core": "1.5.7",
     "@swc/helpers": "0.5.23",
     "@types/node": "18.16.9",
