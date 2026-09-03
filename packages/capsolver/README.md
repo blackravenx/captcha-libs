@@ -85,3 +85,9 @@ const balance = await capsolverClient.getBalance();
 - ~~DEPRECATED~~ [AntiAkamaiWebTask](https://docs.capsolver.com/guide/antibots/akamaiweb.html)
 
 **~~DEPRECATED~~** = Task type removed from service support, but you can still try to send the task.
+
+#### Looking for another captcha recognition service? Check our other libraries:
+
+- [CaptchaAI](https://www.npmjs.com/package/@captcha-libs/captchaai)
+- [CapGuru](https://www.npmjs.com/package/@captcha-libs/capguru)
+- [2Captcha](https://www.npmjs.com/package/@captcha-libs/twocaptcha)
