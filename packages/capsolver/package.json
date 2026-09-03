@@ -16,7 +16,8 @@
     "GeeTest captcha",
     "MtCaptcha",
     "AWS WAF captcha",
-    "Cloudflare captcha"
+    "Cloudflare captcha",
+    "Botdeflector captcha"
   ],
   "license": "ISC",
   "author": "Max Shy",
