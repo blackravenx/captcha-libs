@@ -9,3 +9,4 @@
 [CapGuru](https://www.npmjs.com/package/@captcha-libs/capguru)
 [2Captcha](https://www.npmjs.com/package/@captcha-libs/twocaptcha)
 [CaptchaAI](https://www.npmjs.com/package/@captcha-libs/captchaai)
+[Solvecha](https://www.npmjs.com/package/@captcha-libs/solvecha) (picture and text tasks only)

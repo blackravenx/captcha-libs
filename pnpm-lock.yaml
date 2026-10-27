@@ -116,6 +116,19 @@ importers:
         specifier: workspace:^
         version: link:../../tooling/eslint-config
 
+  packages/solvecha:
+    dependencies:
+      '@captcha-libs/captcha-client':
+        specifier: 'workspace:'
+        version: link:../captcha-client
+      node-fetch:
+        specifier: 'catalog:'
+        version: 3.3.2
+    devDependencies:
+      '@captcha-libs/eslint-config':
+        specifier: workspace:^
+        version: link:../../tooling/eslint-config
+
   packages/twocaptcha:
     dependencies:
       '@captcha-libs/captcha-client':
