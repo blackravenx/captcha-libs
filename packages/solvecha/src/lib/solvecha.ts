@@ -71,7 +71,10 @@ export class Solvecha extends CaptchaClient<SolvechaCreateTaskResponse, Requests
    */
   private async post<TResponse>(path: string, payload: object): Promise<TResponse> {
     const response = await fetch(`${this.baseUrl}/${path}`, {
-      "body": JSON.stringify({ "clientKey": this.clientKey, ...payload }),
+      "body": JSON.stringify({
+        "clientKey": this.clientKey,
+        ...payload
+      }),
       "headers": { "Content-Type": "application/json" },
       "method": "POST"
     });
@@ -84,7 +87,9 @@ export class Solvecha extends CaptchaClient<SolvechaCreateTaskResponse, Requests
       body = undefined;
     }
 
-    if (body?.errorCode) throw new Error(`Solvecha: ${body.errorCode}${body.errorDescription ? ` - ${body.errorDescription}` : ""}`);
+    if (body?.errorCode) throw new Error(`Solvecha: ${body.errorCode}${body.errorDescription
+      ? ` - ${body.errorDescription}`
+      : ""}`);
 
     if (!response.ok || !body) throw new Error(`Solvecha: HTTP ${response.status}`);
 

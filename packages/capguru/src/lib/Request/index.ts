@@ -1,4 +1,5 @@
 import { TaskSolutionTypes } from "./_BaseTaskRequest";
+
 import { AmazonCarPathTask } from "./Recognition/AmazonCarPathTask";
 
 import { AmazonPuzzleTask } from "./Recognition/AmazonPuzzleTask";

@@ -2,5 +2,5 @@ packages:
   - "packages/**"
   - "tooling/**"
 catalog:
-  "typescript": latest
+  "typescript": 5.4.5
   "node-fetch": "^3.3.2"

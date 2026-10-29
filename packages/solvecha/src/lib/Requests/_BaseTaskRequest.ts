@@ -1,8 +1,6 @@
 export type TaskTypes = "ImageToTextTask" | "ReCaptchaV2Classification";
 
-export interface BaseParams {
-  "type": TaskTypes;
-}
+export interface BaseParams { "type": TaskTypes }
 
 /**
  * @type {_IsTaskType} _IsTaskType - Only used for correct method overloading intellisense
