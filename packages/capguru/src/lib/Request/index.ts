@@ -1,3 +1,4 @@
+import { TaskSolutionTypes } from "./_BaseTaskRequest";
 import { AmazonCarPathTask } from "./Recognition/AmazonCarPathTask";
 
 import { AmazonPuzzleTask } from "./Recognition/AmazonPuzzleTask";
@@ -42,7 +43,7 @@ import { ReCaptchaV3Task } from "./Token/ReCaptchaV3Task";
 
 import { TurnstileTask } from "./Token/TurnstileTask";
 
-export type Requests = AmazonCarPathTask | AmazonPuzzleTask | BinanceGridTask | BinancePuzzleTask | BuxMoneyCoordinatesTask | FunCaptchaGridTask | GeeTestPuzzleTask | GenericPuzzleTask | HCaptchaCoordinatesTask | HCaptchaGridTask | HCaptchaTask | ImageToTextTask | LinkvertiseCoordinatesTask | ReCaptchaGridTask | ReCaptchaV2Task | ReCaptchaV3Task | SeoFastCoordinatesTask | TikTokABCTask | TikTokKolesoTask | TikTokPuzzleTask | TurnstileTask | WorldCashCoordinatesTask;
+export type Requests = (AmazonCarPathTask | AmazonPuzzleTask | BinanceGridTask | BinancePuzzleTask | BuxMoneyCoordinatesTask | FunCaptchaGridTask | GeeTestPuzzleTask | GenericPuzzleTask | HCaptchaCoordinatesTask | HCaptchaGridTask | HCaptchaTask | ImageToTextTask | LinkvertiseCoordinatesTask | ReCaptchaGridTask | ReCaptchaV2Task | ReCaptchaV3Task | SeoFastCoordinatesTask | TikTokABCTask | TikTokKolesoTask | TikTokPuzzleTask | TurnstileTask | WorldCashCoordinatesTask) & TaskSolutionTypes;
 
 export {
   AmazonCarPathTask,
