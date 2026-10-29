@@ -48,6 +48,4 @@ export interface ReCaptchaV2ClassificationSolution {
   "type"?: string;
 }
 
-export interface ImageToTextSolution {
-  "text": string;
-}
+export interface ImageToTextSolution { "text": string }

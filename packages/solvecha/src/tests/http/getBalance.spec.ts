@@ -10,7 +10,11 @@ describe("Solvecha API: getBalance", () => {
 
     const response = await client.getBalance();
 
-    expect(response).toEqual({ "balance": 0, "errorId": 0, "packages": [] });
+    expect(response).toEqual({
+      "balance": 0,
+      "errorId": 0,
+      "packages": []
+    });
   });
 
   it("should keep the API error message on a 401 response", async () => {

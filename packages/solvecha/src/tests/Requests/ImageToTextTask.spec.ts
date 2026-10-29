@@ -4,7 +4,10 @@ import { expect, it, describe } from "vitest";
 
 describe("ImageToTextTask Test", () => {
   it("To be equal to object", () => {
-    const task = new ImageToTextTask({ "body": "image", "module": "common" });
+    const task = new ImageToTextTask({
+      "body": "image",
+      "module": "common"
+    });
 
     expect(task).toEqual({
       "_isImageToTextTask": true,

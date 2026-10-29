@@ -21,37 +21,70 @@ describe("Solvecha API: createTask and getTaskResult", () => {
         "errorDescription": "",
         "status": "ready",
         "taskId": "1",
-        "solution": { "type": "multi", "objects": [ 0, 2, 5 ], "size": 3 }
+        "solution": {
+          "type": "multi",
+          "objects": [
+            0,
+            2,
+            5
+          ],
+          "size": 3
+        }
       });
     }));
 
     const client = new Solvecha({ "clientKey": "some-key" });
 
-    const response = await client.solve(new ReCaptchaV2Classification({ "image": "image", "question": "/m/04_sv" }));
+    const response = await client.solve(new ReCaptchaV2Classification({
+      "image": "image",
+      "question": "/m/04_sv"
+    }));
 
-    expect(response.solution.objects).toEqual([ 0, 2, 5 ]);
+    expect(response.solution.objects).toEqual([
+      0,
+      2,
+      5
+    ]);
 
     expect(sentBody).toEqual({
       "clientKey": "some-key",
-      "task": { "type": "ReCaptchaV2Classification", "image": "image", "question": "/m/04_sv" }
+      "task": {
+        "type": "ReCaptchaV2Classification",
+        "image": "image",
+        "question": "/m/04_sv"
+      }
     });
   });
 
   it("should poll getTaskResult while the task is processing", async () => {
     let polls = 0;
 
-    server.use(
-      http.post(`${baseUrl}/createTask`, () => HttpResponse.json({ "errorId": 0, "status": "processing", "taskId": "7" })),
-      http.post(`${baseUrl}/getTaskResult`, () => {
-        polls += 1;
+    server.use(http.post(`${baseUrl}/createTask`, () => HttpResponse.json({
+      "errorId": 0,
+      "status": "processing",
+      "taskId": "7"
+    })),
+    http.post(`${baseUrl}/getTaskResult`, () => {
+      polls += 1;
 
-        if (polls < 2) return HttpResponse.json({ "errorId": 0, "status": "processing", "taskId": "7" });
+      if (polls < 2) return HttpResponse.json({
+        "errorId": 0,
+        "status": "processing",
+        "taskId": "7"
+      });
 
-        return HttpResponse.json({ "errorId": 0, "status": "ready", "taskId": "7", "solution": { "text": "w4kq" } });
-      })
-    );
+      return HttpResponse.json({
+        "errorId": 0,
+        "status": "ready",
+        "taskId": "7",
+        "solution": { "text": "w4kq" }
+      });
+    }));
 
-    const client = new Solvecha({ "clientKey": "some-key", "pollingInterval": 10 });
+    const client = new Solvecha({
+      "clientKey": "some-key",
+      "pollingInterval": 10
+    });
 
     const response = await client.solve(new ImageToTextTask({ "body": "image" }));
 
@@ -73,12 +106,22 @@ describe("Solvecha API: createTask and getTaskResult", () => {
   });
 
   it("should throw a timeout error when the task never finishes", async () => {
-    server.use(
-      http.post(`${baseUrl}/createTask`, () => HttpResponse.json({ "errorId": 0, "status": "processing", "taskId": "9" })),
-      http.post(`${baseUrl}/getTaskResult`, () => HttpResponse.json({ "errorId": 0, "status": "processing", "taskId": "9" }))
-    );
+    server.use(http.post(`${baseUrl}/createTask`, () => HttpResponse.json({
+      "errorId": 0,
+      "status": "processing",
+      "taskId": "9"
+    })),
+    http.post(`${baseUrl}/getTaskResult`, () => HttpResponse.json({
+      "errorId": 0,
+      "status": "processing",
+      "taskId": "9"
+    })));
 
-    const client = new Solvecha({ "clientKey": "some-key", "pollingInterval": 10, "timeout": 50 });
+    const client = new Solvecha({
+      "clientKey": "some-key",
+      "pollingInterval": 10,
+      "timeout": 50
+    });
 
     await expect(client.solve(new ImageToTextTask({ "body": "image" }))).rejects.toThrow("timeout");
   });
