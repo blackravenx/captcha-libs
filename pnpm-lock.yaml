@@ -26,13 +26,13 @@ importers:
         version: 3.0.3
       '@swc-node/register':
         specifier: 1.12.1
-        version: 1.12.1(@swc/core@1.16.2(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@5.4.5)
+        version: 1.12.1(@swc/core@1.16.2(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.4.5)
       '@swc/core':
         specifier: 1.16.2
-        version: 1.16.2(@swc/helpers@0.5.23)
+        version: 1.16.2(@swc/helpers@0.5.24)
       '@swc/helpers':
-        specifier: 0.5.23
-        version: 0.5.23
+        specifier: 0.5.24
+        version: 0.5.24
       '@types/node':
         specifier: 26.5.1
         version: 26.5.1
@@ -56,10 +56,10 @@ importers:
         version: 2.15.0(@types/node@26.5.1)(typescript@5.4.5)
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.23))(@types/node@26.5.1)(typescript@5.4.5)
+        version: 10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.24))(@types/node@26.5.1)(typescript@5.4.5)
       tsup:
         specifier: ^8.3.6
-        version: 8.5.1(@swc/core@1.16.2(@swc/helpers@0.5.23))(postcss@8.5.1)(typescript@5.4.5)(yaml@2.9.1)
+        version: 8.5.1(@swc/core@1.16.2(@swc/helpers@0.5.24))(postcss@8.5.1)(typescript@5.4.5)(yaml@2.9.1)
       typescript:
         specifier: 5.4.5
         version: 5.4.5
@@ -1470,8 +1470,8 @@ packages:
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
-  '@swc/helpers@0.5.23':
-    resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
+  '@swc/helpers@0.5.24':
+    resolution: {integrity: sha512-6tcXo4kA8HgGO7AVmawB57RYi/piBPYVHVcO6dXjX+SZw8GoHmi262sp4v2Ha2kNP9Cx84qei27yT+fjS1lxgg==}
 
   '@swc/types@0.1.28':
     resolution: {integrity: sha512-V6Mnml8v09QALx6K0elJ7o9K/MkVDtW3t6L+7Ou/JcWtb3xwId2AH4FeOceySd2JaO87IMw4+6vSZxLm34LPbw==}
@@ -4305,17 +4305,17 @@ snapshots:
       - supports-color
       - typescript
 
-  '@swc-node/core@1.15.0(@swc/core@1.16.2(@swc/helpers@0.5.23))(@swc/types@0.1.28)':
+  '@swc-node/core@1.15.0(@swc/core@1.16.2(@swc/helpers@0.5.24))(@swc/types@0.1.28)':
     dependencies:
-      '@swc/core': 1.16.2(@swc/helpers@0.5.23)
+      '@swc/core': 1.16.2(@swc/helpers@0.5.24)
       '@swc/types': 0.1.28
 
-  '@swc-node/register@1.12.1(@swc/core@1.16.2(@swc/helpers@0.5.23))(@swc/types@0.1.28)(typescript@5.4.5)':
+  '@swc-node/register@1.12.1(@swc/core@1.16.2(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.4.5)':
     dependencies:
       '@node-rs/xxhash': 1.7.7
-      '@swc-node/core': 1.15.0(@swc/core@1.16.2(@swc/helpers@0.5.23))(@swc/types@0.1.28)
+      '@swc-node/core': 1.15.0(@swc/core@1.16.2(@swc/helpers@0.5.24))(@swc/types@0.1.28)
       '@swc-node/sourcemap-support': 0.6.1
-      '@swc/core': 1.16.2(@swc/helpers@0.5.23)
+      '@swc/core': 1.16.2(@swc/helpers@0.5.24)
       colorette: 2.0.20
       debug: 4.4.3
       fast-json-stable-stringify: 2.1.0
@@ -4368,7 +4368,7 @@ snapshots:
   '@swc/core-win32-x64-msvc@1.16.2':
     optional: true
 
-  '@swc/core@1.16.2(@swc/helpers@0.5.23)':
+  '@swc/core@1.16.2(@swc/helpers@0.5.24)':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.28
@@ -4385,13 +4385,11 @@ snapshots:
       '@swc/core-win32-arm64-msvc': 1.16.2
       '@swc/core-win32-ia32-msvc': 1.16.2
       '@swc/core-win32-x64-msvc': 1.16.2
-      '@swc/helpers': 0.5.23
+      '@swc/helpers': 0.5.24
 
   '@swc/counter@0.1.3': {}
 
-  '@swc/helpers@0.5.23':
-    dependencies:
-      tslib: 2.8.1
+  '@swc/helpers@0.5.24': {}
 
   '@swc/types@0.1.28':
     dependencies:
@@ -6336,7 +6334,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.23))(@types/node@26.5.1)(typescript@5.4.5):
+  ts-node@10.9.2(@swc/core@1.16.2(@swc/helpers@0.5.24))(@types/node@26.5.1)(typescript@5.4.5):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.13
@@ -6354,7 +6352,7 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optionalDependencies:
-      '@swc/core': 1.16.2(@swc/helpers@0.5.23)
+      '@swc/core': 1.16.2(@swc/helpers@0.5.24)
 
   tsconfig-paths@3.15.0:
     dependencies:
@@ -6367,7 +6365,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.1(@swc/core@1.16.2(@swc/helpers@0.5.23))(postcss@8.5.1)(typescript@5.4.5)(yaml@2.9.1):
+  tsup@8.5.1(@swc/core@1.16.2(@swc/helpers@0.5.24))(postcss@8.5.1)(typescript@5.4.5)(yaml@2.9.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.27.7)
       cac: 6.7.14
@@ -6387,7 +6385,7 @@ snapshots:
       tinyglobby: 0.2.17
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.16.2(@swc/helpers@0.5.23)
+      '@swc/core': 1.16.2(@swc/helpers@0.5.24)
       postcss: 8.5.1
       typescript: 5.4.5
     transitivePeerDependencies:
